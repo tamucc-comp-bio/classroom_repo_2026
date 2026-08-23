@@ -1,4 +1,4 @@
-# Week10 Python Boot Camp I: Basic Programming 
+# Week10: Basic Python Programming I
 
 > [!IMPORTANT]
 > Exam 2 is due by beginning of class 
