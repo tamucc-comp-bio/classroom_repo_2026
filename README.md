@@ -154,13 +154,13 @@ This is the end of the hidden section
 	
 ### SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R
 
-* [10/03  Week05 Base R Bootcamp I](lectures/lecture05new.md)
+* [10/02  Week05 Base R Bootcamp I](lectures/lecture05new.md)
 
-  * [Assignment 5 Due 10/10](assignments/assignment_5.md)
+  * [Assignment 5 Due 10/09/2026](assignments/assignment_5.md)
 
-* [10/10  Week06 Base R Bootcamp II](lectures/lecture06new.md)
+* [10/09  Week06 Base R Bootcamp II](lectures/lecture06new.md)
 
-  * [Assignment 06 Q1, Due 10/17](https://classroom.github.com/a/pq4mmgoC)
+  * [Assignment 06 Q1, Due 10/16/2026](https://classroom.github.com/a/pq4mmgoC)
 
   * Install tidyverse in RStudio
 
@@ -169,21 +169,21 @@ This is the end of the hidden section
 	install.packages("janitor")
 	```
 
-* [10/17  Week07 Data Visualization w/ Tidyverse](lectures/lecture07new.md)
+* [10/16  Week07 Data Visualization w/ Tidyverse](lectures/lecture07new.md)
 
-  * Finish Assignment 6 Q 2-3, Due 10/24
-  * [Assignment 7, Due 10/24](https://classroom.github.com/a/cnB6wvv6)
+  * Finish Assignment 6 Q 2-3, Due 10/23/2026
+  * [Assignment 7, Due 10/23/2026](https://classroom.github.com/a/cnB6wvv6)
 
-* [10/24  Week08 Data Wrangling w/ Tidyverse](lectures/lecture08new.md)
+* [10/23  Week08 Data Wrangling w/ Tidyverse](lectures/lecture08new.md)
 
-  * [Assignment 8, Due 10/31](https://classroom.github.com/a/exyYQOJC)
+  * [Assignment 8, Due 10/30/2026](https://classroom.github.com/a/exyYQOJC)
      
-* [10/31  Week09 R Markdown](lectures/lecture09new.md)
+* [10/30  Week09 R Markdown](lectures/lecture09new.md)
 
-  * [Exam 2 Part 1, Due 11/07](https://forms.office.com/r/yEyDY7DRts)
+  * [Exam 2 Part 1, Due 11/06/2026](https://forms.office.com/r/yEyDY7DRts)
 	* [Exam 2 Part 1 (Outside TAMUCC)](https://forms.office.com/r/TycAwVuDEW)
 
-  * [Exam 2 Part 2, Due 11/07](https://classroom.github.com/a/49v1Y0Af)
+  * [Exam 2 Part 2, Due 11/06/2026](https://classroom.github.com/a/49v1Y0Af)
 
  <!--
  
@@ -229,16 +229,12 @@ This is the end of the hidden section
 
 ### SECTION 3. PROGRAMMING WITH PYTHON
 
-* [11/07  Week10 Basic Python Programming I](lectures/lecture10.md)
-* [11/07  Week11 Basic Python Programming II](lectures/lecture11.md)
-    * [Assignment 11, Due 11/14-21](https://classroom.github.com/a/4JCYaOLH)
+* [11/06  Week10 Basic Python Programming I](lectures/lecture10.md)
+* [11/13  Week11 Basic Python Programming II](lectures/lecture11.md)
+    * [Assignment 11, Due 11/20/2026](https://classroom.github.com/a/4JCYaOLH)
 
-* [11/14  Week11 Basic Python Programming II](lectures/lecture11.md)
-* [11/14  Week12 Writing Good Code](lectures/lecture12.md)
-    * [Assignment 12, Due 12/3](https://classroom.github.com/a/LJPtScMZ)
- 
-* [11/21  Week12 Writing Good Code](lectures/lecture12.md)
-* [11/21  Week13 Scientific Computing](lectures/lecture13.md)
+* [11/20  Week12 Writing Good Code](lectures/lecture12.md)
+    * [Assignment 12, Due 12/2/2026](https://classroom.github.com/a/LJPtScMZ)
 
 
 </p>
@@ -272,14 +268,14 @@ We have spent the semester learning:
 #### Undergraduates:  
 I will issue a Final Exam in much the same way I have issued assignments, in a MS Form and a Repo. You can use all resources at your disposal to complete the exam and extra credit.
 
-* [Final Exam (Python) Due 12/8 11:59 pm](https://forms.office.com/r/uYHNJTdBgQ)  LIVE!
+* [Final Exam (Python) Due 12/7/2026 11:59 pm](https://forms.office.com/r/uYHNJTdBgQ)  LIVE!
 
-* [Final Exam Extra Credit Due 12/8 11:59 pm](https://classroom.github.com/a/czMTVVik)  LIVE!
+* [Final Exam Extra Credit Due 12/7/2026 11:59 pm](https://classroom.github.com/a/czMTVVik)  LIVE!
 
 
 
 #### Graduate Students
-Your "final" is completing your independent project by pushing the last changes to your repo by 12/11 9:45 pm.  Graduate students have a presentation also on Friday Dec 5 at 1:45PM in the OCNR 241 (same as the lectures).  Undergrads are invited to attend.   
+Your "final" is completing your independent project by pushing the last changes to your repo by 12/10/2026 9:45 pm.  Graduate students have a presentation also on Friday Dec 4 at 1:45PM in the OCNR 241 (same as the lectures).  Undergrads are invited to attend.   
 
 </p>
 </details>
