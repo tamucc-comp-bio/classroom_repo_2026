@@ -85,37 +85,35 @@ the hidden section ends here
 
 ### SECTION 1.  WELCOME TO THE MATRIX
 
+* [08/28  Week00  Introduction & Data](lectures/lecture00.md)
+  * [Assignment_0  Due, 09/04](assignments/assignment_0_codespaces.md)
 
+* [09/04  Week01 Unix I](lectures/lecture01.md)
 
-* [08/29  Week00  Introduction & Data](lectures/lecture00.md)
-  * [Assignment_0  Due, 09/05](assignments/assignment_0_codespaces.md)
+  * [Assignment_1,  Due 09/11](assignments/assignment_1.md)
 
-* [09/05  Week01 Unix I](lectures/lecture01.md)
+  * [Grad Student Course Project: Ideas, Due 09/11](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUOUo2UVRUMVgwTUlQMlpUQzUzOTIzME9LNi4u)
 
-  * [Assignment_1,  Due 09/12](assignments/assignment_1.md)
+* [09/11  Week02 Unix II](lectures/lecture02.md)
 
-  * [Grad Student Course Project: Ideas, Due 09/13](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUOUo2UVRUMVgwTUlQMlpUQzUzOTIzME9LNi4u)
+  * [Assignment_2,  Due 09/18](assignments/assignment_2.md)
 
-* [09/12  Week02 Unix II](lectures/lecture02.md)
+* [09/18 Week03 Unix III](lectures/lecture03.md)
 
-  * [Assignment_2,  Due 09/19](assignments/assignment_2.md)
+  * [Assignment_3,  Due 09/25](assignments/assignment_3.md)
 
-* [09/19  Week03 Unix III](lectures/lecture03.md)
+  * [Request Account On TAMUCC Super Computer Due 9/25](http://hpc.tamucc.edu/)
 
-  * [Assignment_3,  Due 09/26](assignments/assignment_3.md)
-
-  * [Request Account On TAMUCC Super Computer Due 9/26](http://hpc.tamucc.edu/)
-
-  * [Grad Student Course Project: Plan/Outline, Due 09/26](https://forms.office.com/r/4ANAsh1v5Z)
+  * [Grad Student Course Project: Plan/Outline, Due 09/25](https://forms.office.com/r/4ANAsh1v5Z)
   
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
  
     * [Old Link To Grad Student Course Project](https://classroom.github.com/a/VuB4iKjR).  If you started with this link, then just click the link above, clone the 2022 version of this repo, and copy your work from the old repo to the new one.
 -->
 
-* [09/26  Week04 Version Control w/ Git](lectures/lecture04.md)
+* [09/25  Week04 Version Control w/ Git](lectures/lecture04.md)
 
-  * [Exam_1,  Due 10/03](https://classroom.github.com/a/aDSDqYJ5)
+  * [Exam_1,  Due 10/02](https://classroom.github.com/a/aDSDqYJ5)
 
  <!-- 
  
