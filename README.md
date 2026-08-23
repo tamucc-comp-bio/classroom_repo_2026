@@ -75,13 +75,11 @@ Office hours are M-W 4-5:30 on Zoom or TH234
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-
+<details><summary>SECTION 1.  WELCOME TO THE MATRIX</summary>
+<p>
 
 the hidden section ends here
 -->
-
-<details><summary>SECTION 1.  WELCOME TO THE MATRIX</summary>
-<p>
 
 ### SECTION 1.  WELCOME TO THE MATRIX
 
@@ -132,10 +130,11 @@ the hidden section ends here
 
 * [Quiz Wk 2](https://forms.office.com/Pages/AnalysisPage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMjIySEJCNFlSMVJRSUo0SU5HSFNKMVRHWC4u&AnalyzerToken=EoUZORmaO6qYwQJjsmmNDCGnDljXugop)
 
--->
 
 </p>
 </details>
+
+-->
 
 
 
@@ -220,12 +219,12 @@ This is the end of the hidden section
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-<details><summary>SECTION 3. PROGRAMMING WITH PYTHON</summary>
-<p>
+
 
 -->
 
-
+<details><summary>SECTION 3. PROGRAMMING WITH PYTHON</summary>
+<p>
 
 ### SECTION 3. PROGRAMMING WITH PYTHON
 
