@@ -185,7 +185,7 @@ R Markdown has a very nice lesson plan that we will use to review its features. 
 
 Files needed for R Markdown lesson are in the `Week09new_files` dir in [the repo for todays lecture](https://classroom.github.com/a/57Ld7XZw), otherwise they are here:
 
-* [all *.Rmd` files here](https://github.com/tamucc-comp-bio/classroom_repo_2025/tree/main/lectures/Week09new_files)
+* [all *.Rmd` files here](Week09new_files/)
 
 ---
 

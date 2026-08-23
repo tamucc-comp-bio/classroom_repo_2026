@@ -21,7 +21,7 @@ assignees: ''
 
 
 ### Which assignment are you working on?
-Assignment URL: <For example, `https://github.com/tamucc-comp-bio/classroom_repo_2024/blob/master/lectures/lecture01.md`>
+Assignment path: <For example, `assignments/assignment_1.md`>
 Assignment Title: <copy and paste title of assignment>
 
 

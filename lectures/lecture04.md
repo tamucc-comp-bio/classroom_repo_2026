@@ -327,7 +327,7 @@ Please read: README.md, bin/summarize_means.sh (if present), `tree` of repo.
 
 Git is *distributed* and a full copy of the history of changes resides on every instance of the *repository*
 
-![alt text](https://github.com/tamucc-comp-bio/fall_2019/blob/master/lectures/Week04_files/distributedvcs.png)
+![alt text](Week04_files/distributedvcs.png)
 
 ![alt text](https://miro.medium.com/v2/resize:fit:1386/format:webp/1*pEduJdPky05DeojVGVtPpQ.jpeg)
 
@@ -676,7 +676,7 @@ $ git reset HEAD filetounstage.txt
     git push
     ```
 
-![alt text](https://github.com/tamucc-comp-bio/fall_2019/blob/master/lectures/Week04_files/git_common_commands.png)
+![alt text](Week04_files/git_common_commands.png)
 
 ---
 </p>
