@@ -37,7 +37,7 @@ These are packages that extend the functionality of `python`, making it easier t
 * *NumPy*: adds vector and matrix data structures
 * *SciPy*: adds algebra, integration, differential equations, stats, and simulations
 * *Pandas*: manipulation, analysis, and visualization of data sets
-* *Biopython8*: bioinformatics, connection to biological databases
+* *Biopython*: bioinformatics, connection to biological databases
 
 ---
 
