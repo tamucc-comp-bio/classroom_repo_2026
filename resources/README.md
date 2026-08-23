@@ -6,6 +6,8 @@ This directory contains resources that will help you with your assignments .
 
 ## [How To](https://github.com/tamucc-comp-bio/how_to/blob/main/README.md)
 
+* [Computer Setup Checklist](computer_setup_checklist.md)
+
 * [Create Launch HPC Account](https://hprc.tamu.edu/kb/User-Guides/Launch/Access/#no-ssh-login)
 
 * [Set Up Your Computer for Computational Biology](https://github.com/tamucc-comp-bio/how_to/blob/main/howto_setup_computer.md).

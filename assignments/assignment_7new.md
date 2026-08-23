@@ -2,6 +2,8 @@
 
 ## Computer Preparation
 
+Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
+
 * Open R-Studio
 
 * Load tidyverse
