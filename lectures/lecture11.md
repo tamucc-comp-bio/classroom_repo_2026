@@ -1,4 +1,4 @@
-# Week11 Python Boot Camp I: Basic Programming II
+# Week11 Basic Python Programming II
 
 > [!IMPORTANT]
 > Assignment 10 is due by beginning of class 
