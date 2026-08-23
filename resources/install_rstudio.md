@@ -94,7 +94,7 @@ Open your ubuntu terminal and navigate to your windows `Downloads` directory, th
 ```bash
 # make sure you are in ubuntu
 cd /mnt/c/Users/YourWinUserName/Downloads
-git clone git@github.com:tamucc-comp-bio-2022/CSB.git
+git clone git@github.com:tamucc-comp-bio/CSB.git
 ```
 
 ---

@@ -73,7 +73,7 @@
   > If you **do not** see the output above, then clone the CSB repo by entering the following commands:
 
     ```bash
-        git clone https://github.com/CSB-book/CSB.git
+        git clone git@github.com:tamucc-comp-bio/CSB.git
     ``` 
 
   > You should see the following output:

@@ -139,7 +139,7 @@ cd ~
 pwd
 
 # clone the CSB repository to your home dir
-git clone git@github.com:tamucc-comp-bio-2022/CSB.git
+git clone git@github.com:tamucc-comp-bio/CSB.git
 ```
 
 The repository is named CSB, and it contains all of the example files and directories necessary to conduct the exercises in the text book. Note that this includes solutions to all of the exercises in the book also.
