@@ -247,11 +247,12 @@ This is the end of the hidden section
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
 
-<details><summary>FINAL EXAM: "Welcome to the Desert of the Real"</summary>
-<p>
 
 -->
 
+<details><summary>FINAL EXAM: "Welcome to the Desert of the Real"</summary>
+<p>
+	
 ### FINAL EXAM: "Welcome to the Desert of the Real"
 
 We have spent the semester learning:
@@ -267,9 +268,9 @@ We have spent the semester learning:
 #### Undergraduates:  
 I will issue a Final Exam in much the same way I have issued assignments, in a MS Form and a Repo. You can use all resources at your disposal to complete the exam and extra credit.
 
-* [Final Exam (Python) Due 12/7/2026 11:59 pm](https://forms.office.com/r/uYHNJTdBgQ)  LIVE!
+* [Final Exam (Python) Due 12/7/2026 11:59 pm]()  LIVE!
 
-* [Final Exam Extra Credit Due 12/7/2026 11:59 pm](https://classroom.github.com/a/czMTVVik)  LIVE!
+* [Final Exam Extra Credit Due 12/7/2026 11:59 pm]()  LIVE!
 
 
 
