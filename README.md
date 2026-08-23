@@ -1,5 +1,5 @@
 # Computational Skills for 21st Century Biologists
-#### BIOL 4560, MARB 6560
+#### BIOL 4360, MARB 6360
 #### Department of Life Sciences, Texas A&M University - Corpus Christi
 
 ---
