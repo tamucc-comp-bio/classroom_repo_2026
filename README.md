@@ -84,7 +84,7 @@ the hidden section ends here
 ### SECTION 1.  WELCOME TO THE MATRIX
 
 * [08/28  Week00  Introduction & Data](lectures/lecture00.md)
-  * [Assignment_0  Due, 09/04](assignments/assignment_0_codespaces.md)
+  * [Assignment_0  Due - In Revision -, 09/04]()
 
 * [09/04  Week01 Unix I](lectures/lecture01.md)
 
