@@ -1,0 +1,11 @@
+## Unnecessary Files
+
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+Thumbs.db
+*.Rproj.user/
+.Rproj.user/
+__pycache__/
+*.pyc
