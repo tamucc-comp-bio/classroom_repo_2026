@@ -11,7 +11,7 @@
 
 ---
 
-## [Intro to CLI Computing Using GitHub CodeSpaces](https://classroom.github.com/a/73VUVklZ) (click me!)
+## [Intro to the Command Line Exercise](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0/accept) (click me!)
 
 You will need to push the changes of your repo for this exercise to submit your assignment. Instructions are in the `README.md` in this assignment's repo.
 
