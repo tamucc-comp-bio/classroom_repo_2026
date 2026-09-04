@@ -460,17 +460,6 @@ Tip for messages: use active, present tense (e.g., “Fix typo,” “Add README
 
 ---
 
-## Text Book Vs. Lecture Slides
-
-<details><summary>click to expand</summary>
-<p>
-
-* The [**Lecture_01 Slides**](Week01_files/Lecture01_WelcomeToTheMatrix.pdf) closely follow the book but there is some additional information that is not provided in the book (and vice versa). In the lecture slides, the `code blocks` are represented by green text on a black background, mimicking the terminal.
-
-</p>
-</details>
-
----
 
 ## Lecture: Unix, Linux, & the Command Line Interface (CLI)
 
@@ -651,7 +640,11 @@ ls /tmp
 
 ### Your Home Directory
 
-`/home/<your-username>` (Linux) `/Users/<your-username>` (Mac) or is the directory where you are expected to create and maintain your directories and files.
+the directory where you are expected to create and maintain your directories and files
+
+`/home/<your-username>` (Linux) 
+
+`/Users/<your-username>` (Mac) 
 
   &#x1F4A1; TIP!: `<your-username>` should be replaced with your personal username.  don't include the `<>`
   
@@ -773,7 +766,7 @@ ls CSB/unix/solutions
 
 * The shell is software that controls the [operating system kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) and is accessed through a terminal window
 
-* The shell we are using in Ubuntu and MacOS is called `bash`, or Born Again Shell
+* The shell we are using in Ubuntu and MacOS is called `bash`, or Bourne Again Shell
 
 > &#x26A0; CAUTION! _The default shell language for newer Macs is often `zsh`.  You can simply type `bash` when you open your terminal to change to a `bash` terminal. You can also change the default terminal to be `bash` rather than `zsh`.  Ask Chet G. Peetee how._
 
