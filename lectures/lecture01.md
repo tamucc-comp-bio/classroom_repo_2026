@@ -114,7 +114,7 @@ You work on the clone on your laptop, then use Git to send your changes back to 
 
 ```bash
 git status
-git add .
+git add --all
 git commit -m "Describe your changes"
 git push
 ```
@@ -210,7 +210,7 @@ Use this often. It does not change anything.
 Tell Git which changes should be included in the next commit:
 
 ```bash
-git add .
+git add --all
 ```
 
 ### `git commit`
@@ -233,7 +233,7 @@ git push
 
 ```bash
 git status
-git add .
+git add --all
 git commit -m "Describe what you changed"
 git push
 ```
@@ -386,7 +386,7 @@ Relative paths are extremely useful because the same command can work on differe
 * Think: “include this in my next save.”
 * Examples:
   `git add file.txt` (one file)
-  `git add .` (everything that changed)
+  `git add --all` (everything that changed)
 
 **git commit** — “save it (locally)”
 
