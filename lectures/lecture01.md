@@ -969,58 +969,38 @@ It is best not to used spaces in dir and file names, but you can wrap file names
 
 ## Set Up Your Lecture 1 Repository
 
-For this part of lecture, you will work [**inside your personal `lecture-1` Classroom50 repository**](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-1/accept).
+For this part of lecture, you will work [**inside your personal `lecture-1` Classroom50 repository**](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-1/accept) (click me!).
 
 This is the same general workflow you used for `Assignment 0`:
 
 **GitHub repository → clone to your laptop → work locally → commit → push**
 
+---
 
-
-
-### Set Up Data to Experiment With
-
-From here forward, we will adopt a standardized code block syntax.  The `$` represents the command prompt and you are expected to copy and paste the commands that follow it, but _*do not start any command with the `$`*_.  The `#` is a comment to explain to you what is happening next
-
-```bash
-# goto your home dir
-$ cd ~
-
-# make a directory called comp_bio with a dir called lecture_01 inside of it and move into lecture_01
-$ mkdir -p ~/comp_bio/lecture_01
-$ cd ~/comp_bio/lecture_01
-
-# download the software carpentry data set for the Unix Shell lesson and unzip it and delete the zipped file
-$ wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
-$ unzip shell-lesson-data.zip
-$ rm shell-lesson-data.zip
-```
-
---- 
 
 ### Copy files or directories with `cp <from path> <to path>`
 
-```
-# you should be in ~/comp_bio/lecture_01
-$ cd ~/comp_bio/lecture_01
-$ pwd
+```bash
+# you should be in `~/lecture-1`
+cd ~/lecture-1
+pwd
 
 # view the contents of the present dir
-$ ls
+ls
 
 # copy `haiku.txt` to the present working directory (pwd).  The path of the pwd is represented by a "."
-$ cp shell-lesson-data/exercise-data/writing/haiku.txt .
+cp shell-lesson-data/exercise-data/writing/haiku.txt .
 
 # copy `haiku.txt` to the present directory and rename the copy to be `Haiku.txt`
-$ cp shell-lesson-data/exercise-data/writing/haiku.txt ./Haiku.txt
-$ ls
+cp shell-lesson-data/exercise-data/writing/haiku.txt ./Haiku.txt
+ls
 
 # view tree of shell-lesson-data, 
-$ tree shell-lesson-data
+tree shell-lesson-data
 
 #then copy the whole `exercise-data` dir to the north-pacific-gyre dir, then view dir tree again
-$ cp -rf shell-lesson-data/exercise-data/ ./shell-lesson-data/north-pacific-gyre/
-$ tree shell-lesson-data
+cp -rf shell-lesson-data/exercise-data/ ./shell-lesson-data/north-pacific-gyre/
+tree shell-lesson-data
 
 ```
 
@@ -1032,17 +1012,17 @@ $ tree shell-lesson-data
 
 ```bash
 # you should be in ~/comp_bio/lecture_01
-$ cd ~/comp_bio/lecture_01
-$ pwd
+cd ~/comp_bio/lecture_01
+pwd
 
 # move Haiku.txt to the `writing` dir inside the copy of the `exercise-data` dir in the `north-pacific-gyre` dir to the data directory
-$ mv Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/
+mv Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/
 
 # rename the file you just moved to be `HAIKU.txt` rather than `Haiku.txt`
-$ mv shell-lesson-data/north-pacific-gyre/exercise-data/writing/Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/HAIKU.txt
+mv shell-lesson-data/north-pacific-gyre/exercise-data/writing/Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/HAIKU.txt
 
 # check your work
-$ tree .
+tree .
 
 ```
 
@@ -1055,26 +1035,26 @@ $ tree .
 
 ```bash
 # let's move to shell-lesson-data
-$ cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
-$ pwd
+cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+pwd
 
 # inspect the current contents of the directory
-$ ls -l
+ls -l
 
 # create a new file (you can list multiple files)
-$ touch new_file.txt
+touch new_file.txt
 
 # inspect the contents of the directory again
-$ ls -l
+ls -l
 
 # if you touch the file a second time, the time of last access will change
-$ touch new_file.txt
-$ ls -l
+touch new_file.txt
+ls -l
 
 # create a new file in the `shell-lesson-data` dir (the parent dir of the present dir), then view the 
 # the path to the directory that your present working directory is within is represented by ".."
-$ touch ../another_new_file.txt
-$ ls ..
+touch ../another_new_file.txt
+ls ..
 
 ```
 
@@ -1087,27 +1067,32 @@ $ ls ..
 
 ```bash
 # make sure you are still in the original exercise-data dir 
-$ cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
-$ pwd
+cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+pwd
 
 # delete new_file.txt, the –i requests confirmation, enter `y` to confirm the deletion
-$ rm -i new_file.txt
+rm -i new_file.txt
 
 # delete another_new_file.txt, there is no "undo" option
-$ rm ../another_new_file.txt
+rm ../another_new_file.txt
 
 # make dir `d1` in present dir, `d2` in `d1`, and `d3` in `d2`; if you have tree try it
-$ mkdir -p d1/d2/d3
-$ tree d1
+mkdir -p d1/d2/d3
+tree d1
+```
+
+``` bash
 d1
 └── d2
     └── d3
+```
 
+```
 # remove the `d1`,`d2`,& `d3` dirs recursively with a "one-liner"
-$ rm -rf d1
+rm -rf d1
 
 # remove the copy of the `exercise-data` dir in `north-pacific-gyre`
-$ rm -rf ../north-pacific-gyre/exercise-data/
+rm -rf ../north-pacific-gyre/exercise-data/
 ```
 
 > &#x26A0; CAUTION! _be careful with `rm`, you could delete your "whole computer", and there is no `undo`_
@@ -1118,10 +1103,10 @@ $ rm -rf ../north-pacific-gyre/exercise-data/
 
 ```bash
 # make sure you are still in the original exercise-data dir 
-$ cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
 
 # look at the `NENE01751B.txt` file in `north-pacific-gyre`, try duckduckgo search on “bash less commands”
-$ less ../north-pacific-gyre/NENE01751B.txt
+less ../north-pacific-gyre/NENE01751B.txt
 
 # type /10 inside of less to search; u=up, d=down, G=end, g=begin, q=exit
 
@@ -1133,7 +1118,7 @@ $ less ../north-pacific-gyre/NENE01751B.txt
 
 ```bash
 # concatenate files and/or print to screen
-$ cat numbers.txt ../north-pacific-gyre/goodiff.sh alkanes/cubane.pdb
+cat numbers.txt ../north-pacific-gyre/goodiff.sh alkanes/cubane.pdb
 ```
 
 ---
@@ -1143,7 +1128,7 @@ $ cat numbers.txt ../north-pacific-gyre/goodiff.sh alkanes/cubane.pdb
 ```bash
 
 # print the sorted lines of a file
-$ sort ../north-pacific-gyre/NENE01751B.txt
+sort ../north-pacific-gyre/NENE01751B.txt
 ```
 
 ---
@@ -1156,9 +1141,9 @@ Remember the [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy), w
 
 ```bash
 # first view, then sort a comma delimited file numerically by column 3 in reverse order and view in less
-$ cat animal-counts/animals.csv
-$ sort -nrk3,3 -t "," animal-counts/animals.csv | less
-$ cat animal-counts/animals.csv | sort -nrk3,3 -t "," | less
+cat animal-counts/animals.csv
+sort -nrk3,3 -t "," animal-counts/animals.csv | less
+cat animal-counts/animals.csv | sort -nrk3,3 -t "," | less
 
 ```
 
@@ -1168,10 +1153,10 @@ $ cat animal-counts/animals.csv | sort -nrk3,3 -t "," | less
 
 ```bash
 # count lines, words, and characters
-$ wc writing/LittleWomen.txt
+wc writing/LittleWomen.txt
 
 # count lines only
-$ wc -l ../north-pacific-gyre/NENE01751B.txt
+wc -l ../north-pacific-gyre/NENE01751B.txt
 
 ```
 
@@ -1185,9 +1170,11 @@ The most common use of the `file` command in biology is to determine if files en
 
 ```bash
 # determine file type, ASCII is a type of human-readable text file
-$ file alkanes/cubane.pdb
-alkanes/cubane.pdb: ASCII text
+file alkanes/cubane.pdb
+```
 
+```bash
+alkanes/cubane.pdb: ASCII text
 ```
 
 > &#x1F4A1; TIP! _Do not forget to use the `Tab` key to autocomplete directory names and prevent spelling mistakes_
@@ -1198,17 +1185,17 @@ alkanes/cubane.pdb: ASCII text
 
 ```bash
 # display first two lines of a file
-$ head -n 2 creatures/unicorn.dat
+head -n 2 creatures/unicorn.dat
 
 # display last two lines of file
-$ tail -n 2 creatures/unicorn.dat
+tail -n 2 creatures/unicorn.dat
 
 # display from line 2 onward
 # (i.e., removing the header of the file)
-$ tail -n +2 creatures/unicorn.dat
+tail -n +2 creatures/unicorn.dat
 
 # display all but the last line
-$ head -n -1 creatures/unicorn.dat
+head -n -1 creatures/unicorn.dat
 ```
 
 > &#x1F4A1; TIP! _Do not forget to use `Tab` key to autocomplete file names and prevent spelling mistakes_
