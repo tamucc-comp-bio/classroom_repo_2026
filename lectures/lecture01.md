@@ -62,13 +62,11 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_3.png)
 
-* **Consensus:** 7/11 explicitly **don’t disagree** with Wickham (some praise clarity/usefulness).
-* **Nuanced pushback (4/11):**
-
-  * **Flexibility over rigidity:** Tidy is a *default*, not a universal rule; sometimes “messy” or non-tidy layouts are practical (e.g., for **data entry/storage**).
-  * **High-dimensional data:** **Array/matrix formats** (genomics, imaging) can be more efficient than tidy tables in some workflows.
-  * **Terminology tone:** Calling things “**bad**” data felt a bit harsh/controversial to one reader.
-* **Open curiosity (not disagreement):** Since it’s a 2014 paper, a few wonder about **updates or new strategies** from Wickham since then.
+- Most did not substantially disagree with the overall principles of tidy data.
+- Some questioned whether tidy data is always the most appropriate structure for every type of dataset or scientific field.
+- Some students felt that separating data into multiple tables and later joining them can seem unnecessarily complicated or redundant.
+- There was some concern that there may be multiple valid approaches to producing "clean" data rather than a single universal format.
+- Overall, students generally accepted the value of standardized and well-organized data even when questioning specific implementation choices.
 
  </p>
 </details>
@@ -78,19 +76,12 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_4.png)
 
-* **Overall:** Most found the paper clear/helpful, but **\~8/11** raised specific confusions or worries about applying it to their own data.
-
-* **Top confusion themes:**
-
-  1. **What’s a variable vs a value (and observation)?** Phone-number example; ambiguity across contexts; human-factors note.
-  2. **How to handle nested/multi-level data & multiple observational units** when “each unit = its own table.”
-  3. **Reshape terminology** (melt/cast, string splitting) and mapping to tidy verbs.
-  4. **Using tidy data in R/code** (what the code means if you don’t know R yet).
-  5. **Column ordering advice** (“order related variables contiguously”)—what to do when “related” is unclear.
-  6. **“Versions” confusion** (unspecified what versions—tools/verbs/formats).
-  7. **Applying concepts to real datasets**—confidence in theory vs practice.
-
-* **No/low confusion:** 3–4 respondents reported no questions and/or said the examples were clear.
+- R syntax and some of the programming examples were difficult for students without previous R experience.
+- Several students were unsure about when and why a dataset needs to be "melted" or reshaped.
+- The modeling section and terminology associated with statistical models were confusing to some students.
+- Students had questions about how computers interpret structured data differently from humans.
+- Filtering and manipulating datasets programmatically was identified as an area where additional practice would be useful.
+- Some students were interested in learning about alternative frameworks for data cleaning and organization.
 
  </p>
 </details>
@@ -104,9 +95,10 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_5.png)
 
-
-* **Most have no questions:** 8/11 (≈73%) said “no questions,” with a couple noting the reading was helpful and something they’ll revisit.
-* **Recurring questions/themes (3/11):**
+- Most students reported no specific questions at this point.
+- Several indicated that questions will probably arise once they begin using GitHub in practice.
+- One student asked about the difference between **Issues** and **Pull Requests**.
+- Some students noted that they are still becoming familiar with GitHub terminology.
   
 <details><summary>**Fork vs. clone vs. branch:** what each is for and when to use which.</summary>
 <p>
