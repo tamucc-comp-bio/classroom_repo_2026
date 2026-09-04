@@ -15,9 +15,6 @@
 ## Computer Preparation
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
-
-Confirm that your terminal, Git, and the `~/CSB` repository work before continuing.
-
 ---
 
 ## [Lecture 1 Quiz](https://forms.office.com/r/VJiCRGyzcP)
@@ -711,50 +708,25 @@ man tree
 The `man` command is nearly universal in displaying the manual for "commands" such as `tree`. Use the `q` keystroke to exit the manual for tree.
 
 ```bash
-# set up assignment 0 in your Ubuntu/Mac terminal on your laptop (not codespaces)
-cd ~
-mkdir Desktop
-wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
-unzip -d Desktop shell-lesson-data.zip
-
-# check your directory structure for assignment_0
-tree ~/Desktop/shell-lesson-data
+# goto assignment 0 in your Ubuntu/Mac terminal on your laptop (not codespaces)
+cd ~/assignment-0
 ```
 
-It should look like this:
+If you don't have this dir, either navigate to where you cloned your assignment-0 repo, or clone it again from [here](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0/accept)
+
+```bash
+
+# check your directory structure for assignment_0
+tree ~/assignment-0/shell-lesson-data
+```
+
+It should look similar to this:
 
 ![](../assignments/assignment_0_answer.png)
 
 
 ---
-<!--  
-### The `CSB/unix` [Repository](https://en.wikipedia.org/wiki/Repository_(version_control))
 
-Our primary text book, [Computing Skills for Biologists](https://computingskillsforbiologists.com/), provides a rich assortment of resources for you.  Most of these resources are contained in a GitHub repository that you have cloned into your home directory.  This is the `CSB` directory. 
-
-The `CSB` directory is organized by topic, with subdirectories dedicated to different chapters.  The directory for chapter 1 is `CSB/unix`.
-
-`CSB/unix/data` Contains data for examples and exercises
-
-`CSB/unix/installation` Contains instructions for installing software for this chapter
-
-`CSB/unix/sandbox` Dir where we work and experiment
-
-`CSB/unix/solutions` Solutions in code (`bash`) pseudocode (plain English) for your consultation when you get stuck with an exercise
-
-```bash
-# I am adding the 'cd ~' command to make sure you are in your home dir before running the 'ls' commands
-cd ~
-ls CSB/unix/
-ls CSB/unix/data
-ls CSB/unix/installation
-ls CSB/unix/sandbox
-ls CSB/unix/solutions
-```
-
----
-
--->
 
 </p>
 </details>
