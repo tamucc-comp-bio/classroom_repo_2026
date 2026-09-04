@@ -320,13 +320,103 @@ git push -u origin feature-x
 
 ### Assignment Steps
 
-1. Click the assignment invite link to create your personalized assignment repo
-2. Click the CodeSpaces Link in the Repo
-3. Unzip the `shell-lesson-data`, create the `Desktop` dir in you home dir (`~`), move the `shell-lesson-data` dir to `~/Desktop`, change your directory to the `shell-lesson-data` dir
-4. Open the Software Carpentry lesson, split screen between Software Carpentry and Codespaces 
-5. Start at "1. Introducing the Shell" and stop after completing "3. Working with files and directories"
-6. Move your `shell-lesson-data` dir back to the repo
-7. Use `git` to `add`, `commit`, and `push` the changes to the repo back to the primary copy on github.
+1. Accept the assignment and create your personal repository on GitHub.
+2. Copy the **SSH address** of your personal repository.
+3. Open a Bash terminal on your computer.
+4. Move to your home directory:
+
+   ```bash
+   cd ~
+   ```
+
+5. Clone your personal repository and give the local clone the standardized name `assignment-0`:
+
+   ```bash
+   git clone YOUR-COPIED-SSH-ADDRESS assignment-0
+   ```
+   
+6. Enter the cloned repository:
+
+   ```bash
+   cd assignment-0
+   ```
+   
+7. Work through the assignment using the supplied `shell-lesson-data` directory.
+8. Create and organize files inside `shell-lesson-data/student-work`.
+9. Use Git to record your work locally and push it back to GitHub.
+10. Verify on GitHub that your changes were successfully submitted.
+
+> [!IMPORTANT]
+> The repository on **GitHub** and the clone on **your laptop** are two different copies of the repository. Changes made on your laptop do not appear on GitHub until you `commit` and `push` them.
+
+---
+
+### Bash Commands Introduced in Assignment 0
+
+You used several commands for navigating and working with files and directories:
+
+| Command | Purpose                                         |
+| ------- | ----------------------------------------------- |
+| `pwd`   | print the path to the present working directory |
+| `ls`    | list files and directories                      |
+| `cd`    | change directories                              |
+| `mkdir` | create directories                              |
+| `nano`  | create or edit text files                       |
+| `cp`    | copy files or directories                       |
+| `mv`    | move or rename files or directories             |
+| `rm`    | remove files                                    |
+| `man`   | view the manual for a command                   |
+
+You also learned some important path shortcuts:
+
+| Path | Meaning                       |
+| ---- | ----------------------------- |
+| `~`  | your home directory           |
+| `.`  | the present working directory |
+| `..` | the parent directory          |
+
+---
+
+### Relative and Absolute Paths
+
+An **absolute path** specifies the complete location of a file or directory beginning at the root of the filesystem.
+
+For example, an absolute path might look something like:
+
+```text
+/home/username/assignment-0/shell-lesson-data
+```
+
+or on a Mac:
+
+```text
+/Users/username/assignment-0/shell-lesson-data
+```
+
+The exact path differs among computers.
+
+A **relative path** specifies a location relative to your present working directory.
+
+For example, if you are inside:
+
+```text
+assignment-0/shell-lesson-data/exercise-data
+```
+
+then:
+
+```text
+../north-pacific-gyre
+```
+
+means:
+
+1. `..` — go up one directory to `shell-lesson-data`
+2. enter `north-pacific-gyre`
+
+Relative paths are extremely useful because the same command can work on different computers even when the absolute locations of the files differ.
+
+---
 
 ### Git & GitHub Repository Synchronization
 
