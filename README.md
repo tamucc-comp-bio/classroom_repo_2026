@@ -88,7 +88,7 @@ the hidden section ends here
 
 * [09/04  Week01 Unix I](lectures/lecture01.md)
 
-  * [Assignment_1,  Due 09/11](assignments/assignment_1.md)
+  * [Assignment_1,  Due 09/11](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-1/accept)
 
   * [Grad Student Course Project: Ideas, Due 09/11](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUOUo2UVRUMVgwTUlQMlpUQzUzOTIzME9LNi4u)
 
