@@ -15,9 +15,6 @@
 ## Computer Preparation
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
-
-Confirm that your terminal, Git, and the `~/CSB` repository work before continuing.
-
 ---
 
 ## [Lecture 1 Quiz](https://forms.office.com/r/VJiCRGyzcP)
@@ -88,7 +85,7 @@ Complete the quiz while your computer is updating
 
 ---
 
-## Discussion of Reading Assignment 1 part 2: [Intro to GitHub](https://classroom.github.com/a/C_SLS9P8)
+## Discussion of Reading Assignment 1 part 2: [Intro to GitHub](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0-intro-to-github/accept)
 
 <details><summary>Do you have any questions about the Intro to Github reading?</summary>
 <p>
@@ -100,193 +97,156 @@ Complete the quiz while your computer is updating
 - One student asked about the difference between **Issues** and **Pull Requests**.
 - Some students noted that they are still becoming familiar with GitHub terminology.
   
-<details><summary>**Fork vs. clone vs. branch:** what each is for and when to use which.</summary>
+<details><summary><strong>Fork vs. clone vs. branch: what is the difference?</strong></summary>
 <p>
 
-# Fork
+### Clone
 
-* **What:** Your own copy of *someone else’s GitHub repo* under your account.
-* **Where it lives:** On GitHub.
-* **Why:** Propose changes to a repo you don’t own (via Pull Request).
-* **Typical flow:** *Fork → clone your fork → branch → commit/push → PR to upstream.*
-* **Key cmd(s):**
+A **clone** is a copy of a GitHub repository on your computer.
 
-  * *(on GitHub UI)* “Fork”
-  * `git remote add upstream https://github.com/original/repo.git`
-  * `git fetch upstream && git merge upstream/main` (keep fork updated)
+This is what you are using in this course.
 
-# Clone
-
-* **What:** Download a remote repo (yours or someone else’s) to your computer.
-* **Where it lives:** On your machine.
-* **Why:** To work locally.
-* **Key cmd:** `git clone https://github.com/user/repo.git`
-
-# Branch
-
-* **What:** A lightweight line of development *inside a single repo*.
-* **Where it lives:** In your local repo (and on remote once you push).
-* **Why:** Isolate work without breaking `main`.
-* **Key cmd(s):**
-
-  * `git switch -c feature-x` (create & switch)
-  * `git push -u origin feature-x` (publish branch)
-
----
-
-### Quick choose
-
-* **I want my own copy of a public project to contribute back:** **Fork** (then clone it).
-* **I just need the code on my laptop:** **Clone**.
-* **I’m adding a feature or fixing a bug without touching main:** **Branch**.
-
-### Mini map
-
+```text
+GitHub repository → clone → your laptop
 ```
-GitHub (original) ──(Fork)──> GitHub (your fork) ──(Clone)──> your laptop
-		                                 └─(Branch)─> feature-x
-```
-</p>
-</details>
-  
 
-<details><summary>**GitHub vs. cloud drives:** how version control differs from typical file storage.</summary>
-<p>
-
-### GitHub (version control) vs. Cloud drives (file storage)
-
-**What it is**
-
-* **GitHub:** A *version control* host. Tracks every change as a commit with author, time, and message; supports branches, merges, and code review.
-* **Cloud drive (e.g., Google Drive/OneDrive/Dropbox):** A *file syncing/storage* service. Keeps files in the cloud and on devices; may keep limited, opaque version history.
-
-**How changes are tracked**
-
-* **GitHub:** Explicit snapshots (`add` → `commit` → `push`). Each commit is permanent, diffable, and attributable.
-* **Cloud drive:** Auto-save overwrites the file; version history exists but is not designed for branching/merging workflows.
-
-**Working in parallel**
-
-* **GitHub:** Create **branches** for independent work; merge with a **pull request**; resolves conflicts line-by-line with diffs.
-* **Cloud drive:** Either live co-editing (Docs/Sheets) or last-writer-wins for files; no true branching or structured merges.
-
-**Review & accountability**
-
-* **GitHub:** Pull requests, inline comments, required reviews, CI checks; `blame` to see who changed what, when, and why.
-* **Cloud drive:** Comments on documents, but no repo-wide review gates or commit metadata.
-
-**Reproducibility**
-
-* **GitHub:** You can check out *any* commit/tag and rebuild exactly; great for code, data pipelines, and manuscripts under source control.
-* **Cloud drive:** You can revert versions, but reconstructing precise states across many files is harder.
-
-**File types**
-
-* **GitHub:** Best for plain text (code, Markdown, CSV). Large/binary files (videos, PSDs) are harder; use Git LFS or a drive.
-* **Cloud drive:** Fine for big/binary files and WYSIWYG docs; not ideal for code collaboration.
-
-**Offline & syncing**
-
-* **GitHub:** Work offline; sync intentionally with `push`/`pull`.
-* **Cloud drive:** Syncs automatically; edits depend on app support for offline.
-
----
-
-## When to use which
-
-* **Use GitHub** for code, scripts, text-based writing, datasets you want diff/merge, collaboration via branches/PRs, and reproducible snapshots.
-* **Use a cloud drive** for large binaries, drafts that need rich WYSIWYG co-editing, or assets not suited to diffs.
-
----
-
-## One-liner students can remember
-
-* **Drive = share & sync files.**
-* **GitHub = *track, branch, review,* and reproduce changes to files.**
-</p>
-</details>
-
-
-<details><summary>**Collaboration scale:** small teams vs. large open-source workflows.</summary>
-<p>
-
-yes
-
-</p>
-</details>
-  
-  
-<details><summary>**Beginner essentials:** which **commands/habits** to master first.</summary>
-<p>
-
-# core loop
-
-**Commands**
-
-* `git status` — see what changed.
-* `git add <file>` / `git add .` — stage changes.
-* `git commit -m "Do one thing"` — save locally.
-* `git push` — publish to GitHub.
-* `git pull --rebase` — get latest cleanly.
-
-**Habits**
-
-* Make **small commits** (one logical change).
-* Write **imperative messages**: “Add README section”.
-* Run code/tests **before push**.
-
----
-
-# branches & review
-
-**Commands**
-
-* `git switch -c feature-x` — create & move to a branch.
-* `git switch main` / `git pull --rebase` — update main.
-* `git merge feature-x` (or PR on GitHub) — bring work in.
-* `git log --oneline --graph --decorate --all` — visualize history.
-* `git diff` — review what you’re about to commit.
-
-**Habits**
-
-* **One branch per task.**
-* Open **small PRs**; ask for one review.
-* Add a **.gitignore** early.
-
----
-
-# safe fixes & sync
-
-**Commands**
-
-* `git restore <file>` — discard unstaged edits to a file.
-* `git restore --staged <file>` — unstage.
-* `git commit --amend` — fix last commit (only if not pushed).
-* `git revert <sha>` — undo a bad pushed commit (safe).
-* `git fetch` / `git remote -v` — see & update remotes.
-
-**Habits**
-
-* **Never commit secrets** (use env vars).
-* **Pull before you push** on shared branches.
-* Skim the **diff in the PR**; explain *why* in the description.
-
----
-
-## One-minute workflow (post-setup)
+You work on the clone on your laptop, then use Git to send your changes back to GitHub.
 
 ```bash
-git switch -c feature-x
-# edit files
 git status
-git add .
-git diff --staged        # quick self-review
-git commit -m "Implement feature X"
-git push -u origin feature-x
-# open PR on GitHub
+git add --all
+git commit -m "Describe your changes"
+git push
 ```
 
-> Memory hooks: **status → add → commit → push**, small steps, clear messages, branch per task, review before merge.
+### Fork
+
+A **fork** is your own copy of someone else's repository **on GitHub**.
+
+Forks are commonly used when contributing to projects that you do not own.
+
+> [!NOTE]
+> You do **not** need to use forks for our assignments right now.
+
+### Branch
+
+A **branch** is another line of development within a Git repository. Branches allow people to work on changes without modifying the main version of the project.
+
+> [!NOTE]
+> You do **not** need to create branches for our assignments right now. We will introduce branches later when we need them.
+
+### For now, remember:
+
+```text
+GitHub repository → clone → work on laptop → commit → push → GitHub
+```
+
+</p>
+</details>
+
+<details><summary><strong>GitHub vs. cloud drives</strong></summary>
+<p>
+
+GitHub and services such as Google Drive, OneDrive, and Dropbox all store files, but they are designed for different purposes.
+
+### Cloud drives
+
+Cloud drives are primarily designed to **store and synchronize files**.
+
+Changes are usually saved automatically.
+
+### GitHub
+
+GitHub is designed to work with **Git version control**.
+
+Changes are saved intentionally as **commits**.
+
+A commit records:
+
+* what changed
+* when it changed
+* who made the change
+* a message describing the change
+
+Changes made on your laptop do not appear on GitHub until you push them.
+
+```text
+edit files → git add → git commit → git push
+```
+
+### For this course
+
+GitHub is especially useful for:
+
+* scripts and computer code
+* Markdown files
+* text-based datasets
+* tracking changes to a project
+* keeping a reproducible history of your work
+
+> **Cloud drive = store and sync files**
+> **GitHub = track changes to files**
+
+</p>
+</details>
+
+<details><summary><strong>Git commands to know right now</strong></summary>
+<p>
+
+You only need a small number of Git commands at this point.
+
+### `git status`
+
+See what has changed:
+
+```bash
+git status
+```
+
+Use this often. It does not change anything.
+
+### `git add`
+
+Tell Git which changes should be included in the next commit:
+
+```bash
+git add --all
+```
+
+### `git commit`
+
+Save a snapshot of those changes in the Git repository on your laptop:
+
+```bash
+git commit -m "Complete Assignment 0"
+```
+
+### `git push`
+
+Send your commits to GitHub:
+
+```bash
+git push
+```
+
+### The workflow to remember
+
+```bash
+git status
+git add --all
+git commit -m "Describe what you changed"
+git push
+```
+
+> [!IMPORTANT]
+> A successful `git commit` does **not** mean your work is on GitHub.
+> You must `git push` to send the commit to GitHub.
+
+**Memory hook: `status → add → commit → push`**
+
+</p>
+</details>
+
 
 </p>
 </details>
@@ -426,7 +386,7 @@ Relative paths are extremely useful because the same command can work on differe
 * Think: “include this in my next save.”
 * Examples:
   `git add file.txt` (one file)
-  `git add .` (everything that changed)
+  `git add --all` (everything that changed)
 
 **git commit** — “save it (locally)”
 
@@ -711,50 +671,25 @@ man tree
 The `man` command is nearly universal in displaying the manual for "commands" such as `tree`. Use the `q` keystroke to exit the manual for tree.
 
 ```bash
-# set up assignment 0 in your Ubuntu/Mac terminal on your laptop (not codespaces)
-cd ~
-mkdir Desktop
-wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
-unzip -d Desktop shell-lesson-data.zip
-
-# check your directory structure for assignment_0
-tree ~/Desktop/shell-lesson-data
+# goto assignment 0 in your Ubuntu/Mac terminal on your laptop (not codespaces)
+cd ~/assignment-0
 ```
 
-It should look like this:
+If you don't have this dir, either navigate to where you cloned your assignment-0 repo, or clone it again from [here](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0/accept)
+
+```bash
+
+# check your directory structure for assignment_0
+tree ~/assignment-0/shell-lesson-data
+```
+
+It should look similar to this:
 
 ![](../assignments/assignment_0_answer.png)
 
 
 ---
-<!--  
-### The `CSB/unix` [Repository](https://en.wikipedia.org/wiki/Repository_(version_control))
 
-Our primary text book, [Computing Skills for Biologists](https://computingskillsforbiologists.com/), provides a rich assortment of resources for you.  Most of these resources are contained in a GitHub repository that you have cloned into your home directory.  This is the `CSB` directory. 
-
-The `CSB` directory is organized by topic, with subdirectories dedicated to different chapters.  The directory for chapter 1 is `CSB/unix`.
-
-`CSB/unix/data` Contains data for examples and exercises
-
-`CSB/unix/installation` Contains instructions for installing software for this chapter
-
-`CSB/unix/sandbox` Dir where we work and experiment
-
-`CSB/unix/solutions` Solutions in code (`bash`) pseudocode (plain English) for your consultation when you get stuck with an exercise
-
-```bash
-# I am adding the 'cd ~' command to make sure you are in your home dir before running the 'ls' commands
-cd ~
-ls CSB/unix/
-ls CSB/unix/data
-ls CSB/unix/installation
-ls CSB/unix/sandbox
-ls CSB/unix/solutions
-```
-
----
-
--->
 
 </p>
 </details>
@@ -975,6 +910,16 @@ This is the same general workflow you used for `Assignment 0`:
 
 **GitHub repository → clone to your laptop → work locally → commit → push**
 
+If you didn't clone the repo yet, the please do so
+
+```bash
+cd ~
+git clone YOUR-COPIED-SSH-ADDRESS lecture-1
+```
+
+> !NOTE
+> replace YOUR-COPIED-SSH-ADDRESS with the actual ssh address to your repo, which can be found by clicking the green `<>Code` button and selecting the SSH tab.
+
 ---
 
 
@@ -1011,8 +956,8 @@ tree shell-lesson-data
 ### Move or rename files and directories with `mv <from path> <to path>`
 
 ```bash
-# you should be in ~/comp_bio/lecture_01
-cd ~/comp_bio/lecture_01
+# you should be in ~/lecture-1
+cd ~/lecture-1
 pwd
 
 # move Haiku.txt to the `writing` dir inside the copy of the `exercise-data` dir in the `north-pacific-gyre` dir to the data directory
@@ -1035,7 +980,7 @@ tree .
 
 ```bash
 # let's move to shell-lesson-data
-cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+cd ~/lecture-1/shell-lesson-data/exercise-data
 pwd
 
 # inspect the current contents of the directory
@@ -1067,7 +1012,7 @@ ls ..
 
 ```bash
 # make sure you are still in the original exercise-data dir 
-cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+cd ~/lecture-1/shell-lesson-data/exercise-data
 pwd
 
 # delete new_file.txt, the –i requests confirmation, enter `y` to confirm the deletion
@@ -1105,7 +1050,7 @@ rm -rf ../north-pacific-gyre/exercise-data/
 
 ```bash
 # make sure you are still in the original exercise-data dir 
-cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+cd ~/lecture-1/shell-lesson-data/exercise-data
 
 # look at the `NENE01751B.txt` file in `north-pacific-gyre`, try duckduckgo search on “bash less commands”
 less ../north-pacific-gyre/NENE01751B.txt
