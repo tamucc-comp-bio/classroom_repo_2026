@@ -1,7 +1,7 @@
 # Week01 UNIX
 
 > [!IMPORTANT]
-> [Assignment 0](../assignments/assignment_0_codespaces.md) is due at the beginning of this lecture
+> [Assignment 0](../assignments/assignment_0_2026.md) is due at the beginning of this lecture
 
 > [!NOTE]
 > The [Lecture Stream 2025](https://tamucc.zoom.us/rec/play/UhvJmtYJYRIVJ1ifqNm_Xj0n1ytptIXmbL-ggFJbbH9Cn3D34PNxkhQBUbnAJcotQFlBtry3XH__UYs7.k3kF7aFG1KF6Ks98) will be updated following lecture.
