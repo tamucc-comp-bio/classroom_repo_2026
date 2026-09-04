@@ -1,7 +1,7 @@
 # Week01 UNIX
 
 > [!IMPORTANT]
-> [Assignment 0](../assignments/assignment_0_codespaces.md) is due at the beginning of this lecture
+> [Assignment 0](../assignments/assignment_0_2026.md) is due at the beginning of this lecture
 
 > [!NOTE]
 > The [Lecture Stream 2025](https://tamucc.zoom.us/rec/play/UhvJmtYJYRIVJ1ifqNm_Xj0n1ytptIXmbL-ggFJbbH9Cn3D34PNxkhQBUbnAJcotQFlBtry3XH__UYs7.k3kF7aFG1KF6Ks98) will be updated following lecture.
@@ -35,13 +35,10 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_1.png)
 
-* **Core message (consensus):** Define and advocate **tidy data** as a consistent structure that makes analysis easier.
-* **The rule-of-three:** Many cite/echo the schema — **variables = columns, observations = rows, unit type = table**.
-* **Why it matters:** Tidy structure **reduces cleaning effort and errors**, and **speeds manipulation, modeling, and visualization**.
-* **Practical angle:** Paper shows **how to recognize messy data and convert it to tidy**, introduces **tools/workflows** (and a case study), and underpins the **tidyverse** ethos.
-* **Plain-language takes:** “Everything has a clear place,” leading to **faster, clearer, less error-prone** analysis.
-
-**TL;DR:** Wickham defines what “tidy” means and shows that standardizing dataset shape is the fastest path from messy data to reliable analysis.
+- Tidy data provides a consistent framework for organizing data so that it is easier to analyze.
+- The central rules identified were that variables should be columns, observations should be rows, and observational units should be organized into appropriate tables.
+- Data cleaning/tidying is an important part of analysis that often receives less attention than statistical analysis itself.
+- Standardized data structures make it easier to manipulate data with computational tools.
 
  </p>
 </details>
@@ -51,13 +48,11 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_2.png)
 
-* **Examples & visuals dominate:** \~8/11 praise the concrete **before/after examples**, tables, and figures that make concepts easy to **see** and apply.
-* **Clarity & accessibility:** \~5/11 say the writing is **clear**, beginner-friendly, and breaks ideas down well.
-* **Principles made explicit:** Several appreciate how the paper **formalizes intuitive practices** into clear rules.
-* **Practicality:** A few note **actionable fixes** for messy datasets and smoother workflows.
-* **Ecosystem tie-in:** Some liked the links to **ggplot2/plyr** and how the ideas shaped the **tidyverse**.
-* **Interdisciplinary grounding:** 1 mentions the bridge to **relational DBs, CS, and stats**.
-* **Nuanced stance:** 1 notes the paper isn’t dogmatic—**tidy is a strong default**, not the only way.
+- The examples, figures, and tables were widely viewed as helpful for understanding otherwise abstract concepts.
+- Relatively simple and organized explanation of tidy versus messy data.
+- The examples showing how datasets can be reshaped or "melted" were particularly useful.
+- Some students connected strongly with the discussion because of prior experience spending substantial time cleaning datasets.
+- The manuscript's explicit rules and standards for organizing data were viewed as useful guidance for creating reproducible and manageable datasets.
 
  </p>
 </details>
@@ -67,13 +62,11 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_3.png)
 
-* **Consensus:** 7/11 explicitly **don’t disagree** with Wickham (some praise clarity/usefulness).
-* **Nuanced pushback (4/11):**
-
-  * **Flexibility over rigidity:** Tidy is a *default*, not a universal rule; sometimes “messy” or non-tidy layouts are practical (e.g., for **data entry/storage**).
-  * **High-dimensional data:** **Array/matrix formats** (genomics, imaging) can be more efficient than tidy tables in some workflows.
-  * **Terminology tone:** Calling things “**bad**” data felt a bit harsh/controversial to one reader.
-* **Open curiosity (not disagreement):** Since it’s a 2014 paper, a few wonder about **updates or new strategies** from Wickham since then.
+- Most did not substantially disagree with the overall principles of tidy data.
+- Some questioned whether tidy data is always the most appropriate structure for every type of dataset or scientific field.
+- Some students felt that separating data into multiple tables and later joining them can seem unnecessarily complicated or redundant.
+- There was some concern that there may be multiple valid approaches to producing "clean" data rather than a single universal format.
+- Overall, students generally accepted the value of standardized and well-organized data even when questioning specific implementation choices.
 
  </p>
 </details>
@@ -83,19 +76,12 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_4.png)
 
-* **Overall:** Most found the paper clear/helpful, but **\~8/11** raised specific confusions or worries about applying it to their own data.
-
-* **Top confusion themes:**
-
-  1. **What’s a variable vs a value (and observation)?** Phone-number example; ambiguity across contexts; human-factors note.
-  2. **How to handle nested/multi-level data & multiple observational units** when “each unit = its own table.”
-  3. **Reshape terminology** (melt/cast, string splitting) and mapping to tidy verbs.
-  4. **Using tidy data in R/code** (what the code means if you don’t know R yet).
-  5. **Column ordering advice** (“order related variables contiguously”)—what to do when “related” is unclear.
-  6. **“Versions” confusion** (unspecified what versions—tools/verbs/formats).
-  7. **Applying concepts to real datasets**—confidence in theory vs practice.
-
-* **No/low confusion:** 3–4 respondents reported no questions and/or said the examples were clear.
+- R syntax and some of the programming examples were difficult for students without previous R experience.
+- Several students were unsure about when and why a dataset needs to be "melted" or reshaped.
+- The modeling section and terminology associated with statistical models were confusing to some students.
+- Students had questions about how computers interpret structured data differently from humans.
+- Filtering and manipulating datasets programmatically was identified as an area where additional practice would be useful.
+- Some students were interested in learning about alternative frameworks for data cleaning and organization.
 
  </p>
 </details>
@@ -109,9 +95,10 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_5.png)
 
-
-* **Most have no questions:** 8/11 (≈73%) said “no questions,” with a couple noting the reading was helpful and something they’ll revisit.
-* **Recurring questions/themes (3/11):**
+- Most students reported no specific questions at this point.
+- Several indicated that questions will probably arise once they begin using GitHub in practice.
+- One student asked about the difference between **Issues** and **Pull Requests**.
+- Some students noted that they are still becoming familiar with GitHub terminology.
   
 <details><summary>**Fork vs. clone vs. branch:** what each is for and when to use which.</summary>
 <p>
@@ -305,8 +292,6 @@ git push -u origin feature-x
 </details>
 	
 
-	**TL;DR:** Overall confidence is high; targeted clarification is needed on fork/clone/branch, core workflow concepts, and practical beginner commands.
-
  </p>
 </details>
 
@@ -335,13 +320,103 @@ git push -u origin feature-x
 
 ### Assignment Steps
 
-1. Click the assignment invite link to create your personalized assignment repo
-2. Click the CodeSpaces Link in the Repo
-3. Unzip the `shell-lesson-data`, create the `Desktop` dir in you home dir (`~`), move the `shell-lesson-data` dir to `~/Desktop`, change your directory to the `shell-lesson-data` dir
-4. Open the Software Carpentry lesson, split screen between Software Carpentry and Codespaces 
-5. Start at "1. Introducing the Shell" and stop after completing "3. Working with files and directories"
-6. Move your `shell-lesson-data` dir back to the repo
-7. Use `git` to `add`, `commit`, and `push` the changes to the repo back to the primary copy on github.
+1. Accept the assignment and create your personal repository on GitHub.
+2. Copy the **SSH address** of your personal repository.
+3. Open a Bash terminal on your computer.
+4. Move to your home directory:
+
+   ```bash
+   cd ~
+   ```
+
+5. Clone your personal repository and give the local clone the standardized name `assignment-0`:
+
+   ```bash
+   git clone YOUR-COPIED-SSH-ADDRESS assignment-0
+   ```
+   
+6. Enter the cloned repository:
+
+   ```bash
+   cd assignment-0
+   ```
+   
+7. Work through the assignment using the supplied `shell-lesson-data` directory.
+8. Create and organize files inside `shell-lesson-data/student-work`.
+9. Use Git to record your work locally and push it back to GitHub.
+10. Verify on GitHub that your changes were successfully submitted.
+
+> [!IMPORTANT]
+> The repository on **GitHub** and the clone on **your laptop** are two different copies of the repository. Changes made on your laptop do not appear on GitHub until you `commit` and `push` them.
+
+---
+
+### Bash Commands Introduced in Assignment 0
+
+You used several commands for navigating and working with files and directories:
+
+| Command | Purpose                                         |
+| ------- | ----------------------------------------------- |
+| `pwd`   | print the path to the present working directory |
+| `ls`    | list files and directories                      |
+| `cd`    | change directories                              |
+| `mkdir` | create directories                              |
+| `nano`  | create or edit text files                       |
+| `cp`    | copy files or directories                       |
+| `mv`    | move or rename files or directories             |
+| `rm`    | remove files                                    |
+| `man`   | view the manual for a command                   |
+
+You also learned some important path shortcuts:
+
+| Path | Meaning                       |
+| ---- | ----------------------------- |
+| `~`  | your home directory           |
+| `.`  | the present working directory |
+| `..` | the parent directory          |
+
+---
+
+### Relative and Absolute Paths
+
+An **absolute path** specifies the complete location of a file or directory beginning at the root of the filesystem.
+
+For example, an absolute path might look something like:
+
+```text
+/home/username/assignment-0/shell-lesson-data
+```
+
+or on a Mac:
+
+```text
+/Users/username/assignment-0/shell-lesson-data
+```
+
+The exact path differs among computers.
+
+A **relative path** specifies a location relative to your present working directory.
+
+For example, if you are inside:
+
+```text
+assignment-0/shell-lesson-data/exercise-data
+```
+
+then:
+
+```text
+../north-pacific-gyre
+```
+
+means:
+
+1. `..` — go up one directory to `shell-lesson-data`
+2. enter `north-pacific-gyre`
+
+Relative paths are extremely useful because the same command can work on different computers even when the absolute locations of the files differ.
+
+---
 
 ### Git & GitHub Repository Synchronization
 
@@ -385,17 +460,6 @@ Tip for messages: use active, present tense (e.g., “Fix typo,” “Add README
 
 ---
 
-## Text Book Vs. Lecture Slides
-
-<details><summary>click to expand</summary>
-<p>
-
-* The [**Lecture_01 Slides**](Week01_files/Lecture01_WelcomeToTheMatrix.pdf) closely follow the book but there is some additional information that is not provided in the book (and vice versa). In the lecture slides, the `code blocks` are represented by green text on a black background, mimicking the terminal.
-
-</p>
-</details>
-
----
 
 ## Lecture: Unix, Linux, & the Command Line Interface (CLI)
 
@@ -576,7 +640,11 @@ ls /tmp
 
 ### Your Home Directory
 
-`/home/<your-username>` (Linux) `/Users/<your-username>` (Mac) or is the directory where you are expected to create and maintain your directories and files.
+the directory where you are expected to create and maintain your directories and files
+
+`/home/<your-username>` (Linux) 
+
+`/Users/<your-username>` (Mac) 
 
   &#x1F4A1; TIP!: `<your-username>` should be replaced with your personal username.  don't include the `<>`
   
@@ -698,7 +766,7 @@ ls CSB/unix/solutions
 
 * The shell is software that controls the [operating system kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) and is accessed through a terminal window
 
-* The shell we are using in Ubuntu and MacOS is called `bash`, or Born Again Shell
+* The shell we are using in Ubuntu and MacOS is called `bash`, or Bourne Again Shell
 
 > &#x26A0; CAUTION! _The default shell language for newer Macs is often `zsh`.  You can simply type `bash` when you open your terminal to change to a `bash` terminal. You can also change the default terminal to be `bash` rather than `zsh`.  Ask Chet G. Peetee how._
 
@@ -899,50 +967,40 @@ It is best not to used spaces in dir and file names, but you can wrap file names
 
 ---
 
+## Set Up Your Lecture 1 Repository
 
-### Set Up Data to Experiment With
+For this part of lecture, you will work [**inside your personal `lecture-1` Classroom50 repository**](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-1/accept) (click me!).
 
-From here forward, we will adopt a standardized code block syntax.  The `$` represents the command prompt and you are expected to copy and paste the commands that follow it, but _*do not start any command with the `$`*_.  The `#` is a comment to explain to you what is happening next
+This is the same general workflow you used for `Assignment 0`:
 
-```bash
-# goto your home dir
-$ cd ~
+**GitHub repository → clone to your laptop → work locally → commit → push**
 
-# make a directory called comp_bio with a dir called lecture_01 inside of it and move into lecture_01
-$ mkdir -p ~/comp_bio/lecture_01
-$ cd ~/comp_bio/lecture_01
+---
 
-# download the software carpentry data set for the Unix Shell lesson and unzip it and delete the zipped file
-$ wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
-$ unzip shell-lesson-data.zip
-$ rm shell-lesson-data.zip
-```
-
---- 
 
 ### Copy files or directories with `cp <from path> <to path>`
 
-```
-# you should be in ~/comp_bio/lecture_01
-$ cd ~/comp_bio/lecture_01
-$ pwd
+```bash
+# you should be in `~/lecture-1`
+cd ~/lecture-1
+pwd
 
 # view the contents of the present dir
-$ ls
+ls
 
 # copy `haiku.txt` to the present working directory (pwd).  The path of the pwd is represented by a "."
-$ cp shell-lesson-data/exercise-data/writing/haiku.txt .
+cp shell-lesson-data/exercise-data/writing/haiku.txt .
 
 # copy `haiku.txt` to the present directory and rename the copy to be `Haiku.txt`
-$ cp shell-lesson-data/exercise-data/writing/haiku.txt ./Haiku.txt
-$ ls
+cp shell-lesson-data/exercise-data/writing/haiku.txt ./Haiku.txt
+ls
 
 # view tree of shell-lesson-data, 
-$ tree shell-lesson-data
+tree shell-lesson-data
 
 #then copy the whole `exercise-data` dir to the north-pacific-gyre dir, then view dir tree again
-$ cp -rf shell-lesson-data/exercise-data/ ./shell-lesson-data/north-pacific-gyre/
-$ tree shell-lesson-data
+cp -rf shell-lesson-data/exercise-data/ ./shell-lesson-data/north-pacific-gyre/
+tree shell-lesson-data
 
 ```
 
@@ -954,17 +1012,17 @@ $ tree shell-lesson-data
 
 ```bash
 # you should be in ~/comp_bio/lecture_01
-$ cd ~/comp_bio/lecture_01
-$ pwd
+cd ~/comp_bio/lecture_01
+pwd
 
 # move Haiku.txt to the `writing` dir inside the copy of the `exercise-data` dir in the `north-pacific-gyre` dir to the data directory
-$ mv Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/
+mv Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/
 
 # rename the file you just moved to be `HAIKU.txt` rather than `Haiku.txt`
-$ mv shell-lesson-data/north-pacific-gyre/exercise-data/writing/Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/HAIKU.txt
+mv shell-lesson-data/north-pacific-gyre/exercise-data/writing/Haiku.txt shell-lesson-data/north-pacific-gyre/exercise-data/writing/HAIKU.txt
 
 # check your work
-$ tree .
+tree .
 
 ```
 
@@ -977,26 +1035,26 @@ $ tree .
 
 ```bash
 # let's move to shell-lesson-data
-$ cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
-$ pwd
+cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+pwd
 
 # inspect the current contents of the directory
-$ ls -l
+ls -l
 
 # create a new file (you can list multiple files)
-$ touch new_file.txt
+touch new_file.txt
 
 # inspect the contents of the directory again
-$ ls -l
+ls -l
 
 # if you touch the file a second time, the time of last access will change
-$ touch new_file.txt
-$ ls -l
+touch new_file.txt
+ls -l
 
 # create a new file in the `shell-lesson-data` dir (the parent dir of the present dir), then view the 
 # the path to the directory that your present working directory is within is represented by ".."
-$ touch ../another_new_file.txt
-$ ls ..
+touch ../another_new_file.txt
+ls ..
 
 ```
 
@@ -1009,27 +1067,34 @@ $ ls ..
 
 ```bash
 # make sure you are still in the original exercise-data dir 
-$ cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
-$ pwd
+cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+pwd
 
 # delete new_file.txt, the –i requests confirmation, enter `y` to confirm the deletion
-$ rm -i new_file.txt
+rm -i new_file.txt
 
 # delete another_new_file.txt, there is no "undo" option
-$ rm ../another_new_file.txt
+rm ../another_new_file.txt
 
 # make dir `d1` in present dir, `d2` in `d1`, and `d3` in `d2`; if you have tree try it
-$ mkdir -p d1/d2/d3
-$ tree d1
+mkdir -p d1/d2/d3
+tree d1
+```
+
+You should see this:
+
+``` bash
 d1
 └── d2
     └── d3
+```
 
+```
 # remove the `d1`,`d2`,& `d3` dirs recursively with a "one-liner"
-$ rm -rf d1
+rm -rf d1
 
 # remove the copy of the `exercise-data` dir in `north-pacific-gyre`
-$ rm -rf ../north-pacific-gyre/exercise-data/
+rm -rf ../north-pacific-gyre/exercise-data/
 ```
 
 > &#x26A0; CAUTION! _be careful with `rm`, you could delete your "whole computer", and there is no `undo`_
@@ -1040,10 +1105,10 @@ $ rm -rf ../north-pacific-gyre/exercise-data/
 
 ```bash
 # make sure you are still in the original exercise-data dir 
-$ cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
+cd ~/comp_bio/lecture_01/shell-lesson-data/exercise-data
 
 # look at the `NENE01751B.txt` file in `north-pacific-gyre`, try duckduckgo search on “bash less commands”
-$ less ../north-pacific-gyre/NENE01751B.txt
+less ../north-pacific-gyre/NENE01751B.txt
 
 # type /10 inside of less to search; u=up, d=down, G=end, g=begin, q=exit
 
@@ -1055,7 +1120,7 @@ $ less ../north-pacific-gyre/NENE01751B.txt
 
 ```bash
 # concatenate files and/or print to screen
-$ cat numbers.txt ../north-pacific-gyre/goodiff.sh alkanes/cubane.pdb
+cat numbers.txt ../north-pacific-gyre/goodiff.sh alkanes/cubane.pdb
 ```
 
 ---
@@ -1065,7 +1130,7 @@ $ cat numbers.txt ../north-pacific-gyre/goodiff.sh alkanes/cubane.pdb
 ```bash
 
 # print the sorted lines of a file
-$ sort ../north-pacific-gyre/NENE01751B.txt
+sort ../north-pacific-gyre/NENE01751B.txt
 ```
 
 ---
@@ -1078,9 +1143,9 @@ Remember the [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy), w
 
 ```bash
 # first view, then sort a comma delimited file numerically by column 3 in reverse order and view in less
-$ cat animal-counts/animals.csv
-$ sort -nrk3,3 -t "," animal-counts/animals.csv | less
-$ cat animal-counts/animals.csv | sort -nrk3,3 -t "," | less
+cat animal-counts/animals.csv
+sort -nrk3,3 -t "," animal-counts/animals.csv | less
+cat animal-counts/animals.csv | sort -nrk3,3 -t "," | less
 
 ```
 
@@ -1090,10 +1155,10 @@ $ cat animal-counts/animals.csv | sort -nrk3,3 -t "," | less
 
 ```bash
 # count lines, words, and characters
-$ wc writing/LittleWomen.txt
+wc writing/LittleWomen.txt
 
 # count lines only
-$ wc -l ../north-pacific-gyre/NENE01751B.txt
+wc -l ../north-pacific-gyre/NENE01751B.txt
 
 ```
 
@@ -1107,9 +1172,11 @@ The most common use of the `file` command in biology is to determine if files en
 
 ```bash
 # determine file type, ASCII is a type of human-readable text file
-$ file alkanes/cubane.pdb
-alkanes/cubane.pdb: ASCII text
+file alkanes/cubane.pdb
+```
 
+```bash
+alkanes/cubane.pdb: ASCII text
 ```
 
 > &#x1F4A1; TIP! _Do not forget to use the `Tab` key to autocomplete directory names and prevent spelling mistakes_
@@ -1120,17 +1187,17 @@ alkanes/cubane.pdb: ASCII text
 
 ```bash
 # display first two lines of a file
-$ head -n 2 creatures/unicorn.dat
+head -n 2 creatures/unicorn.dat
 
 # display last two lines of file
-$ tail -n 2 creatures/unicorn.dat
+tail -n 2 creatures/unicorn.dat
 
 # display from line 2 onward
 # (i.e., removing the header of the file)
-$ tail -n +2 creatures/unicorn.dat
+tail -n +2 creatures/unicorn.dat
 
 # display all but the last line
-$ head -n -1 creatures/unicorn.dat
+head -n -1 creatures/unicorn.dat
 ```
 
 > &#x1F4A1; TIP! _Do not forget to use `Tab` key to autocomplete file names and prevent spelling mistakes_
