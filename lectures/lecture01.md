@@ -35,13 +35,10 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_1.png)
 
-* **Core message (consensus):** Define and advocate **tidy data** as a consistent structure that makes analysis easier.
-* **The rule-of-three:** Many cite/echo the schema — **variables = columns, observations = rows, unit type = table**.
-* **Why it matters:** Tidy structure **reduces cleaning effort and errors**, and **speeds manipulation, modeling, and visualization**.
-* **Practical angle:** Paper shows **how to recognize messy data and convert it to tidy**, introduces **tools/workflows** (and a case study), and underpins the **tidyverse** ethos.
-* **Plain-language takes:** “Everything has a clear place,” leading to **faster, clearer, less error-prone** analysis.
-
-**TL;DR:** Wickham defines what “tidy” means and shows that standardizing dataset shape is the fastest path from messy data to reliable analysis.
+- Tidy data provides a consistent framework for organizing data so that it is easier to analyze.
+- The central rules identified were that variables should be columns, observations should be rows, and observational units should be organized into appropriate tables.
+- Data cleaning/tidying is an important part of analysis that often receives less attention than statistical analysis itself.
+- Standardized data structures make it easier to manipulate data with computational tools.
 
  </p>
 </details>
@@ -51,13 +48,11 @@ Complete the quiz while your computer is updating
 
 ![](Week01_files/assignment0_2.png)
 
-* **Examples & visuals dominate:** \~8/11 praise the concrete **before/after examples**, tables, and figures that make concepts easy to **see** and apply.
-* **Clarity & accessibility:** \~5/11 say the writing is **clear**, beginner-friendly, and breaks ideas down well.
-* **Principles made explicit:** Several appreciate how the paper **formalizes intuitive practices** into clear rules.
-* **Practicality:** A few note **actionable fixes** for messy datasets and smoother workflows.
-* **Ecosystem tie-in:** Some liked the links to **ggplot2/plyr** and how the ideas shaped the **tidyverse**.
-* **Interdisciplinary grounding:** 1 mentions the bridge to **relational DBs, CS, and stats**.
-* **Nuanced stance:** 1 notes the paper isn’t dogmatic—**tidy is a strong default**, not the only way.
+- The examples, figures, and tables were widely viewed as helpful for understanding otherwise abstract concepts.
+- Relatively simple and organized explanation of tidy versus messy data.
+- The examples showing how datasets can be reshaped or "melted" were particularly useful.
+- Some students connected strongly with the discussion because of prior experience spending substantial time cleaning datasets.
+- The manuscript's explicit rules and standards for organizing data were viewed as useful guidance for creating reproducible and manageable datasets.
 
  </p>
 </details>
