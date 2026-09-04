@@ -17,7 +17,7 @@ Click the following link and follow the instructions in the `README.md` file
 
 [Intro to the Command Line Exercise](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0/accept) (click me!)
 
-To submit your assignment, you will need to push the changes of your repo after completing this exercise. Instructions are in the `README.md` in this assignment's repo.
+To submit your assignment, you will need to push the changes to your repo after completing this exercise. Instructions are in the `README.md` in this assignment's repo.
 
 ---
 
