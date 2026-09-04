@@ -1081,6 +1081,8 @@ mkdir -p d1/d2/d3
 tree d1
 ```
 
+You should see this:
+
 ``` bash
 d1
 └── d2
