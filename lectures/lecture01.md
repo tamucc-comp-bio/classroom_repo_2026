@@ -967,6 +967,16 @@ It is best not to used spaces in dir and file names, but you can wrap file names
 
 ---
 
+## Set Up Your Lecture 1 Repository
+
+For this part of lecture, you will work [**inside your personal `lecture-1` Classroom50 repository**](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-1/accept).
+
+This is the same general workflow you used for `Assignment 0`:
+
+**GitHub repository → clone to your laptop → work locally → commit → push**
+
+
+
 
 ### Set Up Data to Experiment With
 
