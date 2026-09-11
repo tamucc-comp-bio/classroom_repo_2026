@@ -285,6 +285,8 @@ We name it `BodyMass.tsv` because it contains tabs. Some older slides and the bo
 > [!TIP]
 > The source description is `../data/Pacifici2013_about.txt`. A sorted table answers a question about the supplied values; it does not establish that every value is complete or error-free.
 
+--- 
+
 </details>
 
 <details><summary>Search the body-mass table with grep</summary>
@@ -316,6 +318,8 @@ grep -Ew 'Gorilla|Pan' BodyMass.tsv
 `grep` returns matching **lines**. `grep -c` counts matching lines, not every occurrence of the pattern. The neighbors around a gorilla record have nearby ranks in this sorted table; this is not a calculation of absolute differences in mass.
 
 In `grep -Ew 'Gorilla|Pan'`, the quoted `|` means **or** in the search pattern. A `|` outside quotes connects shell commands into a pipeline.
+
+---
 
 </details>
 
@@ -351,6 +355,8 @@ find ../data -type d
 
 `-type f` restricts results to files; `-type d` restricts results to directories. Without a type restriction, `find` can return both.
 
+---
+
 </details>
 
 <details><summary>Permissions: read, write, and execute</summary>
@@ -374,11 +380,20 @@ Numeric permissions add read = 4, write = 2, and execute = 1 for each of the thr
 
 `sudo` runs a command with elevated privileges, often for system administration such as installing software. `chown` changes ownership. Neither is needed for today's exercises. If a command fails, check the path and error message before deciding that administrator privileges are needed.
 
+---
+
 </details>
 
 </details>
+
+---
+---
 
 [Mind Expander 01.04](https://forms.office.com/r/uvi6cGMSMJ): Take 10 minutes to complete.
+
+---
+---
+
 
 ## [File Path Scavenger Hunt!](https://forms.cloud.microsoft/r/Zq7avbJpqu)
 
