@@ -31,7 +31,7 @@ Keep this page open beside your terminal. Command blocks omit the terminal's `$`
 
 <details><summary>Set Up the CSB Repository in your Home Dir</summary>
 
-We did this is lecture 0. This will be used for the File Path Scavenger Hunt today in class. Confirm that you have it by running the following command:
+We did this is lecture 0. The CSB dir will be used for the File Path Scavenger Hunt today in class. Confirm that you have it by running the following command:
 
 ```bash
 ls ~/CSB
@@ -44,7 +44,7 @@ LICENSE    data_wrangling  good_code  python  regex       sql
 README.md  git             latex      r       scientific  unix
 ```
 
-If you don't have the CSB dir, then clone it to your home dir.
+If you don't see the output above, then either you cloned the CSB dir to another location or you don't have the CSB dir.  If you can't find it, then clone it to your home dir.
 
 ```bash
 cd ~
