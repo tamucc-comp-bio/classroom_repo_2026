@@ -191,11 +191,17 @@ The response summaries below are retained from the previous version of this lect
 
 
 ---
-
-
-
 ---
 
+
+## [File Path Scavenger Hunt!](https://forms.cloud.microsoft/r/Zq7avbJpqu)
+
+[Non-TAMUCC students: File Path Scavenger Hunt](https://forms.cloud.microsoft/r/036fdetK5g)
+
+Take 10 minutes to complete the scavenger hunt. Any `CSB` paths shown in older questions refer to the same directory relationships inside today's `~/lecture-2/CSB` directory.
+
+---
+---
 
 
 ## Additional Important `bash` Commands (CSB 1.6)
@@ -394,14 +400,6 @@ Numeric permissions add read = 4, write = 2, and execute = 1 for each of the thr
 ---
 ---
 
-
-## [File Path Scavenger Hunt!](https://forms.cloud.microsoft/r/Zq7avbJpqu)
-
-[Non-TAMUCC students: File Path Scavenger Hunt](https://forms.cloud.microsoft/r/036fdetK5g)
-
-Take 10 minutes to complete the scavenger hunt. Any `CSB` paths shown in older questions refer to the same directory relationships inside today's `~/lecture-2/CSB` directory.
-
----
 
 ## Computer Programming with `bash` (CSB 1.7–1.9)
 
