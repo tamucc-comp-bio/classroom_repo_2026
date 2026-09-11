@@ -94,7 +94,7 @@ the hidden section ends here
 
 * [09/11  Week02 Unix II](lectures/lecture02_2026.md)
 
-  * [Assignment_2,  Due 09/18](assignments/assignment_2.md)
+  * [Assignment_2,  Due 09/18]()
 
 * [09/18 Week03 Unix III](lectures/lecture03.md)
 
