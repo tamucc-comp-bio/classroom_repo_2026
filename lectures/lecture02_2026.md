@@ -35,57 +35,6 @@ Complete the quiz while everyone gets ready.
 
 ---
 
-## Set Up Your Lecture 2 Repository
-
-Accept **Lecture 2** using the Classroom 50 link provided by your instructor. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.
-
-<!-- Instructor: replace the preceding sentence with the verified Lecture 2 acceptance link after creating the activity. Starter files and setup notes are in ../resources/classroom50/lecture-2-setup.md. -->
-
-1. Open **your Lecture 2 repository** on GitHub.
-2. Click the green **Code** button, select **SSH**, and copy the address.
-3. Go to your home directory:
-
-   ```bash
-   cd ~
-   ```
-
-4. Replace `YOUR-COPIED-SSH-ADDRESS` below with your address and clone into a directory named `lecture-2`:
-
-   ```text
-   git clone YOUR-COPIED-SSH-ADDRESS lecture-2
-   ```
-
-5. Enter your clone and inspect it:
-
-   ```bash
-   cd ~/lecture-2
-   pwd
-   ls
-   git status
-   ```
-
-If you already cloned Lecture 2, enter that directory instead of cloning it again. Your personal repositories are separate projects; use the Lecture 2 clone for today's work.
-
-| Location in `~/lecture-2` | Purpose |
-| --- | --- |
-| `README.md` | Getting started and link to this lecture |
-| `CSB/unix/data/` | Supplied biological data and source descriptions |
-| `CSB/unix/sandbox/` | Your practice files, scripts, results, and notes |
-
-Enter the sandbox:
-
-```bash
-cd ~/lecture-2/CSB/unix/sandbox
-pwd
-ls ../data
-```
-
-Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` means go up to `unix`, then into `data`.
-
-> [!IMPORTANT]
-> Keep the supplied files in `data` unchanged. Save your work in `sandbox`. All examples below use this Lecture 2 repository, including the Assignment 1 review.
-
----
 
 ## Review [Assignment_1](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-1/accept)
 
@@ -206,6 +155,63 @@ The response summaries below are retained from the previous version of this lect
  </details>
 
 </details>
+
+
+
+
+---
+
+## Set Up Your Lecture 2 Repository
+
+Accept **Lecture 2** using the Classroom 50 link provided by your instructor. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.
+
+<!-- Instructor: replace the preceding sentence with the verified Lecture 2 acceptance link after creating the activity. Starter files and setup notes are in ../resources/classroom50/lecture-2-setup.md. -->
+
+1. Open **your Lecture 2 repository** on GitHub.
+2. Click the green **Code** button, select **SSH**, and copy the address.
+3. Go to your home directory:
+
+   ```bash
+   cd ~
+   ```
+
+4. Replace `YOUR-COPIED-SSH-ADDRESS` below with your address and clone into a directory named `lecture-2`:
+
+   ```text
+   git clone YOUR-COPIED-SSH-ADDRESS lecture-2
+   ```
+
+5. Enter your clone and inspect it:
+
+   ```bash
+   cd ~/lecture-2
+   pwd
+   ls
+   git status
+   ```
+
+If you already cloned Lecture 2, enter that directory instead of cloning it again. Your personal repositories are separate projects; use the Lecture 2 clone for today's work.
+
+| Location in `~/lecture-2` | Purpose |
+| --- | --- |
+| `README.md` | Getting started and link to this lecture |
+| `CSB/unix/data/` | Supplied biological data and source descriptions |
+| `CSB/unix/sandbox/` | Your practice files, scripts, results, and notes |
+
+Enter the sandbox:
+
+```bash
+cd ~/lecture-2/CSB/unix/sandbox
+pwd
+ls ../data
+```
+
+Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` means go up to `unix`, then into `data`.
+
+> [!IMPORTANT]
+> Keep the supplied files in `data` unchanged. Save your work in `sandbox`. All examples below use this Lecture 2 repository, including the Assignment 1 review.
+
+---
 
 
 
