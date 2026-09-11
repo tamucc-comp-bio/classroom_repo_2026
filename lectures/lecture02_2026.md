@@ -510,8 +510,6 @@ $ sudo chown -R $USER test_dir/
 
 </details>
 
-</details>
-
 ---
 ---
 
