@@ -280,18 +280,24 @@ cd ~/lecture-2/CSB/unix/sandbox; ls
 </details>
 
 
-<details><summary>Build a body-mass table</summary>
+<details><summary>Build a body-mass table from `Pacifici2013_data.csv `</summary>
 
 ### Biological question: Which mammals have the largest adult body masses?
 
 Create a table containing the taxonomic information and body masses, sorted from largest to smallest.
 
 ```bash
-cd ~/lecture-2/CSB/unix/sandbox
 head -n 1 ../data/Pacifici2013_data.csv | tr ';' '\n'
 ```
 
-Select original columns 2–6. Count the columns **after** selection:
+Build and inspect the pipeline in stages:
+
+```bash
+# Select five columns.
+cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | head
+```
+
+We selected original columns 2–6. which now become columns 1-5 **after** selection:
 
 | New column | Original column | Variable |
 | --- | --- | --- |
@@ -301,20 +307,16 @@ Select original columns 2–6. Count the columns **after** selection:
 | 4 | 5 | Scientific_name |
 | 5 | 6 | AdultBodyMass_g |
 
-Build and inspect the pipeline in stages:
 
 ```bash
-# Select five columns.
-cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | head
-
 # Remove the header from the text stream.
 cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | tail -n +2 | head
 
 # Sort by the fifth selected column, keeping semicolons as delimiters.
-cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | tail -n +2 | sort -t ';' -k5,5nr | head
+cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | tail -n +2 | sort -t ';' -nrk5,5 | head
 
 # Convert semicolons to tabs for a TSV output file.
-cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | tail -n +2 | sort -t ';' -k5,5nr | tr ';' '\t' > BodyMass.tsv
+cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv | tail -n +2 | sort -t ';' -nrk5,5 | tr ';' '\t' > BodyMass.tsv
 
 head -n 5 BodyMass.tsv
 wc -l BodyMass.tsv
