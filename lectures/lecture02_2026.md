@@ -21,7 +21,7 @@ By the end of this lecture, you should be able to:
 
 ---
 
-## Computer Preparation
+## Computer and GitHub Repo Preparation
 
 <details><summary>Instructions to Setup Computer for Comp Bio</summary>
 
@@ -32,9 +32,9 @@ Keep this page open beside your terminal. Command blocks omit the terminal's `$`
 </details>
 
 
-<details><summary>Set Up Your [Lecture 2 Repository]()</summary>
+<details><summary>Set Up Your Lecture 2 Repository</summary>
 
-Accept **Lecture 2** using the Classroom 50 link. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.  Clone the `lecture-2` repository to your local computer. 
+Accept **Lecture 2** using the [Classroom 50, Lecture 2 link](). Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.  Clone the `lecture-2` repository to your local computer. 
 
 | Location in `~/lecture-2` | Purpose |
 | --- | --- |
