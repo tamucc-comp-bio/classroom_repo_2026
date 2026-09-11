@@ -284,13 +284,21 @@ cd ~/lecture-2/CSB/unix/sandbox; ls
 
 ### Biological question: Which mammals have the largest adult body masses?
 
-Create a table containing the taxonomic information and body masses, sorted from largest to smallest.
+We will incrementally build a pipeline that creates a table containing the taxonomic information and body masses, sorted from largest to smallest. The first step is to view the column names in the source data:
 
 ```bash
 head -n 1 ../data/Pacifici2013_data.csv | tr ';' '\n'
 ```
 
-Build and inspect the pipeline in stages:
+&#x1F4A1; _in step 1, we use `tr` to replace semicolons `;` with "[line feeds](https://en.wikipedia.org/wiki/Newline)" `\n` to view one column header per line._
+
+&#x1F4A1; _`\` is the "[escape character](https://en.wikipedia.org/wiki/Escape_character)".  The character following the `\` has an alternate meaning._
+
+&#x1F4A1; _`t` is the letter "t", `\t` is a [metacharacter](https://en.wikipedia.org/wiki/Metacharacter) that symbolizes a tab_
+
+&#x1F4A1; _`n` is the letter "n", `\n` is a metacharacter that symbolizes the end of a line (aka line feed)_
+
+We then build and inspect the pipeline in stages:
 
 ```bash
 # Select five columns.
@@ -322,14 +330,11 @@ head -n 5 BodyMass.tsv
 wc -l BodyMass.tsv
 ```
 
-`sort -t ';' -k5,5nr` uses semicolons to identify fields, sorts only field 5, treats it as a number (`n`), and reverses the order (`r`). Spaces within species names remain intact.
+`sort -t ';' -nrk5,5` uses semicolons to identify fields, sorts only field 5, treats it as a number (`n`), and reverses the order (`r`). Spaces within species names remain intact.
 
 The output has **5,426 rows and five tab-separated columns**, without a header. The first row should be *Balaenoptera musculus*, with an adult body mass of **154,321,304.5 g**. Keep the units in mind!
 
 We name it `BodyMass.tsv` because it contains tabs. Some older slides and the book use `BodyMass.csv` or `BodyM.csv`; use `BodyMass.tsv` in this lecture.
-
-> [!TIP]
-> The source description is `../data/Pacifici2013_about.txt`. A sorted table answers a question about the supplied values; it does not establish that every value is complete or error-free.
 
 --- 
 
