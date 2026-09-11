@@ -521,7 +521,7 @@ $ sudo chown -R $USER test_dir/
 
 ## Concise Review of Material Covered Up Through Now
 
-<details><summary>Commands have options and accept arguments to modify functionality </summary>
+<details><summary>Expand</summary>
 <p>
 
 <details><summary>Commands have options and accept arguments to modify functionality </summary>
@@ -703,13 +703,14 @@ $ sudo chown -R $USER test_dir/
 ## Computer Programming with `bash` (CSB 1.7–1.9)
 
 <details><summary>Save a working pipeline as a script</summary>
+<p>
 
-A **script** is a text file containing commands. Running the script carries out those commands in order. This preserves the processing steps, so you and other researchers can repeat them.
+A [script](https://en.wikipedia.org/wiki/Scripting_language) is a text file containing commands. Running the script carries out those commands in order. This preserves the processing steps, so you and other researchers can repeat them.
 
-### Create the script
+### Create a script
 
 ```bash
-cd ~/lecture-2/CSB/unix/sandbox
+# pwd = ~/lecture-2/CSB/unix/sandbox
 nano ExtractBodyM.sh
 ```
 
@@ -723,6 +724,7 @@ Type or paste the following **into the editor**:
 
 # Select original columns 2-6; remove the header; sort selected column 5
 # numerically from largest to smallest; convert delimiters to tabs.
+
 cut -d ';' -f 2-6 ../data/Pacifici2013_data.csv |
     tail -n +2 |
     sort -t ';' -k5,5nr |
@@ -740,23 +742,37 @@ head -n 5 BodyMass.tsv
 
 Running it again replaces `BodyMass.tsv` with a freshly generated result.
 
+---
+
+
 ### Make the code readable
 
 * Explain the purpose, inputs, outputs, and how to run the script in comments.
 * Indent continuation lines consistently.
 * Keep the steps in the same order as the pipeline you tested.
+* It is a good idea to try to limit a script to 1 command per line to improve its readability.
 
-A line ending in `|` tells Bash that the pipeline continues on the next line. No backslash is needed after that pipe. Elsewhere, a final `\` can continue a command onto the next line; it must be the last character, with no trailing spaces.
+Open your script in `nano`
+
+```bash
+nano ExtractBodyM.sh
+```
 
 The first line, `#!/usr/bin/env bash`, is the **shebang**. It tells the system to use Bash when you execute the file directly.
+
+&#x1F4A1; TIP! A line ending in `|` tells Bash that the pipeline continues on the next line. No backslash is needed after that pipe. Elsewhere, a final `\` can continue a command onto the next line; it must be the last character, with no trailing spaces.
 
 You can also edit the file with Notepad++ or BBEdit if you are comfortable opening the file in your clone. Save as plain text with Unix (LF) line endings. `nano` provides a consistent starting point on both operating systems.
 
 </details>
 
-<details><summary>Accept input and output paths as arguments</summary>
+---
 
-The first version always reads and writes the same paths. Arguments let us supply those paths when we run it.
+<details><summary>Accept input and output paths as script arguments</summary>
+
+It is easy to write a script that accepts arguments when run from the command line.  Recall that an argument is a word or number that is passed to a command.  The first argument after a script or command is saved into a variable called `$1` automatically. A second argument is saved to `$2`, so on and so forth.  
+
+Let us make our script accept a path to the input file and a path to the output file rather than [hard coding](https://en.wikipedia.org/wiki/Hard_coding) the input and output files. We do this by replacing the input `../data/Pacifici2013_data.csv` and output file paths `BodyMass.csv` with `$1` and `$2`, respectively.
 
 Open the script again:
 
@@ -781,10 +797,12 @@ cut -d ';' -f 2-6 "$1" |
     tr ';' '\t' > "$2"
 ```
 
+&#x1F4A1; TIP! _ctrl+k will delete a line in `nano`_
+
 Save and exit, then run:
 
 ```bash
-bash ExtractBodyM.sh ../data/Pacifici2013_data.csv BodyMass.tsv
+bash ExtractBodyM.sh ../data/Pacifici2013_data.csv BodyMass2.tsv
 ```
 
 | Part | Meaning |
@@ -796,25 +814,30 @@ bash ExtractBodyM.sh ../data/Pacifici2013_data.csv BodyMass.tsv
 
 The double quotes in `"$1"` and `"$2"` keep each supplied path together, including any spaces. This introductory script assumes two valid paths and a table with the expected columns. It does not check them for you yet.
 
-### Check your understanding
+---
+
+### Compare the script outputs
 
 ```bash
-bash ExtractBodyM.sh ../data/Pacifici2013_data.csv BodyMass_check.tsv
-cmp BodyMass.tsv BodyMass_check.tsv
+cmp BodyMass.tsv BodyMass2.tsv
 ```
 
 `cmp` compares the files. No output means their contents match. An error message about a missing file means the comparison could not run.
 
 The script path and its input/output paths are relative to the terminal's **current working directory**, not automatically relative to where the script is stored.
 
+---
+
 ### Make the script executable
 
 ```bash
-chmod u+x ExtractBodyM.sh
+chmod 770 ExtractBodyM.sh
 ./ExtractBodyM.sh ../data/Pacifici2013_data.csv BodyMass.tsv
 ```
 
 `./` tells the shell to run the script in the current directory. You can still run it with `bash ExtractBodyM.sh ...` without adding execute permission.
+
+---
 
 </details>
 
