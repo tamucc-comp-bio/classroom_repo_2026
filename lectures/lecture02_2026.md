@@ -960,7 +960,7 @@ Keep generated files in the sandbox so that input globs such as `../data/miRNA/*
 The original lecture used `grep -A 1` to extract a header and the following sequence line. This works only for FASTA files with one sequence line per record, as in these supplied files.
 
 ```bash
-pwd = ~/lecture-2/CSB/unix/sandbox
+# pwd = ~/lecture-2/CSB/unix/sandbox
 
 for mirna in miR-208a miR-564 miR-3170
 do
