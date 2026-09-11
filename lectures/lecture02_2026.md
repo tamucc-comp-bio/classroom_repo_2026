@@ -468,7 +468,7 @@ $ ls –l
 
 </details>
 
-<details><summary>Reference: administrator commands (`sudo`)</summary>
+<details><summary>Administrator commands (`sudo`)</summary>
 
 `sudo` runs a command with elevated privileges, often for system administration such as installing software. If a command fails, check the path and error message before deciding that administrator privileges are needed.
 
@@ -518,6 +518,187 @@ $ sudo chown -R $USER test_dir/
 ---
 ---
 
+
+## Concise Review of Material Covered Up Through Now
+
+<details><summary>Commands have options and accept arguments to modify functionality </summary>
+<p>
+
+<details><summary>Commands have options and accept arguments to modify functionality </summary>
+<p>
+
+#### [command] [options] [arguments]
+
+* `ls -ltrh CSB`
+
+#### a command is a simple app 
+
+* `ls`
+
+#### an option is a command setting, like a check box
+
+* `-a` single letter options are immediately preceded by `-`,  `- a` will not work
+
+  * shortcut for many single letter options: `ls -l -t -r -h` is the same as `ls -ltrh`
+
+* `--all` there are typically word versions of each option and they are preceded by `--`
+
+  * there are no shortcuts for word options, i.e. `ls -ltrh --all` or ` ls --all -ltrh` or `ls -ltrha`
+
+#### an argument is a value or string that is provided to the command
+
+* ex. a path, dir name, or file name
+  
+  * `ls data` will return the file and contents of directory named *data* if it exists in present dir
+
+</p>
+</details>
+
+---
+
+<details><summary>Commands for navigating and manipulating dirs & files </summary>
+<p>
+
+#### `cd`    change directories
+#### `pwd`   where am I?
+#### `ls`    show contents of `pwd`
+#### `cp`    copy files and directories from one location to another, could also rename copied file
+#### `mv`    move files and directories from one location to another, rename file or directories
+#### `rm`    delete file or dir, be careful, there is no undo
+#### `mkdir` make new directory, will not overwrite existing dir
+#### `less`  view a file without opening all of it, good for large files
+#### `nano`  word processor, edit text files
+#### `chmod` change file and dir permissions
+
+</p>
+</details>
+
+---
+
+<details><summary>Use `man`, `-h`, `--help`, or web search to get help </summary>
+<p>
+
+#### `man` [command]    show manual for command
+  
+#### [command]` -h`     if man does not work, this could show manual for command
+  
+#### [command]` --help` another way to display manual in some cases
+  
+#### [command]          another way to display manual in some cases
+  
+#### use web browser to search on *bash command* 
+  
+
+</p>
+</details>
+
+---
+
+<details><summary>The address of a file or dir is a *path*: `/home/username`</summary>
+<p>
+
+#### Absolute paths specify the same address regardless of the present working dir
+
+  * `/`     root dir, top dir in directory tree
+  
+  * `~`     home dir
+
+#### Relative paths specify different addresses depending upon the present working dir
+
+  * `-`     last directory your were in before the `pwd`
+  
+  * `../`   parent directory, one directory up the tree from `pwd`
+  
+  * `../../` 2 directories up the tree from `pwd`
+  
+  * `./`    present working directory
+
+</p>
+</details>
+
+---
+
+<details><summary>Many bash commands are important for manipulating biological data</summary>
+<p>
+
+#### `echo`  prints text or convertes text into a text stream
+
+#### `head`  returns only first few lines of a file, or remove last lines (rows)
+
+#### `tail`  returns only last few lines of a file, or remove first lines (rows)
+
+#### `cut`   returns specified columns
+
+#### `cat`   combines files together by line (row)
+
+#### `uniq`  removes duplicates
+
+#### `sort`  changes the order of rows by column
+
+#### `grep`  returns lines (rows) that match a pattern
+
+#### `tr`    replaces one character with another, usually column delimiters
+
+#### `wc`    count words, characters, lines, etc
+
+</p>
+</details>
+
+---
+
+<details><summary>Unix commands are designed to pipe `|` and redirect `>` text streams to construct pipelines that link commands and create new files</summary>
+<p>
+
+#### [command] [options] [arguments] | [command] [options] [arguments] > [output file]
+
+#### `|`     takes standard output (*stdout*) from one command and pipes it to another command as *stdin*
+
+#### `>`     redirects *stdout* into a file of your naming, will overwrite existing file
+
+#### `>>`    redirects *stdout* into a file of your naming, will append existing file
+
+</p>
+</details>
+
+---
+
+<details><summary>Glob patterns employ wildcards and common naming to specify several files with one word or path</summary>
+<p>
+
+#### `*` can be any character
+
+* `ls *.txt` will list all files ending in `.txt` 
+
+#### `[AB]` means either character `A` or character `B` 
+
+* `ls [bm]oat.txt` will list files named either `boat.txt` or `moat.txt`
+
+</p>
+</details>
+
+---
+
+<details><summary>The escape character `\ ` changes the meaning of the character that follows, including end of lines</summary>
+<p>
+
+#### at the end of a line, `\ ` means do not end line and continue on next line
+
+#### `\t`   is a tab, but not all commands recognize this
+
+#### `\n`   is a line feed (*LF*), the unix end of line character (usually invisible)
+
+#### `\r`   is a carriage return (*CR*), in windows every line concludes with CRLF, and causes compatibility issues with unix/linux/mac 
+
+#### there are MANY more uses of `\ `, such as specifying a file with a space in the name: `my\ files`
+
+</p>
+</details>
+
+</p>
+</details>
+
+---
+---
 
 ## Computer Programming with `bash` (CSB 1.7–1.9)
 
