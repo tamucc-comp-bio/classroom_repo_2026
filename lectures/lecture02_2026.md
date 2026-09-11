@@ -23,11 +23,38 @@ By the end of this lecture, you should be able to:
 
 ## Computer Preparation
 
-<details><summary>Instructions</summary>
+<details><summary>Instructions to Setup Computer for Comp Bio</summary>
 
 Complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md). Use Ubuntu on Windows or Terminal on macOS. If your Mac opens a `zsh` shell, enter `bash` before working through the examples.
 
 Keep this page open beside your terminal. Command blocks omit the terminal's `$` and `>` prompts so you can copy the commands directly. A line beginning with `#` is a comment; Bash ignores it.
+
+</details>
+
+
+<details><summary>Set Up Your [Lecture 2 Repository]()</summary>
+
+Accept **Lecture 2** using the Classroom 50 link. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.  Clone the `lecture-2` repository to your local computer. 
+
+| Location in `~/lecture-2` | Purpose |
+| --- | --- |
+| `README.md` | Getting started and link to this lecture |
+| `CSB/unix/data/` | Supplied biological data and source descriptions |
+| `CSB/unix/sandbox/` | Your practice files, scripts, results, and notes |
+
+Enter the sandbox:
+
+```bash
+cd ~/lecture-2/CSB/unix/sandbox
+pwd
+ls ../data
+```
+
+Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` means go up to `unix`, then into `data`.
+
+> [!IMPORTANT]
+> Keep the supplied files in `data` unchanged. Save your work in `sandbox`. All examples below use this Lecture 2 repository, including the Assignment 1 review.
+
 
 </details>
 
@@ -165,33 +192,7 @@ The response summaries below are retained from the previous version of this lect
 
 ---
 
-## Set Up Your [Lecture 2 Repository]()
 
-<details><summary>Instructions</summary>
-
-Accept **Lecture 2** using the Classroom 50 link. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.  Clone the `lecture-2` repository to your local computer. 
-
-| Location in `~/lecture-2` | Purpose |
-| --- | --- |
-| `README.md` | Getting started and link to this lecture |
-| `CSB/unix/data/` | Supplied biological data and source descriptions |
-| `CSB/unix/sandbox/` | Your practice files, scripts, results, and notes |
-
-Enter the sandbox:
-
-```bash
-cd ~/lecture-2/CSB/unix/sandbox
-pwd
-ls ../data
-```
-
-Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` means go up to `unix`, then into `data`.
-
-> [!IMPORTANT]
-> Keep the supplied files in `data` unchanged. Save your work in `sandbox`. All examples below use this Lecture 2 repository, including the Assignment 1 review.
-
-
-</details>
 
 ---
 
