@@ -29,6 +29,30 @@ Keep this page open beside your terminal. Command blocks omit the terminal's `$`
 
 </details>
 
+<details><summary>Set Up the CSB Repository in your Home Dir</summary>
+
+We did this is lecture 0. This will be used for the File Path Scavenger Hunt today in class. Confirm that you have it by running the following command:
+
+```bash
+ls ~/CSB
+```
+
+You should see:
+
+```bash
+LICENSE    data_wrangling  good_code  python  regex       sql
+README.md  git             latex      r       scientific  unix
+```
+
+If you don't have the CSB dir, then clone it to your home dir.
+
+```bash
+cd ~
+git clone git@github.com:tamucc-comp-bio/CSB.git
+```
+
+</details>
+
 
 <details><summary>Set Up Your Lecture 2 Repository</summary>
 
@@ -186,8 +210,6 @@ The response summaries below are retained from the previous version of this lect
  </details>
 
 </details>
-
-
 
 
 ---
