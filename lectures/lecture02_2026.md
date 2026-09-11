@@ -87,97 +87,8 @@ Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` me
 
 ---
 
-## Review Assignment 1
+## Review [Assignment_1](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-1/accept)
 
-<details><summary>Pipes, filters, and finding things</summary>
-
-Start here whenever you need to reset your working directory:
-
-```bash
-cd ~/lecture-2/CSB/unix/sandbox
-```
-
-### Redirection and pipes
-
-Predict what each command will do before running it:
-
-```bash
-echo "My first line" > test.txt
-echo "My second line" >> test.txt
-cat test.txt
-wc -l < test.txt
-```
-
-| Operator | Meaning |
-| --- | --- |
-| `>` | Write output to a file, replacing its contents if it exists |
-| `>>` | Append output to a file |
-| `<` | Read a file as a command's input |
-| `\|` | Pass one command's output into the next command |
-
-Never redirect output back into the input file: Bash opens and empties the output file before the command reads it.
-
-![Commands connected by a pipe](Week01_files/pipeline.png)
-
-How many plant–pollinator network files are supplied?
-
-```bash
-find ../data/Saavedra2013 -type f -name '*.txt' | wc -l
-```
-
-Expected result: **59**. `find` selects files; `wc -l` counts the resulting lines. These supplied filenames do not contain newline characters.
-
-### Inspect a table before processing it
-
-```bash
-head -n 3 ../data/Pacifici2013_data.csv
-head -n 1 ../data/Pacifici2013_data.csv | tr ';' '\n'
-```
-
-Despite its `.csv` extension, this file separates columns with semicolons. Spaces inside a species name are part of the name, not column separators.
-
-* `cut -d ';'` specifies the input delimiter.
-* `-f 2` selects the second field (column), **Order**.
-* `tail -n +2` starts at line 2, omitting the header.
-* `uniq` groups adjacent identical lines; sort first to bring matching values together.
-
-Build the pipeline one step at a time:
-
-```bash
-cut -d ';' -f 2 ../data/Pacifici2013_data.csv | head
-cut -d ';' -f 2 ../data/Pacifici2013_data.csv | tail -n +2 | head
-cut -d ';' -f 2 ../data/Pacifici2013_data.csv | tail -n +2 | sort | uniq -c
-cut -d ';' -f 2 ../data/Pacifici2013_data.csv | tail -n +2 | sort | uniq -c | sort -nr | head -n 1
-```
-
-Which order has the most records? Explain what the final `sort -nr` adds. These are counts of records in this dataset, not estimates of animal abundance.
-
-### `grep` versus `find`
-
-```bash
-# Search inside a file.
-grep -n 'Gorilla' ../data/Pacifici2013_data.csv
-
-# Find a file by its name.
-find ../data -type f -name 'n30.txt'
-```
-
-Put the filename pattern in quotes so `find` receives it unchanged.
-
-</details>
-
-<details><summary>Mind Expander and exercise review</summary>
-
-Bring up the questions that were most challenging in Assignment 1:
-
-* [Mind Expander 01.03](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUOThBNjZNVzlGQUtJUzhYREZVSE5UVVJMNS4u)
-* [Exercise 1.10.1: Next Generation Sequencing Data](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMTVENFg0UjhFTzc3Wkc0NExRTjdLSjdGNi4u)
-
-Open your Assignment 1 answers for this discussion. Any additional Marra data commands for that exercise belong in your Assignment 1 repository.
-
-Additional reference: [Software Carpentry: Pipes and Filters](https://swcarpentry.github.io/shell-novice/04-pipefilter.html) and [Finding Things](https://swcarpentry.github.io/shell-novice/07-find.html).
-
-</details>
 
 <details><summary>Discuss the reading: Wilson et al. (2017)</summary>
 
@@ -295,6 +206,8 @@ The response summaries below are retained from the previous version of this lect
  </details>
 
 </details>
+
+
 
 ---
 
