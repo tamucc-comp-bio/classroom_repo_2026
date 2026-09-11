@@ -23,9 +23,13 @@ By the end of this lecture, you should be able to:
 
 ## Computer Preparation
 
+<details><summary>Instructions</summary>
+
 Complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md). Use Ubuntu on Windows or Terminal on macOS. If your Mac opens a `zsh` shell, enter `bash` before working through the examples.
 
 Keep this page open beside your terminal. Command blocks omit the terminal's `$` and `>` prompts so you can copy the commands directly. A line beginning with `#` is a comment; Bash ignores it.
+
+</details>
 
 ---
 
@@ -161,36 +165,11 @@ The response summaries below are retained from the previous version of this lect
 
 ---
 
-## Set Up Your Lecture 2 Repository
+## Set Up Your [Lecture 2 Repository]()
 
-Accept **Lecture 2** using the Classroom 50 link provided by your instructor. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.
+<details><summary>Instructions</summary>
 
-<!-- Instructor: replace the preceding sentence with the verified Lecture 2 acceptance link after creating the activity. Starter files and setup notes are in ../resources/classroom50/lecture-2-setup.md. -->
-
-1. Open **your Lecture 2 repository** on GitHub.
-2. Click the green **Code** button, select **SSH**, and copy the address.
-3. Go to your home directory:
-
-   ```bash
-   cd ~
-   ```
-
-4. Replace `YOUR-COPIED-SSH-ADDRESS` below with your address and clone into a directory named `lecture-2`:
-
-   ```text
-   git clone YOUR-COPIED-SSH-ADDRESS lecture-2
-   ```
-
-5. Enter your clone and inspect it:
-
-   ```bash
-   cd ~/lecture-2
-   pwd
-   ls
-   git status
-   ```
-
-If you already cloned Lecture 2, enter that directory instead of cloning it again. Your personal repositories are separate projects; use the Lecture 2 clone for today's work.
+Accept **Lecture 2** using the Classroom 50 link. Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.  Clone the `lecture-2` repository to your local computer. 
 
 | Location in `~/lecture-2` | Purpose |
 | --- | --- |
@@ -211,11 +190,11 @@ Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` me
 > [!IMPORTANT]
 > Keep the supplied files in `data` unchanged. Save your work in `sandbox`. All examples below use this Lecture 2 repository, including the Assignment 1 review.
 
+
+</details>
+
 ---
 
-
-
----
 
 
 ## Additional Important `bash` Commands (CSB 1.6)
