@@ -246,7 +246,7 @@ In order, these commands return `bbbbbbb`, `000006789`, `ACTGGCAATT`, `112233dde
 * `-s` squeezes repeated instances of the specified characters into one.
 * Quote character classes such as `'[:lower:]'` so the shell passes them to `tr`.
 
-For example, view the Pacifici data with tabs between columns:
+For example, view the Pacifici data with tabs between columns (if you have not yet, then please clone your [Lecture 2 Repo]() to your computer:
 
 ```bash
 cd ~/lecture-2/CSB/unix/sandbox
@@ -255,12 +255,29 @@ tr ';' '\t' < ../data/Pacifici2013_data.csv | less -S
 
 Press `q` to exit `less`. Here, `tr` interprets `\t` as a tab. Escape sequences are command-dependent; not every command interprets `\t` the same way.
 
+&#x1F4A1; TIP! _`tr` does not accept a file as an argument, always use pipe `|` or redirect a file into `tr` (`tr " " "," < file.txt`)_
+
 `tr` changes individual characters, not whole words. These examples work for this simple delimited dataset; `tr` and `cut` do not understand quoted CSV fields containing delimiters or embedded newlines.
 
 ---
 
 </details>
 
+<details><summary>Multiple commands in one line</summary>
+
+Use `;` to separate multiple independent commands on 1 line.
+
+`;` is equivalent to a period in an english sentence.
+
+```bash
+# move to sandbox and list files
+cd ~/lecture-2/CSB/unix/sandbox; ls
+```
+
+---
+
+
+</details>
 
 
 <details><summary>Build a body-mass table</summary>
