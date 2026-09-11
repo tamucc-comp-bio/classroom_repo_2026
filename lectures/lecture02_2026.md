@@ -433,6 +433,10 @@ The permission letters are `r` (read), `w` (write), and `x` (execute). They appl
 
 ![Reading file permissions](Week01_files/ls-ltrh_3.PNG)
 
+---
+
+</details>
+
 <details><summary>Reference: numeric permissions and administrator commands</summary>
 
 Numeric permissions add read = 4, write = 2, and execute = 1 for each of the three categories. For example, `chmod 754 script.sh` gives the owner read/write/execute, the group read/execute, and everyone else read access.
