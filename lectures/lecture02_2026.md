@@ -7,8 +7,6 @@
 > The [2025 lecture recording](https://tamucc.zoom.us/rec/play/pfgVVA9Bsk-di4MUxhHCxwL9kKJFOqZNeqw9ZgNV59MMlaxYxJaARqcDpYSbh0rZRK5iv1RJB8dUe29l.0g9hG3R7k_b1Hqyz) is available as a reference. Passcode: !N6*?2HL
 > Its paths and some commands differ from this year's instructions.
 
-The [Lecture 02 slides](Week02_files/Lecture02_WelcomeToTheMatrix.pdf) and CSB Chapter 1 provide additional background. Follow the commands on this page for the current repository layout.
-
 In Lecture 1, you practiced navigating directories and manipulating files. In Assignment 1, you connected commands to process biological data. Today we will turn those commands into documented scripts that we can run again and apply to many files.
 
 By the end of this lecture, you should be able to:
@@ -57,6 +55,8 @@ Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` me
 
 
 </details>
+
+---
 
 ---
 
@@ -230,7 +230,11 @@ Press `q` to exit `less`. Here, `tr` interprets `\t` as a tab. Escape sequences 
 
 `tr` changes individual characters, not whole words. These examples work for this simple delimited dataset; `tr` and `cut` do not understand quoted CSV fields containing delimiters or embedded newlines.
 
+---
+
 </details>
+
+
 
 <details><summary>Build a body-mass table</summary>
 
