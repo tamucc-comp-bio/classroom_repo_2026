@@ -838,6 +838,7 @@ chmod 770 ExtractBodyM.sh
 `./` tells the shell to run the script in the current directory. You can still run it with `bash ExtractBodyM.sh ...` without adding execute permission.
 
 ---
+---
 
 </details>
 
@@ -875,7 +876,7 @@ Why is counting headers more reliable than dividing a FASTA file's line count by
 ### Start with two files
 
 ```bash
-cd ~/lecture-2/CSB/unix/sandbox
+pwd = ~/lecture-2/CSB/unix/sandbox
 
 for file in ../data/miRNA/ggo_miR.fasta ../data/miRNA/hsa_miR.fasta
 do
@@ -950,6 +951,8 @@ Why would using `>>` for the header be a problem when running this script again?
 
 Keep generated files in the sandbox so that input globs such as `../data/miRNA/*.fasta` continue to select only the supplied data.
 
+---
+
 </details>
 
 <details><summary>Extension: extract selected microRNA records</summary>
@@ -957,7 +960,7 @@ Keep generated files in the sandbox so that input globs such as `../data/miRNA/*
 The original lecture used `grep -A 1` to extract a header and the following sequence line. This works only for FASTA files with one sequence line per record, as in these supplied files.
 
 ```bash
-cd ~/lecture-2/CSB/unix/sandbox
+pwd = ~/lecture-2/CSB/unix/sandbox
 
 for mirna in miR-208a miR-564 miR-3170
 do
