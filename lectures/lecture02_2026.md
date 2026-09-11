@@ -54,7 +54,7 @@ git clone git@github.com:tamucc-comp-bio/CSB.git
 </details>
 
 
-<details><summary>Set Up Your Lecture 2 Repository</summary>
+<details><summary><strong>Set Up Your Lecture 2 Repository</strong></summary>
 
 Accept **Lecture 2** using the [Classroom 50, Lecture 2 link](). Classroom 50 creates your personal GitHub repository, just as it did for Lecture 1 and Assignment 1.  Clone the `lecture-2` repository to your local computer. 
 
