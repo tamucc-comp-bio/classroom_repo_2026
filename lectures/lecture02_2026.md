@@ -81,7 +81,6 @@ Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` me
 </details>
 
 ---
-
 ---
 
 ## [Week 02 Quiz](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMjIySEJCNFlSMVJRSUo0SU5HSFNKMVRHWC4u)
@@ -89,7 +88,7 @@ Your path should end with `/lecture-2/CSB/unix/sandbox`. From here, `../data` me
 Complete the quiz while everyone gets ready.
 
 ---
-
+---
 
 ## Review [Assignment_1](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-1/accept)
 
