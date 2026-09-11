@@ -290,7 +290,7 @@ We will incrementally build a pipeline that creates a table containing the taxon
 head -n 1 ../data/Pacifici2013_data.csv | tr ';' '\n'
 ```
 
-&#x1F4A1; _in step 1, we use `tr` to replace semicolons `;` with "[line feeds](https://en.wikipedia.org/wiki/Newline)" `\n` to view one column header per line._
+&#x1F4A1; _we used `tr` to replace semicolons `;` with "[line feeds](https://en.wikipedia.org/wiki/Newline)" `\n` to view one column header per line._
 
 &#x1F4A1; _`\` is the "[escape character](https://en.wikipedia.org/wiki/Escape_character)".  The character following the `\` has an alternate meaning._
 
@@ -343,7 +343,7 @@ We name it `BodyMass.tsv` because it contains tabs. Some older slides and the bo
 <details><summary>Search the body-mass table with grep</summary>
 
 ```bash
-cd ~/lecture-2/CSB/unix/sandbox
+# pwd = ~/lecture-2/CSB/unix/sandbox
 
 # Find wombat records, then count matching rows.
 grep 'Vombatidae' BodyMass.tsv
@@ -370,21 +370,17 @@ grep -Ew 'Gorilla|Pan' BodyMass.tsv
 
 In `grep -Ew 'Gorilla|Pan'`, the quoted `|` means **or** in the search pattern. A `|` outside quotes connects shell commands into a pipeline.
 
+&#x1F4A1; TIP! _the `grep -c` option is very handy for counting and can negate the need for `wc -l`_
+
 ---
 
 </details>
 
-<details><summary>Use filename patterns and find</summary>
+<details><summary>Use filename patterns (Globs) and `find`</summary>
 
-We will use the supplied microRNA FASTA files later in a loop. View the matching filenames:
+[Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are used to specify groups of directories and files based on common naming.
 
-```bash
-cd ~/lecture-2/CSB/unix/sandbox
-ls ../data/miRNA/*.fasta
-ls ../data/miRNA/pp*.fasta
-ls ../data/miRNA/[ghm]*.fasta
-wc -l ../data/miRNA/*.fasta
-```
+[Wildcards](https://en.wikipedia.org/wiki/Wildcard_character) are special characters that represent multiple characters simultaneously
 
 | Pattern | Meaning |
 | --- | --- |
@@ -393,6 +389,18 @@ wc -l ../data/miRNA/*.fasta
 | `[ghm]` | One character: g, h, or m |
 
 These are shell filename patterns, also called **globs**. They are different from the regular expressions used by `grep`.
+
+We will use the supplied microRNA FASTA files later in a loop. View the matching filenames:
+
+```bash
+# pwd = ~/lecture-2/CSB/unix/sandbox
+ls ../data/miRNA/*.fasta
+ls ../data/miRNA/pp*.fasta
+ls ../data/miRNA/[ghm]*.fasta
+wc -l ../data/miRNA/*.fasta
+```
+
+
 
 Search below the data directory:
 
@@ -404,7 +412,7 @@ find ../data -type f -name '*.txt' | wc -l
 find ../data -type d
 ```
 
-`-type f` restricts results to files; `-type d` restricts results to directories. Without a type restriction, `find` can return both.
+&#x1F4A1; TIP! `-type f` restricts results to files`-type d` restricts results to directories. Without a type restriction, `find` can return both.
 
 ---
 
@@ -413,7 +421,7 @@ find ../data -type d
 <details><summary>Permissions: read, write, and execute</summary>
 
 ```bash
-cd ~/lecture-2/CSB/unix/sandbox
+# pwd = ~/lecture-2/CSB/unix/sandbox
 touch permissions.txt
 ls -l permissions.txt
 chmod u-w permissions.txt
@@ -429,7 +437,75 @@ The permission letters are `r` (read), `w` (write), and `x` (execute). They appl
 
 Numeric permissions add read = 4, write = 2, and execute = 1 for each of the three categories. For example, `chmod 754 script.sh` gives the owner read/write/execute, the group read/execute, and everyone else read access.
 
+  * Simply add numbers together for different combos of permissions
+
+    * if the user has all permissions, 4 + 2 + 1 = 7
+  
+    * if the group has read permissions, 4
+  
+    * if the global has no permissions, 0
+
+      * the full set of permissions are then: 740
+
+```bash
+# create a file in the unix sandbox
+$ touch permissions.txt
+$ ls –l
+
+# change permissions so that user can r,w,x; group can r,x; and global can r
+$ chmod 754 permissions.txt
+$ ls –l
+
+# give everybody full permissions 
+$ chmod 777 permissions.txt
+$ ls –l
+
+# give yourself full permissions, but only let others read your files 
+$ chmod 744 permissions.txt
+$ ls –l
+```
+
+---
+
+</details>
+
+<details><summary>Reference: administrator commands (`sudo`)</summary>
+
+`sudo` runs a command with elevated privileges, often for system administration such as installing software. If a command fails, check the path and error message before deciding that administrator privileges are needed.
+
+&#x26A0; CAUTION! _Make sure you are certain that you want to execute the command before using `sudo`, especially in combination with `rm`, `cp`, `mv`._
+
+---
+
+</details>
+
+
+<details><summary>Change Owners With `chown`</summary>
+
 `sudo` runs a command with elevated privileges, often for system administration such as installing software. `chown` changes ownership. Neither is needed for today's exercises. If a command fails, check the path and error message before deciding that administrator privileges are needed.
+
+&#x26A0; CAUTION! _Make sure you are certain that you want to execute the command before using `sudo`, especially in combination with `rm`, `cp`, `mv`._
+
+The user who creates a file or directory owns that file or directory, but sometimes you will want to transfer ownership (usually to yourself).
+
+```bash
+# create a directory with a subdirectory
+$ mkdir -p test_dir/test_subdir
+$ ls -l 
+$ ls -l test_dir
+
+# list valid users
+$ cut –d: -f1 /etc/passwd
+
+# change owner of dir, -R includes subdirs
+$ chown -R ValidUserName test_dir/
+$ sudo chown -R ValidUserName test_dir/
+$ ls –l
+$ ls –l test_dir
+
+# change owner back to you
+$ sudo chown -R $USER test_dir/
+```
 
 ---
 
