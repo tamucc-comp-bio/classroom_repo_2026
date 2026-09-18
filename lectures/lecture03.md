@@ -14,6 +14,16 @@
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
+Make sure the [Lecture 2 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-2v2/accept) is cloned to your computer  and named `lecture-3`.  We will reuse the same repo from lecture 2, but name it `lecture-3`.  
+
+```
+cd ~
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-3
+ls lecture-3/CSB
+```
+
+You should see both the unix and python dirs in the CSB dir.
+
 ---
 
 ## [I. Quiz 3](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUNEpSWTVNREU0N1IxUDNLU0tPMVYyUkpSRC4u)
@@ -171,13 +181,17 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 <details><summary>Click to expand</summary>
 <p>
 
-Let us all move to our `~/CSB/unix/sandbox` and copy the Marra and Dalziel data to the `sandbox` if it is not already there.
+Let us all move to our `lecture-3/CSB/unix/sandbox` and copy the Marra and Dalziel data to the `sandbox` if it is not already there.
   ```bash
-  $ cd ~/CSB/unix/sandbox
-  $ cp ../data/Marra2014_data.fasta .
-  $ cp ../../python/data/Dalziel2016_data.csv .
-  $ less -S Marra2014_data.fasta
+  cd ~/lecture-3/CSB/unix/sandbox
+  cp ../data/Marra2014_data.fasta .
+  cp ../../python/data/Dalziel2016_data.csv .
+  less -S Marra2014_data.fasta
+  ```
   
+  you should see something like this:
+  
+  ```
   >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh
   ATCCTAGCTACTCTGGAGACTGAGGATTGAAGTTCAAAGTCAGCTCAAGCAAGAGATTTG
   TTTACAATTAACCCACAAAAGGCTGTTACTGAAGGTGTGGCTTAAGTGTCAGAGCAACAG
@@ -199,7 +213,8 @@ Let us all move to our `~/CSB/unix/sandbox` and copy the Marra and Dalziel data 
 ``` bash
 # for those with Macs, let me know if this returns an error
 touch deInterleaveFASTA.sh
-echo '#!/bin/bash' > deInterleaveFASTA.sh && echo 'awk '"'"'/^>/ {if (seq) print seq; print; seq=""} /^[^>]/ {seq=seq $0} END {if (seq) print seq}'"'"' "$1"' >> deInterleaveFASTA.sh
+echo '#!/bin/bash' > deInterleaveFASTA.sh
+echo 'awk '"'"'/^>/ {if (seq) print seq; print; seq=""} /^[^>]/ {seq=seq $0} END {if (seq) print seq}'"'"' "$1"' >> deInterleaveFASTA.sh
 ```
 
 Take a look at the script we just created
@@ -210,7 +225,7 @@ cat deInterleaveFASTA.sh
 
 You should see the following:
 
-```
+```bash
 #!/bin/bash
 awk '/^>/ {if (seq) print seq; print; seq=""} /^[^>]/ {seq=seq $0} END {if (seq) print seq}' "$1"
 ```
@@ -228,6 +243,163 @@ The sequences should each be on 1 line, rather than several.
 >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh
 ATCCTAGCTACTCTGGAGACTGAGGATTGAAGTTCAAAGTCAGCTCAAGCAAGAGATTTGTTTACAATTAACCCACAAAAGGCTGTTACTGAAGGTGTGGCTTAAGTGTCAGAGCAACAGCTATGAGTGGAGGAATTTTCTATTACAATATAATTTCATCTCTGGTAAATTGACCAATTAACTGGAACTTTTTCCAACTGAAATAAATGGTAAACTTTTTATCCACCATTCTGCCATCTGACTCACAAAGACCCATGGGAATGGGTGATGAAATCCAACATGCTTCTTTGTAGCAAAAATAAATAAAATCCCCAGAAGGGTGAGGTAAATGGAAAACTCCAAACTCGCCCCTCAGGTGGGTGTAATTTACCCAAGTCTGAGAGGAGGCAGAGTTTTTCCCAATGGACTTTGGTTAAGTGAGATATGCTGGTCTGTAGAAGGAGGGAGTTCTAGGAAAACAGACACTTAAGTAGGGCCGAACTAAAAATTGTATCAGTCAGATCTTCATGTGAAGTCCTGTGTGCCCA
 ```
+
+<details><summary>What's awk? </summary>
+<p>
+
+AWK is a small programming language designed for processing text. The awk command reads input, normally one line at a time, and applies rules of the form:
+
+pattern { action }
+
+For each input line, AWK checks each rule in order. If a pattern matches, its action runs. More than one rule can run for the same line if their patterns match.
+
+AWK normally divides lines into whitespace-separated fields:
+
+AWK expression	Meaning
+$0	The entire current line
+$1	The first field
+$2	The second field
+
+Notice that Bash’s "$1" and AWK’s $1 mean different things. Here, Bash’s "$1" supplies the filename, while AWK uses $0 to access each complete line from that file.
+
+</p>
+</details>
+
+<details><summary>Interpreting the awk script</summary>
+<p>
+
+With line breaks and indentation, the program is:
+
+```
+/^>/ {
+    if (seq)
+        print seq
+    print
+    seq = ""
+}
+
+/^[^>]/ {
+    seq = seq $0
+}
+
+END {
+    if (seq)
+        print seq
+}
+```
+
+It has three rules.
+
+Rule 1: When a header line is encountered
+
+```
+/^>/ {
+    if (seq)
+        print seq
+    print
+    seq = ""
+}
+```
+
+`/^>/` is a regular expression:
+
+`/ ... /` delimits the regular expression.
+`^` means the beginning of the line.
+`>` is a literal greater-than character.
+
+Thus, this rule matches a line beginning with >, the FASTA header marker.
+
+Its actions are:
+
+```
+if (seq)
+    print seq
+```
+
+If seq contains an accumulated DNA or protein sequence, print it. That sequence belongs to the previous header. When AWK encounters the first header, seq is initially empty, so nothing prints here.
+
+print
+
+Print the current line—the new header. A bare print means print $0.
+
+```
+seq = ""
+```
+
+Reset seq to an empty string, ready to accumulate the new sequence.
+
+Rule 2: When a sequence line is encountered
+
+```
+/^[^>]/ {
+    seq = seq $0
+}
+```
+
+The two `^` characters have different meanings:
+
+Expression	Meaning
+Leading `^`	Match at the beginning of the line
+`[^>]`	Match one character that is not `>`
+
+Together, `/^[^>]/` matches any nonempty line whose first character is not `>`. Empty lines match neither of these two rules.
+
+The action:
+
+```
+seq = seq $0
+```
+
+appends the current line to the accumulated sequence.
+
+In AWK, placing expressions next to each other concatenates them. No + operator or separator is needed:
+
+Existing seq:  ATGC
+Current $0:   TTAG
+Updated seq:  ATGCTTAG
+
+AWK removes the input line’s newline before assigning it to $0, so that newline is not included in the accumulated sequence. Other characters, including spaces, remain.
+
+Rule 3: After all input has been read
+
+```
+END {
+    if (seq)
+        print seq
+}
+```
+
+END runs once after AWK finishes reading the input.
+
+Normally, an accumulated sequence prints when the next header appears. The last sequence has no next header, so this rule prints it.
+
+An easier way to create the same script
+
+A quoted here-document avoids the complicated quote construction:
+
+```
+cat > deInterleaveFASTA.sh <<'EOF'
+#!/bin/bash
+awk '
+    /^>/ {
+        if (seq) print seq
+        print
+        seq = ""
+    }
+    /^[^>]/ {
+        seq = seq $0
+    }
+    END {
+        if (seq) print seq
+    }
+' "$1"
+EOF
+```
+
+Everything between the two EOF markers is written into the file. Quoting the opening 'EOF' tells Bash to preserve characters such as $0 and $1 literally, so they are interpreted when the generated script runs.
+
+</p>
+</details>
 
 ---
 
