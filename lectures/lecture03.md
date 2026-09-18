@@ -60,23 +60,23 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 		* `../../` 2 directories up the tree from `pwd`
 		* `./`    present working directory
 
-4. Wildcards can be used to specify several files with one word or path
+4. Globs employ wildcard characters to specify several files with one word or path
 
 	* `*` can be any character
 	* example: `ls *.txt` will list all files ending in `.txt` 
 
-5. There are several commands we have learned that are important for manipulating biological data.
+5. There are several bash commands we have learned that are important for manipulating biological data, and these are summarized in the [Linux Data Wrangling Cheat Sheat](../resources/CheatSheetLinuxDataWrangling.pdf).
 
 	* `echo`  prints text or converts text and the contents of variables into a text stream
 	* `head`  returns only first few lines of a file, or remove last lines (rows)
 	* `tail`  returns only last few lines of a file, or remove first lines (rows)
-	  * `cut`   returns specified columns
-	  * `cat`   combines files together by line (row)
-	  * `uniq`  removes duplicates
-	  * `sort`  changes the order of rows by column
-	  * `grep`  returns lines (rows) that match a pattern
-	  * `tr`    replaces one character with another, usually column delimiters (aka field separators)
-	  * `wc`    count words, characters, lines, etc
+	* `cut`   returns specified columns
+	* `cat`   combines files together by line (row)
+	* `uniq`  removes duplicates
+	* `sort`  changes the order of rows by column
+	* `grep`  returns lines (rows) that match a pattern
+	* `tr`    replaces one character with another, usually column delimiters (aka field separators)
+	* `wc`    count words, characters, lines, etc
 
 6. Unix commands are designed to pipe `|` and redirect `>` text streams to construct pipelines that link commands and create new files
 	  * `|`     takes standard output (*stdout*) from one command and pipes it to another command as *stdin*
