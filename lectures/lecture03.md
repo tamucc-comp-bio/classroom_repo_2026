@@ -28,6 +28,8 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 <details><summary>Click to expand</summary>
 <p>
 
+---
+
 1. There are several commands for navigating and manipulating a computer file directory.  I made a [linux cheat sheet](../resources/CheatSheetLinux_2022-09-02.pdf) for students learning to use linux that you can print out on a single double sided sheet of paper and use as a desk reference. 
 	  * `cd`    change directories
 	  * `pwd`   where am I?
@@ -40,6 +42,8 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 	  * `nano`  word processor, edit text files
 	  * `chmod` change file and dir permissions
 
+---
+
 2. Each command has *options* and accepts *arguments* to modify functionality and which can be viewed in the manual
 	  * `man`   show manual for command
 	  * `_command_ -h` if man does not work, this could show manual for command
@@ -48,6 +52,8 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 	  * use web browser to search on *bash command man*
 	  * example of argument: `ls data` will return the file and contents of directory in pwd that are named *data* if they exist
 	  * example of option:  `ls -ltrh` will return all files in `pwd` with details, in reverse chronological order with human-readable file sizes
+
+---
 
 3. Locations of files and dirs can be specified using absolute or relative *paths* and these *paths* are used by the majority of commands because most commands manipulate files and dirs
 
@@ -60,10 +66,14 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 		* `../../` 2 directories up the tree from `pwd`
 		* `./`    present working directory
 
+---
+
 4. Globs employ wildcard characters to specify several files with one word or path
 
 	* `*` can be any character
 	* example: `ls *.txt` will list all files ending in `.txt` 
+
+---
 
 5. There are several bash commands we have learned that are important for manipulating biological data, and these are summarized in the [Linux Data Wrangling Cheat Sheat](../resources/CheatSheetLinuxDataWrangling.pdf).
 
@@ -78,10 +88,14 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 	* `tr`    replaces one character with another, usually column delimiters (aka field separators)
 	* `wc`    count words, characters, lines, etc
 
+---
+
 6. Unix commands are designed to pipe `|` and redirect `>` text streams to construct pipelines that link commands and create new files
 	  * `|`     takes standard output (*stdout*) from one command and pipes it to another command as *stdin*
 	  * `>`     redirects *stdout* into a file of your naming, will overwrite existing file
 	  * `>>`    redirects *stdout* into a file of your naming, will append existing file
+
+---
 
 7. The escape character `\ ` changes the meaning of the character that follows, including end of lines
 	  * at the end of a line, it means do not end line and continue on next line
@@ -90,10 +104,14 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 	  * `\r`   is a carriage return (*CR*), in windows every line concludes with CRLF, and causes compatibility issues with unix/linux/mac 
 	  * there are MANY more uses of `\ `
 
+---
+
 8. We can assign values to variables
 	  ```bash
 	  VARIABLE=1375
 	  ```
+
+---
 
 9. We have learned how to use unix commands within a line of code to return a value with `$()` 
 
@@ -103,6 +121,8 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 	  FILES=$(ls *)
 	  ```
 
+---
+
 10. Repetative tasks can be automated using `for` loops
 
 	  ```bash
@@ -110,6 +130,8 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 		echo $i
 	  done
 	  ```
+
+---
 
 11. Many lines of commands can be stored in file (script) and executed sequentially
 
@@ -119,6 +141,8 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 
 	  Each "pipe line" is like a sentence in English.  It can stand on its own.  It tells the computer to do something and output the result.  The script will be composed of several pipelines.
 	  
+
+---
 
 12. Values can be passed into a script by listing them as argumnents which are stored sequentially into variables: `$1`, `$2`, `$3`, etc
 	```
