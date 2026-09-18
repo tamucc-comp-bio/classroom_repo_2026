@@ -2,7 +2,7 @@
 
 
 > [!IMPORTANT]
-> [Assignment 2](../assignments/assignment_2.md) is due at the beginning of this lecture
+> [Assignment 2](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2/accept) is due at the beginning of this lecture
 
 > [!NOTE]
 > The [Lecture Stream 2025](https://tamucc.zoom.us/rec/play/aq7l-IbbmYNjOPABMHWggcKG-f_xJifCB_GEPQB-PW5YeJzsCmjrtSrZfhJW7Wca_WR5bdg4L7pun4Dm.ZcxgjLKiglMsTD9_) will be updated following lecture.
@@ -14,17 +14,13 @@
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that your terminal, Git, and the `~/CSB` repository work before continuing.
-
 ---
 
 ## [I. Quiz 3](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUNEpSWTVNREU0N1IxUDNLU0tPMVYyUkpSRC4u)
 
-## II. Go Over Assignment 02
+## II. Go Over [Assignment 02](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2/accept)
 
 * [Mind Expander 01.04](https://forms.office.com/r/uvi6cGMSMJ)
-* [File Path Scavenger Hunt!](https://forms.cloud.microsoft/r/Zq7avbJpqu)
-* [Non-TAMUCC Students: File Path Scavenger Hunt!](https://forms.cloud.microsoft/r/036fdetK5g)
 * [Exercise 1.10.2 Hormone Levels in Baboons](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUQldJQTVHMTlYMFVYTkhZSDBZR1A0Q1E2Ny4u)
 * [Exercise 1.10.3 Plant-Pollinator Networks](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMlpVSUQ0U1hTSFZERDE1WUdZWjRYUlhaWi4u)
 
@@ -55,12 +51,14 @@ Confirm that your terminal, Git, and the `~/CSB` repository work before continui
 
 3. Locations of files and dirs can be specified using absolute or relative *paths* and these *paths* are used by the majority of commands because most commands manipulate files and dirs
 
-	  * `/`     root dir, top dir in directory tree
-	  * `~`     home dir
-	  * `-`     last directory your were in before the `pwd`
-	  * `../`   parent directory, one directory up the tree from `pwd`
-	  * `../../` 2 directories up the tree from `pwd`
-	  * `./`    present working directory
+	  * absolute
+		* `/`     root dir, top dir in directory tree
+		* `~`     home dir
+		* `-`     last directory your were in before the `pwd`
+	  * relative
+		* `../`   parent directory, one directory up the tree from `pwd`
+		* `../../` 2 directories up the tree from `pwd`
+		* `./`    present working directory
 
 4. Wildcards can be used to specify several files with one word or path
 
