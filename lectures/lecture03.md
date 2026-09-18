@@ -262,6 +262,8 @@ $2	The second field
 
 Notice that Bash’s "$1" and AWK’s $1 mean different things. Here, Bash’s "$1" supplies the filename, while AWK uses $0 to access each complete line from that file.
 
+---
+
 </p>
 </details>
 
@@ -411,17 +413,24 @@ Note that we will use the `deInterleaveFASTA.sh` script so that sequences aren't
   
   ```bash
   # we can use the paste command to take a single column of data and make it multi column
-  $ bash deInterleaveFASTA.sh Marra2014_data.fasta | paste - - | less -S
+  bash deInterleaveFASTA.sh Marra2014_data.fasta | paste - - | less -S
+  ```
+  
+  you should see something like this:
+  
+  ```
 
   >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh      ATCCTAGCTACTCTGGAGACTGAGGATTGAAGTTCAAAGTCAGCTCAAGCAAGAGATTTGTTTACAATTAACCCACAAAAGGCTGTTACTGAAGGTGTGGCTTAAGTGTCAGAGCAACAGCTATGAGTGGAGGAATTTTCTATTACAATATAATTTCATCTCTGGTAAATTGACCAATTAACTGGAACTTTTTCCAACTGAAATAAATGGTAAACTTTTTATCCACCATTCTGCCATCTGACTCACAAAGACCCATGGGAATGGGTGATGAAATCCAACATGCTTCTTTGTAGCAAAAATAAATAAAATCCCCAGAAGGGTGAGGTAAATGGAAAACTCCAAACTCGCCCCTCAGGTGGGTGTAATTTACCCAAGTCTGAGAGGAGGCAGAGTTTTTCCCAATGGACTTTGGTTAAGTGAGATATGCTGGTCTGTAGAAGGAGGGAGTTCTAGGAAAACAGACACTTAAGTAGGGCCGAACTAAAAATTGTATCAGTCAGATCTTCATGTGAAGTCCTGTGTGCCCA
   >contig00002  length=551  numreads=8  gene=isogroup00001  status=it_thresh      GAACCATCCTGCGCGGGAAAGATCTAGAAGCTGGCACGTCAAACTGCTGCCGAGTAACGACTGTGAAAATACAGAGCAGAACGTACAGGTGGTAATGCACTGGAAAGGAAGAAACTGATCGTCTCCTGTGACCTCCAGATTCCACTGGCATAAGTACTGTCATCTGTGTGCCACACAGAAAGGCGCTCCGTGGTAAAGTACGATCATCACCAATCTACCTATAAGAGAAACAGACTGGCTCCACAGTGCAAGTATAAGGGAGACTTGGAGAAGGCACTTGAAGGCACTGTTTTAATTAATTCCATCATTTCTTTGGTATTTCTCAGGCTTTGGGATCCTCTGTAAACCTGGCATCCACTGGTGGAAGCTTTATGGGTGTGGGGGAGGCACTGGCATCATCAGAGTGCGACGGTCCTCAGCAGGTTCCCCGGGGTGCCCGGCCCCACCACGTATGTGCACTCCGACTTCTCTGCAAACTTCCCGCAGCAGGACCAGTGGGGACGGCCCGGATGGCCCTTGTGTCCGTGACCGCAGCCCAGGTACCCACCTGg
   ```
   
+  We can also use paste to join files by column, instead of by row (cat)
+  While you would not want to combine these two files, just as a demonstration you can run this command to do just that:  
   ```bash
-  # we can also use paste to join files by column, instead of by row (cat)
-  # while you would not want to combine these two files, you can:
-  $ paste Dalziel2016_data.csv Marra2014_data.fasta | less -S
+  paste Dalziel2016_data.csv Marra2014_data.fasta | less -S
   ```
+  
+  and you should see:
   
   ```bash
   biweek,year,loc,cases,pop       >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh
@@ -464,7 +473,12 @@ Note that we will use the `deInterleaveFASTA.sh` script so that sequences aren't
 
   ```bash
   # find the first T on each line and replace with @
-  $ sed 's/T/@/' Marra2014_data.fasta | head
+  sed 's/T/@/' Marra2014_data.fasta | head
+  ```
+  
+  you should see:
+  
+  ```bash
   >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh
   A@CCTAGCTACTCTGGAGACTGAGGATTGAAGTTCAAAGTCAGCTCAAGCAAGAGATTTG
   @TTACAATTAACCCACAAAAGGCTGTTACTGAAGGTGTGGCTTAAGTGTCAGAGCAACAG
@@ -475,9 +489,17 @@ Note that we will use the `deInterleaveFASTA.sh` script so that sequences aren't
   @GTAATTTACCCAAGTCTGAGAGGAGGCAGAGTTTTTCCCAATGGACTTTGGTTAAGTGA
   GA@ATGCTGGTCTGTAGAAGGAGGGAGTTCTAGGAAAACAGACACTTAAGTAGGGCCGAA
   C@AAAAATTGTATCAGTCAGATCTTCATGTGAAGTCCTGTGTGCCCA
+  ```
   
-  # find the all T and replace with @
-  $ sed 's/T/@/g' Marra2014_data.fasta | head
+  You can find the all `T`characters and replace them with `@`
+  
+  ```bash
+  sed 's/T/@/g' Marra2014_data.fasta | head
+  ```
+  
+  you should see:
+  
+  ```bash
   >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh
   A@CC@AGC@AC@C@GGAGAC@GAGGA@@GAAG@@CAAAG@CAGC@CAAGCAAGAGA@@@G
   @@@ACAA@@AACCCACAAAAGGC@G@@AC@GAAGG@G@GGC@@AAG@G@CAGAGCAACAG
@@ -510,7 +532,12 @@ There are different regex languages (POSIX, PERL, etc) that have slight differen
   
   ```bash
   # return contig names for either isogroup00001 or isogroup00002 in Marra data
-  $ grep 'isogroup0000[12]' Marra2014_data.fasta 
+  grep 'isogroup0000[12]' Marra2014_data.fasta 
+  ```
+  
+  you should see: 
+  
+  ```
   >contig00001  length=527  numreads=2  gene=isogroup00001  status=it_thresh
   >contig00002  length=551  numreads=8  gene=isogroup00001  status=it_thresh
   >contig00003  length=541  numreads=2  gene=isogroup00001  status=it_thresh
@@ -524,7 +551,12 @@ There are different regex languages (POSIX, PERL, etc) that have slight differen
 
   ```bash
   # return lines that begin with A
-  $ grep '^A' Marra2014_data.fasta 
+  grep '^A' Marra2014_data.fasta 
+  ```
+  
+  you should see:
+  
+  ```bash
   ATCCTAGCTACTCTGGAGACTGAGGATTGAAGTTCAAAGTCAGCTCAAGCAAGAGATTTG
   ACTGGAACTTTTTCCAACTGAAATAAATGGTAAACTTTTTATCCACCATTCTGCCATCTG
   ACTCACAAAGACCCATGGGAATGGGTGATGAAATCCAACATGCTTCTTTGTAGCAAAAAT
@@ -569,9 +601,9 @@ In a script, it is a good practice to indent the code between `if`, `else`, and 
 
 ```bash
 if [ 1 == 2 ]; then                # if 1 equals 2 then
-  echo 1 does equal 2               # print "1 does equal 2" to screen
+  echo 1 does equal 2                # print "1 does equal 2" to screen
 else                               # if 1 does not equal 2 then
-  echo 1 does not equal 2          # print "1 does not equal 2" to screen
+  echo 1 does not equal 2            # print "1 does not equal 2" to screen
 fi                                 # end of if statement
 ```
   
@@ -590,13 +622,13 @@ fi
 ---
 
 
-## A function allows you to define a new customized command composed of several existing commands
+## A function allows you to define a new customized command 
 
 A function is a command that you can define and use in the terminal environment or a script. You should make a function when you find yourself repeatedly using the same code over and over. 
 
 Let us build upon the if-then-else logic in the last section to create a function that decides whether the two arguments passed to it are equal.
 
-* The name of the function is `DOES_A_EQUAL_B`
+* The name of the function is `isEQUAL`
 
 * The `()` are there because other languages have the same structure, but they do not do anything
 
@@ -611,7 +643,7 @@ Note that a function treats "arguments" just like a script.  The first argument 
 Also note the indenting to make code readable and signify hierarchy
 
 ```bash
-DOES_A_EQUAL_B(){
+isEQUAL(){
 A=$1
 B=$2
 if [ "$A" != "$B" ]; then
@@ -622,17 +654,18 @@ fi
 }
   ```
 
-After you enter the function, nothing will happen, but it has been stored into memory and can now be used.
+After you enter the function, nothing will happen, but it has been stored into memory and can now be used. Try this line of code to see how the function `isEQUAL` works.
 
 ```bash
-DOES_A_EQUAL_B 1 2
-  ```
+isEQUAL 1 2
+```
 
 ---
 
 </p>
 </details>
 
+---
 
 ## V. Real World Application of Skills Learned: Fisheries-Induced Evolution
 
@@ -648,12 +681,10 @@ The images above are rendered 3d scans, but the data file is in [STL](https://en
 
 Unfortunately, the output of `admesh` is not tidy.  Fortunately for you, I made a tool to tame the `admesh` output, `admesh2tsv.bash`. I'll show you how this works and then you'll edit it for homework.
 
-#### Clone the [`admesh2tsv` repo](https://github.com/comp-bio-master/admesh2tsv) to your `comp_bio` dir
+#### Clone the [`admesh2tsv` repo](https://github.com/comp-bio-master/admesh2tsv) to your home dir
 
 ```bash
-mkdir ~/comp_bio  
-# you should get an error here saying that you've already created this dir
-cd ~/comp_bio
+cd ~
 git clone git@github.com:comp-bio-master/admesh2tsv.git
 
 # move into the new Repo and explore
@@ -664,12 +695,14 @@ less -S admesh.out
 less -S admesh2tsv.bash
 ```
 
-In the lecture, I will orient you to this repo which is similar, but not the same as your homework repo.
+You can consult the `README.md` in the link to the github page above to see how to use the `admesh2tsv.bash` script
 
-### IMPORTANT: delete the `admesh2tsv` repo we cloned in class before doing the homework. For the home work, you will clone your homework repo, which is very similar to `LimpetShellEvolution`, to your computer and complete you work there.
+In the lecture, I will orient you to this repo which is similar to, but not the same as your homework repo.
+
+### IMPORTANT: delete the `admesh2tsv` repo we cloned in class before doing the homework. For the home work, you will clone your homework repo to your computer and complete your work there.
 
 ```
-cd ~/comp_bio
+cd ~
 rm -rf admesh2tsv
 ```
 
