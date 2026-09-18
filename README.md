@@ -99,7 +99,7 @@ the hidden section ends here
 
 * [09/18 Week03 Unix III](lectures/lecture03.md)
 
-  * [Assignment_3,  Due 09/25](assignments/assignment_3.md)
+  * [Assignment_3,  Due 09/25](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-3/accept)
 
   * [Request Account On TAMUCC Super Computer Due 9/25](http://hpc.tamucc.edu/)
 
