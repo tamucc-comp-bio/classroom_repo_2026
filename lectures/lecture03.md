@@ -144,7 +144,7 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 
 ---
 
-12. Values can be passed into a script by listing them as argumnents which are stored sequentially into variables: `$1`, `$2`, `$3`, etc
+12. Values can be passed into a script by listing them as arguments which are stored sequentially into variables: `$1`, `$2`, `$3`, etc
 	```
 	# run script with the argument "../data.txt" 
 	bash script.sh ../data.txt
