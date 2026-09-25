@@ -3,7 +3,6 @@
 ## Lecture 0 — Introduction & Data
 
 - [In Lecture Quiz 0.0](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMlExSEtYN0pTTFVXUzJJUlpYRUNGQzU1Ti4u)
-  - [Quiz 0.0 for Non-TAMUCC Students](https://forms.cloud.microsoft/r/DUdbALPWZ3)
 
 ## Lecture 1 — Unix I
 
@@ -15,24 +14,22 @@
 
 - [Week 02 Quiz](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMjIySEJCNFlSMVJRSUo0SU5HSFNKMVRHWC4u)
 - [File Path Scavenger Hunt](https://forms.cloud.microsoft/r/Zq7avbJpqu)
-  - [File Path Scavenger Hunt for Non-TAMUCC Students](https://forms.cloud.microsoft/r/036fdetK5g)
 - [Mind Expander 01.04](https://forms.office.com/r/uvi6cGMSMJ)
 
 ## Lecture 3 — Unix III
 
 - [Quiz 3](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUNEpSWTVNREU0N1IxUDNLU0tPMVYyUkpSRC4u)
-- [Mind Expander 01.04](https://forms.office.com/r/uvi6cGMSMJ)
 - [Exercise 1.10.2 — Hormone Levels in Baboons](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUQldJQTVHMTlYMFVYTkhZSDBZR1A0Q1E2Ny4u)
 - [Exercise 1.10.3 — Plant-Pollinator Networks](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMlpVSUQ0U1hTSFZERDE1WUdZWjRYUlhaWi4u)
 
 ## Lecture 4 — Version Control with Git
 
 - [Quiz 4](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUNU1IUUg4Nzc1SU9KQVNRTVc0TU0xMFI1Sy4u)
-  - [Quiz 4 for Non-TAMUCC Students](https://forms.cloud.microsoft/r/yHephrmEfk)
 - [Mind Expander 2.1](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMVJSRE4zRVpFOElBVTUzMTVVNFZBNkRGVy4u)
 
+---
 
-# Undergraduate Assignments
+# Undergrad & Grad Assignments
 
 ## Assignment 0 — Due 09/04
 
