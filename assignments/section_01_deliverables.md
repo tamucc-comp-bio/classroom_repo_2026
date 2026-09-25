@@ -44,34 +44,21 @@
 ## Assignment 2 — Due 09/18
 
 - [Assignment 2](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2/accept)
-- [Assignment 2 Extra Credit — Worth a Whole Extra Assignment](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2xc/accept)
+- [Assignment 2 Extra Credit — Worth a Whole Extra Assignment, Due 9/25](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2xc/accept)
 
 ## Assignment 3 — Due 09/25
 
 - [Assignment 3](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-3/accept)
 
 
-# Graduate Student Assignments
+# Graduate Student Only Assignments
 
 Graduate students complete the regular assignments plus the additional graduate project assignments below.
 
-## Assignment 0 — Due 09/04
+# Assignment 1 — Due 09/11
 
-- [Intro to GitHub](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0-intro-to-github/accept)
-- [Tidy Data Reading Questions](https://forms.cloud.microsoft/r/cQjEwD96v7)
-- [Intro to the Command Line Exercise](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-0/accept)
-
-## Assignment 1 — Due 09/11
-
-- [Assignment 1](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-1/accept)
 - [Graduate Student Course Project — Ideas](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUOUo2UVRUMVgwTUlQMlpUQzUzOTIzME9LNi4u)
-
-## Assignment 2 — Due 09/18
-
-- [Assignment 2](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2/accept)
-- [Assignment 2 Extra Credit — Worth a Whole Extra Assignment](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-2xc/accept)
 
 ## Assignment 3 — Due 09/25
 
-- [Assignment 3](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-3/accept)
 - [Graduate Student Course Project — Plan/Outline](https://forms.office.com/r/4ANAsh1v5Z)
