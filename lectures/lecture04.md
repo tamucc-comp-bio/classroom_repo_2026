@@ -126,7 +126,7 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
 
 ---
 
-<details><summary>Vibe Coding vs. Agentic Engineering</summary>
+<details><summary>Strategies for Employing LLM in your Workflows from Vibe Coding to Agentic Engineering</summary>
 <p>
 
 ```
@@ -151,7 +151,7 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
 | **AI as tutor**                | Explains concepts/code                   | Writes the code                  | Human understands/tests      |
 | **AI-assisted coding**         | Suggests snippets/functions              | Designs + integrates             | Human reviews/tests          |
 | **Pair programming**           | Writes/reviews interactively             | Directs implementation           | Both iterate                 |
-| **Vibe coding**                | Generates much of solution               | Describes desired behavior       | Mostly “does it work?”       |
+| [**Vibe coding**](https://x.com/karpathy/status/1886192184808149383)                | Generates much of solution               | Describes desired behavior       | Mostly “does it work?”       |
 | **Spec-driven generation**     | Implements explicit specification        | Defines requirements             | Tests against spec           |
 | **Test-driven AI development** | Implements code to pass tests            | Defines/reviews tests            | Automated tests              |
 | **Agentic engineering**        | Explores, implements, tests, debugs      | Defines goals + reviews evidence | Agent repeatedly verifies    |
