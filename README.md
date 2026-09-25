@@ -113,7 +113,7 @@ the hidden section ends here
 * [09/25  Week04 Version Control w/ Git](lectures/lecture04.md)
 
   * [List of Course Deliverables Prior to Exam 1](assignments/section_01_deliverables.md)
-  * [Exam_1,  Due 10/02](https://classroom.github.com/a/aDSDqYJ5)
+  * [Exam_1,  Due 10/02](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/exam-1/accept)
 
  <!-- 
  
