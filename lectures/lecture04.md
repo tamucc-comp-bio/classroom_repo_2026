@@ -25,7 +25,7 @@ Before class, complete the [Computer Setup Checklist](../resources/computer_setu
 
 ---
 
-### II. [Assignment 3](../assignments/assignment_3.md) Triage
+### II. [Assignment 3](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-3/accept) Triage
 
 We will review your burning questions about the assignment.
 
