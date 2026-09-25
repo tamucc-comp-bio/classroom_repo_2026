@@ -14,6 +14,7 @@ ___
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
+Clone the [Lecture 4 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-4/accept)
 
 ---
 
