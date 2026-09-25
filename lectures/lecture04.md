@@ -33,7 +33,18 @@ We will review your burning questions about the assignment.
 
 ### III. ChatGPT
 
-Let's use ChatGPT to solve `assignment-02-xc`.  See my [session log with ChatGPT](https://chat.openai.com/share/b6a5adb2-bd6b-4fd6-ab49-d585b2d0bb12)
+Let's use ChatGPT to solve `assignment-02-xc`.  Let's look at how I solved this using different versions of ChatGPT with different levels of capabilities
+
+* [session log from paid ChatGPT v6 2026 using High Reasoning](https://chatgpt.com/share/6ab6982b-cb70-83ea-808c-6e94fcb4d0db)
+
+* [session log from paid ChatGPT v6 2026 using Instant  (Low) Reasoning](https://chatgpt.com/share/6ab69a4d-b1f0-83e9-9a8f-1fa8a3eebef6)
+
+* [session log from tamucc.tamus.ai ChatGPT v5.5](https://tamucc.tamus.ai/s/2c324ce2-a47e-4d20-9ec1-041cbb5b1d0a)
+
+* [session log from 2+ years ago using paid ChatGPT using High Reasoning](https://chat.openai.com/share/b6a5adb2-bd6b-4fd6-ab49-d585b2d0bb12)
+
+
+
 <details><summary>ChatGPT Hacks!</summary>
 <p>
 
