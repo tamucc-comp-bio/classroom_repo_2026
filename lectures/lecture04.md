@@ -56,10 +56,10 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
    Guide ChatGPT by clearly explaining what you want, rather than expecting it to know everything. If something doesn't work, give feedback and iterate.
 
 2. **Provide Context Clearly**  
-   Describe your environment (e.g., bash, R, Python) and tools you're using. This helps ChatGPT give relevant answers.
+   Describe your environment (e.g., bash, R, Python) and tools you're using. This helps ChatGPT give relevant answers. 
 
 3. **Share File Structures and Data Layout**  
-   Show the directory structure and contents of key files. ChatGPT can give more targeted help when it understands the layout of your project.
+   Show the directory structure and contents of key files. ChatGPT can give more targeted help when it understands the layout of your project.  If you have a public github repo, you can point ChatGPT at that so that it can navigate your dir and files.  Alternatively, you can use Codex CLI, ChatGPT Work, Claude Code, etc to work on local files.  Just be cognizant that whatever you show to an LLM is potentially stored on a server forever.  tamucc.tamus.ai is supposed to be confidential and could be used for sensitive data.
 
 4. **Explicit File, Directory, and Column Naming**  
    Name files, directories, and columns in a way that a human could interpret without guidance. It makes it easier for ChatGPT (and humans!) to follow your work.
@@ -77,7 +77,7 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
    If a suggestion doesn’t work, provide the exact terminal code and associated error message or describe what went wrong. ChatGPT can provide a better solution if it understands what didn’t work.
 
 9. **Use ChatGPT for Planning**  
-   When tackling large tasks, ask ChatGPT to help you plan steps before diving into code. You can also have it review your process.
+   When tackling large tasks, ask ChatGPT to help you plan steps before diving into coding. You can also have it review your process.
 
 10. **Request [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing) and [Edge Case Testing](https://en.wikipedia.org/wiki/Edge_case)**  
     Ask ChatGPT to create unit tests or edge case scenarios to ensure the robustness of scripts.
@@ -88,7 +88,7 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
 12. **Iterate on Responses**  
     Don’t expect the first response to always be perfect—it's common to go through a few iterations before reaching the best solution.
 
-13. **Don't Go Through Too Many Iterations**
+13. **Don't Go Through Too Many Iterations** 
     If you go through several cycles of ChatGPT getting it wrong, start a new conversation and change your approach. I've found that ChatGPT can get stuck and changing the prompts can provide different results. 
 
 14. **Include Relevant Logs and Outputs**  
@@ -104,7 +104,7 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
     After writing code, ask ChatGPT to help generate comments or documentation for your scripts. This can improve the clarity of your code for both yourself and others.
 
 18. **Understand the Limitations of ChatGPT**  
-    ChatGPT doesn't have live access to the internet and is trained on data up until a certain point. It may not have the latest updates on libraries or tools. Always verify responses, especially for new or cutting-edge technologies.
+    ChatGPT and other LLM are language machines.  They are not logic machines and aren't the best at decision making. Always verify responses, especially for new or cutting-edge technologies.
 
 19. **Be Specific with Formatting Requests**  
     When requesting code, markdown, or other formatting (e.g., tables, lists), be explicit about how you'd like ChatGPT to present the information.
@@ -126,10 +126,41 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
 
 ---
 
-<details><summary>Vibe Coding</summary>
+<details><summary>Vibe Coding vs. Agentic Engineering</summary>
 <p>
 
+```
+              ENGINEERING RIGOR
+                    high
+                     ↑
+     AI-assisted    │     Agentic
+     engineering    │     engineering
+                    │
+ HUMAN ─────────────┼────────────── AI
+ writes             │             writes
+ most               │             most
+                    │
+ traditional        │     Vibe
+ hacking            │     coding
+                    ↓
+                    low
+```
+
+| Strategy                       | AI's role                                | Human's role                     | Verification                 |
+| ------------------------------ | ---------------------------------------- | -------------------------------- | ---------------------------- |
+| **AI as tutor**                | Explains concepts/code                   | Writes the code                  | Human understands/tests      |
+| **AI-assisted coding**         | Suggests snippets/functions              | Designs + integrates             | Human reviews/tests          |
+| **Pair programming**           | Writes/reviews interactively             | Directs implementation           | Both iterate                 |
+| **Vibe coding**                | Generates much of solution               | Describes desired behavior       | Mostly “does it work?”       |
+| **Spec-driven generation**     | Implements explicit specification        | Defines requirements             | Tests against spec           |
+| **Test-driven AI development** | Implements code to pass tests            | Defines/reviews tests            | Automated tests              |
+| **Agentic engineering**        | Explores, implements, tests, debugs      | Defines goals + reviews evidence | Agent repeatedly verifies    |
+| **Multi-agent engineering**    | Specialized agents plan/code/review/test | Supervises system                | Independent/automated checks |
+
+
 Vibe Coding, [coined by Andrej Karpathy in Feb 2025 on X](https://x.com/karpathy/status/1886192184808149383), is a specific strategy for integrating LLM into the code creation, but has become the widely adopted term for employing LLM to complete coding tasks, regardless of the strategy.
+
+
 
 ---
 
