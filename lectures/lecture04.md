@@ -129,6 +129,47 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
 <details><summary>Strategies for Employing LLM in your Workflows from Vibe Coding to Agentic Engineering</summary>
 <p>
 
+---
+
+## What Is Vibe Coding?
+
+**Definition:** An improvisational, intent‑first coding style where you state your goal in natural language, generate or sketch code fast (often with an LLM), run it, read errors/output, and iterate in short loops—**then** consolidate into robust artifacts (scripts, tests, docs).
+
+---
+
+**Core loop:**
+
+1. **State the vibe** (goal + constraints) in plain language.
+2. **Generate a first pass** (you/LLM) and run it on a small sample.
+3. **Tight iteration:** paste errors/outputs back; refine prompts/code.
+4. **Snapshot what works**; name functions and files clearly.
+5. **Harden:** add flags, checks, docs, and minimal tests.
+
+**Good for:** early exploration, data checks, API pokes, shaping file formats, UI/UX sketches.
+
+**Not for:** final analyses, production pipelines, papers’ main results without tests and documentation.
+
+---
+
+## What Is Agentic Engineering?
+
+**Definition:** A goal- and specification-driven coding approach where you give an AI agent a task, requirements, and access to tools, and it works through multiple engineering steps—inspecting files, planning, writing code, running tests, diagnosing failures, and revising its work—while you define what success means and evaluate the evidence that it works.
+
+**Core loop:**
+
+1. **Define the goal** — specify the desired outcome, requirements, and constraints.
+Provide context + tools — give the agent access to relevant code, data, documentation, and execution environment.
+2. **Let the agent work** — inspect, plan, implement, run, and test the solution.
+3. **Verify and diagnose** — check outputs, tests, edge cases, errors, and requirements.
+4. **Iterate + harden** — fix failures, improve robustness, document decisions, and produce reproducible artifacts.
+
+**Good for:** implementing well-defined features, debugging, refactoring, building pipelines, writing tests, stress-testing code, and maintaining larger codebases.
+
+**Not for:** poorly defined problems where success cannot be evaluated, or high-stakes scientific/production work where agent-generated results are accepted without independent validation and human review.
+
+
+---
+
 ```
               ENGINEERING RIGOR
                     high
@@ -158,33 +199,10 @@ Here are some &#x1F4A1; tips to help you get the most out of working with ChatGP
 | **Multi-agent engineering**    | Specialized agents plan/code/review/test | Supervises system                | Independent/automated checks |
 
 
-Vibe Coding, [coined by Andrej Karpathy in Feb 2025 on X](https://x.com/karpathy/status/1886192184808149383), is a specific strategy for integrating LLM into the code creation, but has become the widely adopted term for employing LLM to complete coding tasks, regardless of the strategy.
-
-
 
 ---
 
-## What Is Vibe Coding?
-
-**Definition:** An improvisational, intent‑first coding style where you state your goal in natural language, generate or sketch code fast (often with an LLM), run it, read errors/output, and iterate in short loops—**then** consolidate into robust artifacts (scripts, tests, docs).
-
----
-
-**Core loop:**
-
-1. **State the vibe** (goal + constraints) in plain language.
-2. **Generate a first pass** (you/LLM) and run it on a small sample.
-3. **Tight iteration:** paste errors/outputs back; refine prompts/code.
-4. **Snapshot what works**; name functions and files clearly.
-5. **Harden:** add flags, checks, docs, and minimal tests.
-
-**Good for:** early exploration, data checks, API pokes, shaping file formats, UI/UX sketches.
-
-**Not for:** final analyses, production pipelines, papers’ main results without tests and documentation.
-
----
-
-## Responsible Vibe Coding in Science
+## Responsible Use of LLM in Science
 
 * **Reproducibility:** always end with a script and a README.
 * **Data protection:** never overwrite raw data; keep `data/` read‑only using `chmod`.
