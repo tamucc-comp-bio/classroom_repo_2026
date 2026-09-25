@@ -44,7 +44,6 @@ Let's use ChatGPT to solve `assignment-02-xc`.  Let's look at how I solved this 
 * [session log from 2+ years ago using paid ChatGPT using High Reasoning](https://chat.openai.com/share/b6a5adb2-bd6b-4fd6-ab49-d585b2d0bb12)
 
 
-
 <details><summary>ChatGPT Hacks!</summary>
 <p>
 
