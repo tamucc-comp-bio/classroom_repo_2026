@@ -1,13 +1,12 @@
 # Week04 How to use ChatGPT and How to use Version Control
 
 > [!IMPORTANT]
-> [Assignment 3](../assignments/assignment_3.md) is due at the beginning of this lecture
+> [Assignment 3](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-3/accept) is due at the beginning of this lecture
 
 > [!NOTE]
 > The [Lecture Stream 2025](https://tamucc.zoom.us/rec/share/wazoE-XXaH84n0pqtn45EtU8fZ_WAD2qgkCCxJ0fbZCe2dKjh3s9uPu7ipd01PLi.1TpSh9UycOt00AEZ )
 Passcode: 727zJ?xU
 
-https://tamucc.zoom.us/rec/share/wazoE-XXaH84n0pqtn45EtU8fZ_WAD2qgkCCxJ0fbZCe2dKjh3s9uPu7ipd01PLi.1TpSh9UycOt00AEZ
 
 ___
 
@@ -15,7 +14,6 @@ ___
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that your terminal, Git, and the `~/CSB` repository work before continuing.
 
 ---
 
