@@ -50,6 +50,7 @@
 
 - [Assignment 3](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-3/accept)
 
+---
 
 # Graduate Student Only Assignments
 
