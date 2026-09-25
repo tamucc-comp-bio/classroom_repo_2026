@@ -198,11 +198,9 @@ Provide context + tools — give the agent access to relevant code, data, docume
 | **Agentic engineering**        | Explores, implements, tests, debugs      | Defines goals + reviews evidence | Agent repeatedly verifies    |
 | **Multi-agent engineering**    | Specialized agents plan/code/review/test | Supervises system                | Independent/automated checks |
 
-
-
 ---
 
-## Responsible Use of LLM in Science
+## Responsible Use of LLMs in Science
 
 * **Reproducibility:** always end with a script and a README.
 * **Data protection:** never overwrite raw data; keep `data/` read‑only using `chmod`.
@@ -212,7 +210,7 @@ Provide context + tools — give the agent access to relevant code, data, docume
 
 ---
 
-## LLM Copilot Prompts (Templates)
+## Example LLM Prompt Templates
 
 * **Scaffold:** “Write a Bash script with `getopts` that … Use `set -euo pipefail` and helpful error messages.”
 	*  `getopts` is a command used in a bash script to read in options such as `-o` when the script is run
@@ -251,7 +249,7 @@ Provide context + tools — give the agent access to relevant code, data, docume
 
 ---
 
-<details><summary>Vibe Coding Environments</summary>
+<details><summary>LLM Coding Environments</summary>
 <p>
 
 [Gemini CLI](https://github.com/google-gemini/gemini-cli)
@@ -266,13 +264,13 @@ Provide context + tools — give the agent access to relevant code, data, docume
 
 ---
 
-## Structured Vibe Coding
+## Structured Coding
 
 Some best practices in vibe coding are taking shape along with tools like Gemini CLI, Codex CLI, and Claude Code.  I've yet to try these because I'm typcially satisfied with using the "old-fashioned" chat interface, but you might want to give one of these a shot.  Gemini CLI's free version is pretty generous with prompt allowances and features. One important recent development is the birth of the "prompt file".
 
 ---
 
-## Prompt File
+## Prompt File (`AGENTS.md`)
 
 Prompt files contain basic information about your project to guide the LLM.  They are natively supported by Gemini CLI and others. I think it's good practice to make one even if you're not using a tool like Gemini CLI.
 
@@ -298,7 +296,7 @@ Keep it short, structured, and commit it to the repo.
 
 ---
 
-## Prompt File Template  (`PROMPT.md`)
+## Prompt File Template  (`AGENTS.md`)
 
 ```
 # Objective
