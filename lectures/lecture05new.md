@@ -7,17 +7,12 @@
 > [Lecture Stream](https://tamucc.zoom.us/rec/share/5oTEFguSs5hjKLwLgRrNUP5dWToM-SLnQ2rv7a2fsgCLOehiHPLX-Xi9eUNUbKcX.YzmL5DfjpC1z9sdh)
 > Passcode: Qft0Te?5
 
-> [!NOTE]
-> I converted the [Lecture_05 Slides](Week05new_files/Introduction%20to%20R%201.pptx) to a more screen-splitting friendly format here in GitHub.
-
 
 ---
 
 ## Computer Preparation
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
-
-Confirm that Git, R, and the `~/CSB` repository work before continuing.
 
 ---
 
@@ -65,8 +60,8 @@ If you see this (or similar), then R is installed and you can proceed.  You shou
 ```
 $ R
 
-R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
-Copyright (C) 2024 The R Foundation for Statistical Computing
+R version 4.6.1 (2026-06-24) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -111,15 +106,13 @@ To run `R`, just type `R` and hit your enter/return key
 ```
 $ R
 
-R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.6.1 (2026-06-24) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -141,7 +134,13 @@ That is it, you are in an `R` shell, and `bash` commands will no longer work.  N
 <details><summary>Exiting R Shell</summary>
 <p>
 
-The keys `ctrl+d` will exit the R shell. You will be prompted to save your session.  If you say yes, all of your work will be saved and available when you open the R shell again.
+The keys `ctrl+d` will exit the R shell. You will be prompted to save your session.  If you say "yes", the objects in your workspace will be saved and available when you open the R shell again.  I generally think this is a bad idea, and I suggest that you say "no" so that objects from previous sessions are not introduced into new and different sessions in the future. 
+
+You can also type the following command to exit R
+
+```R
+q(save = "no")
+```
 
 Now that you see how to enter and exit the R shell, enter the R shell again.
 
@@ -291,16 +290,17 @@ as.DataType(NameOfVariable)
 Try it out by creating the following variables
 
 ```R
-> z <- as.numeric(x^2)
-> y <- as.character("Bye")
-> q <- as.complex(1+3i)
-> r <- 3==4
+x <- 3.5
+greeting <- "Hi"
+z <- as.numeric(x^2)
+y <- as.character("Bye")
+q <- as.complex(1+3i)
+r <- 3==4
 ```
 
 > [!NOTE]
 > that R will automatically choose a data type if you do not specify one.  It usually gets the data type right, but not always.
 
-We can query the data type of a variable using `is.type(variable)`
 
 ```R
 > is.numeric(x)
@@ -309,6 +309,13 @@ We can query the data type of a variable using `is.type(variable)`
 > is.complex(q)
 ```
 
+We can query the data type of a variable using the `typeof` command : `typeof(VariableName)`, where you replace "VariableName" with the name of an actual variable
+
+```R
+> typeof(x)
+> typeof(greeting)
+> typeof(r)
+```
 
 ---
 </p>
@@ -754,20 +761,16 @@ Comma delimited files (this is pseudo code, do not type in):
 
 `write.csv(MyDF, “MyFile.csv”) `
 
-#don’t overwrite
+#no row names
 
-`write.csv(MyDF, “MyFile.csv”, append=TRUE) `
-
-#no header row
-
-`write.csv(MyDF, “MyFile.csv”, col.names=FALSE)`
+`write.csv(MyDF, “MyFile.csv”, row.names=FALSE)`
 
 See documentation for write, write.csv, write.table for full functionality
 
 Here we will save the file we just read into the variable `ch6` as a new comma delimited file named `H938_Euro_chr6.csv`
 
 ```R
-write.csv(ch6, "H938_Euro_chr6.csv")
+write.csv(ch6, "H938_Euro_chr6.csv", row.names = FALSE)
 
 # view files in present working directory
 list.files()
