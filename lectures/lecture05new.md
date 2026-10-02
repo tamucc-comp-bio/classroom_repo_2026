@@ -319,12 +319,12 @@ r <- 3==4
 > is.complex(q)
 ```
 
-We can query the data type of a variable using the `typeof` command : `typeof(VariableName)`, where you replace "VariableName" with the name of an actual variable
+We can query the data type of a variable using the `class` command : `class(VariableName)`, where you replace "VariableName" with the name of an actual variable
 
 ```R
-> typeof(x)
-> typeof(greeting)
-> typeof(r)
+> class(x)
+> class(greeting)
+> class(r)
 ```
 
 ---
@@ -387,7 +387,7 @@ We can query the data type of a variable using the `typeof` command : `typeof(Va
 
 * Simplest data structure is a single element
 
-* A vector is a collection of elements
+* A vector is a collection of elements and technically a vector with 1 element is the simplest data structure
 
  * 1, 2, 3, 4, 5, 6
 
@@ -681,7 +681,7 @@ Before you start reading and writing files, it is important to know where the wo
 
 `getwd()`  shows where you are, like `pwd` in `bash`
 
-`setwd(“path”)`	changes where you are, like `cd` in `bash`
+`setwd(“path”)`	changes where you are, like `cd` in `bash`, where you change "path" to an actual path that is quotified.
 
 > [!NOTE]
 > root in windows is `C:/` rather than `/`
@@ -712,14 +712,21 @@ You will typically read in your data from a comma or tab delimited file.  It is 
 
 Comma delimited files:
 
-	`read.csv(“MyFile.csv”)`
+```R
 
-	`read.csv(“MyFile.csv”, header=TRUE) #csv has col headers`
+# Read in csv
+read.csv(“../data/Goldberg2010_data.csv”)
 
-	`read.csv(“MyFile.csv”, sep=“;”) #separator is semicolon`
+# skip 1st 5 lines	
+read.csv(“../data/Goldberg2010_data.csv”, skip=5)   
 
-	`read.csv(“MyFile.csv”, skip=5)   #skip 1st 5 lines`
+# csv has col headers
+read.csv(“../data/Mersch2013/behavior.csv”, header=TRUE) 
 
+# Don't type this one in
+read.csv(“MyFile.csv”, sep=“;”) #separator is semicolon
+
+```
 
 Tab delimited files: `read.delim()`
 
