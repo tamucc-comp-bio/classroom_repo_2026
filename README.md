@@ -75,11 +75,13 @@ Office hours are M-W 4-5:30 on Zoom or TH234
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-<details><summary>SECTION 1.  WELCOME TO THE MATRIX</summary>
-<p>
+
 
 the hidden section ends here
 -->
+
+<details><summary>SECTION 1.  WELCOME TO THE MATRIX</summary>
+<p>
 
 ### SECTION 1.  WELCOME TO THE MATRIX
 
@@ -105,10 +107,6 @@ the hidden section ends here
 
   * [Grad Student Course Project: Plan/Outline, Due 09/25](https://forms.office.com/r/4ANAsh1v5Z)
   
-<!-- This is a hidden comment. It will not be visible in the rendered markdown. 
- 
-    * [Old Link To Grad Student Course Project](https://classroom.github.com/a/VuB4iKjR).  If you started with this link, then just click the link above, clone the 2022 version of this repo, and copy your work from the old repo to the new one.
--->
 
 * [09/25  Week04 Version Control w/ Git](lectures/lecture04.md)
 
@@ -116,15 +114,13 @@ the hidden section ends here
   * [Exam_1,  Due 10/02](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/exam-1/accept)
 
  <!-- 
- 
-  * [Grad Student Course Project: GitHub Repo w/ ReadMe, Due 10/03]()
 
 
-</p>
-</details>
 
 -->
 
+</p>
+</details>
 
 
 ---
@@ -132,13 +128,14 @@ the hidden section ends here
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-
+<details><summary>SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R</summary>
+<p>
 
 This is the end of the hidden section
 -->
 
-<details><summary>SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R</summary>
-<p>
+
+
 	
 ### SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R
 
@@ -201,14 +198,14 @@ This is the end of the hidden section
   * [Install Anaconda & Jupyter, Due 10/04](http://computingskillsforbiologists.com/setup/basic-programming/), Due 10/04
 -->
 
-</p>
-</details>
+
 
 ---
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-
+</p>
+</details>
 
 -->
 
