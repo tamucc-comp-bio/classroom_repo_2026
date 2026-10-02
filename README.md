@@ -141,7 +141,7 @@ This is the end of the hidden section
 
 * [10/02  Week05 Base R Bootcamp I](lectures/lecture05new.md)
 
-  * [Assignment 5 Due 10/09/2026](assignments/assignment_5.md)
+  * [Assignment 5 Due 10/09/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-5/accept)
 
 * [10/09  Week06 Base R Bootcamp II](lectures/lecture06new.md)
 

@@ -14,6 +14,16 @@
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
+Clone the [Lecture 5 repository](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-5/accept) to your home directory and name it `lecture-assignment-5`
+
+```bash
+cd ~
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-assignment-5
+
+# confirm it worked:
+ls lecture-assignment-5/CSB
+```
+
 ---
 
 ## Lecture Activities
@@ -682,8 +692,10 @@ rm(list=ls())
 # where ever you were in bash when you opened R is where you will be in R
 getwd()
 
-# change working directory to CSB/r/sandbox
-setwd("~/CSB/r/sandbox")
+# change working directory to ~/lecture-assignment-5/CSB/r/sandbox
+setwd("~/lecture-assignment-5/CSB/r/sandbox")
+
+# confirm the present working dir is ~/lecture-assignment-5/CSB/r/sandbox
 getwd()
 
 ```
