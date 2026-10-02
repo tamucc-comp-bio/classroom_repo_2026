@@ -640,7 +640,7 @@ tolower(x)
 <details><summary>R Data Structures: Data Frame</summary>
 <p>
 
-A data frame holds "tidy" data
+A data frame contains tabular data and is organized into columns and rows.  The data in a data frame may or may not be tidy.
 
 Like a spreadsheet, each column is a type of categorization or measurement and each row is a different sample.  
 
@@ -721,9 +721,11 @@ Comma delimited files:
 	`read.csv(“MyFile.csv”, skip=5)   #skip 1st 5 lines`
 
 
-Tab delimited files: `read.table()`
+Tab delimited files: `read.delim()`
 
-See the help pages for both `read.csv` and `read.table` for complete functionality
+White space delimited files: `read.table()`
+
+See the help pages for both `read.csv`, `read.table` and `read.delim` for complete functionality
 
 
 ```R
@@ -731,7 +733,7 @@ help(read.csv)
 # to exit type 'q'
 ```
 
-We will read  `H938_Euro_chr6.geno` into a variable called `ch6` in R.
+We will read  `H938_Euro_chr6.geno` into a variable called `ch6` in R. Spaces delimit the the columns in the file, so we will use `read.table()`.
 
 ```R
 #read in data
