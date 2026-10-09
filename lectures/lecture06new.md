@@ -21,8 +21,8 @@ Clone the [Lecture-Assignment 5 Repo](https://classroom50.org/tamucc-comp-bio-as
 
 
 ```bash
-# For windows only, change the pwd to your Windows Downloads dir
-cd /mnt/Users/TypeYourWinUserNameHere/Downloads
+# For windows only, change the pwd to your Windows Documents dir
+cd /mnt/Users/TypeYourWinUserNameHere/Documents
 
 # for mac/linux put it in your home dir, as we have been doing
 cd ~
@@ -429,20 +429,20 @@ Then click through to your `/home/YourUserName/CSB` dir
 </p>
 </details>
 
-<details><summary>Optional Housekeeping for Windows Only, Clone [Lecture-Assignment-6 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-5/accept) Into Your Windows Downloads Dir</summary>
+<details><summary>Optional Housekeeping for Windows Only, Clone [Lecture-Assignment-6 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-5/accept) Into Your Windows Documents Dir</summary>
 <p>
 
 _If you already did this when following the instructions to prep your computer at the top of this doc, then you do not have to do this again._
 
 For now, we should all be in the `sandbox` for the `r` chapter in `CSB`.
 
-Just to make things a little more tricky, if you have windows, it is not easy to access the `CSB` repo that you cloned to your home directory in Ubuntu from RStudio. So, we can clone the repo to a more convenient location, the `Downloads` dir inside your windows home dir.  This is a good location because if you're following best practices, then your repo is always backed up on github and the Downloads dir is a location for files that you can likely delete.
+Just to make things a little more tricky, if you have windows, it is not easy to access the `CSB` repo that you cloned to your home directory in Ubuntu from RStudio. So, we can clone the repo to a more convenient location, the `Documents` dir inside your windows home dir.  
 
-Open your ubuntu terminal and navigate to your windows `Downloads` directory, then clone the CSB repo to there.
+Open your ubuntu terminal and navigate to your windows `Documents` directory, then clone the CSB repo to there.
 
 ```bash
 # make sure you are in ubuntu
-cd /mnt/c/Users/TypeYourWinUserNameHere/Downloads
+cd /mnt/c/Users/TypeYourWinUserNameHere/Documents
 
 git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-assignment-6
 
@@ -475,7 +475,7 @@ If you are not in your home directory, you can easily navigate there:
 
 ```R
 # set the present working dir to home
-setwd(~)
+setwd("~")
 
 # view the present working dir
 getwd()
@@ -488,7 +488,7 @@ Now let us move to the `sandbox` for the `r` chapter in `CSB`
 list.dirs(recursive=FALSE)
 
 # change working directory to CSB/r/sandbox
-setwd("~/CSB/r/sandbox")
+setwd("lecture-assignment-6/CSB/r/sandbox")
 
 # view the present working dir
 getwd()
