@@ -15,8 +15,6 @@ ___
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that Git, R, RStudio, and the `~/CSB` repository work before continuing.
-
 ---
 
 ## I. Review Material Covered for Homework
@@ -363,9 +361,9 @@ Global Environment (upper right)
 From here forward, I request that you please work in R Studio, unless otherwise specified, to reduce minor issues that might crop up between platforms. However, it is important to realize that everything we are learning will also work in the R terminal from the linux/unix command line and with minor exceptions, _almost_ nothing we cover will be only usable in R Studio.
 
 You should type commands into the R Studio `text editor` (upper left panel) and then execute them from there using your mouse or arrow keys and `ctrl` + `enter`.  You can save your work as you would in other GUI apps.
+---
 
-
-<details><summary>Dude, where's my ubuntu home dir? (Windows Only)</summary>
+<details><summary><big><strong>Dude, where's my Ubuntu home dir? (Windows Only)</strong></big></summary>
 <p>
 
 You can access your Ubunutu directory system by typing the following command into a windows explorer search bar or RSTudio/File Open window:
