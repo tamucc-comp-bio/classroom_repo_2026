@@ -559,7 +559,7 @@ Notice that `here()` constructs the complete file path without needing to specif
 </p>
 </details>
 
-<details><summary>RStudio Working Directories - Pro Solution</summary>
+<details><summary>RStudio Working Directories - Another Solution</summary>
 <p>
 
 There is a "magic" line of code that will solve all of your working directory issues in RStudio.
