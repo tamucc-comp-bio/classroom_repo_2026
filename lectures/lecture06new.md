@@ -363,7 +363,7 @@ From here forward, I request that you please work in R Studio, unless otherwise 
 You should type commands into the R Studio `text editor` (upper left panel) and then execute them from there using your mouse or arrow keys and `ctrl` + `enter`.  You can save your work as you would in other GUI apps.
 ---
 
-<details><summary><big><strong>Dude, where's my Ubuntu home dir? (Windows Only)</strong></big></summary>
+<details><summary><strong>Dude, where's my Ubuntu home dir? (Windows Only)</strong></summary>
 <p>
 
 You can access your Ubunutu directory system by typing the following command into a windows explorer search bar or RSTudio/File Open window:
