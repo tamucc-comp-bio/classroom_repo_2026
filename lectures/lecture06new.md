@@ -500,10 +500,69 @@ getwd()
 </details>
 
 
+<details><summary>RStudio Working Directories - here() </summary>
+<p>
+
+
+
+
+### RStudio Working Directories - Pro Solution
+
+There is an R package called `here` that makes working with directories much easier, regardless of whether you use Windows, Mac, or Linux.
+
+First, install the `here` package in your console (bottom left panel):
+
+```r
+install.packages("here")
+```
+
+Using the RStudio GUI, create and save a blank R script to `~/lecture-assignment-6/CSB/r/sandbox/lecture_06.R`.
+
+Check your working directory in the RStudio console (lower left panel):
+
+```r
+getwd()
+```
+
+Now, copy the following code into your saved `lecture_06.R` script and run it:
+
+```r
+library(here)
+
+# identify the project root
+here::i_am("CSB/r/sandbox/lecture_06.R")
+
+# load here
+library(here)
+
+# show the project root
+here()
+```
+
+You should see the path to your `lecture-assignment-6` directory, regardless of your operating system.
+
+Now let's use `here()` to locate our script:
+
+```r
+here("CSB", "r", "sandbox", "lecture_06.R")
+```
+
+Notice that `here()` constructs the complete file path without needing to specify your username or operating system.
+
+**The magic:** You can now use `here()` to locate files anywhere in your project without repeatedly using `setwd()`.
+
+⚠️ **Important:** The file `lecture_06.R` must exist, and the RStudio working directory must initially be inside the `lecture-assignment-6` repository for `i_am()` to identify the project root.
+
+
+---
+
+</p>
+</details>
+
 <details><summary>RStudio Working Directories - Pro Solution</summary>
 <p>
 
-There is a "magic" line of code that will solve all of your working directory issues in R.
+There is a "magic" line of code that will solve all of your working directory issues in RStudio.
 
 You must have the `rstudioapi` package installed 
 
@@ -511,7 +570,7 @@ You must have the `rstudioapi` package installed
 install.packages("rstudioapi")
 ```
 
-And your script in the code editor panel of RStudio must be saved on your computer, or else you will get an error because the document does not exist in the directory structure.  Use the GUI to save a blank script to `CSB/r/sandbox/lecture_06.R`
+And your script in the code editor panel of RStudio must be saved on your computer, or else you will get an error because the document does not exist in the directory structure.  Use the GUI to save a blank script to `~/lecture-assignment-6/CSB/r/sandbox/lecture_06.R`
 
 ```r
 # check your working dir by running this in the 'console' (lower left panel)
@@ -618,7 +677,7 @@ isTriangular(91)
 
 If there are functions that you use frequently across different projects, you can save them into their own script and `source()` them in a different script.
 
-You can open a new R script (use mouse), copy and paste the `isTriangular` function into new blank script, save it to `~/CSB/r/sandbox/` with the name `triangular.R`, and close it.
+You can open a new R script (use mouse), copy and paste the `isTriangular` function into new blank script, save it to `~/lecture-assignment-6/CSB/r/sandbox/` with the name `triangular.R`, and close it.
 
 Once you have done that, we can use the `source()` command to read in the `isTriangular` function from the `triangular.R` script.  When you "source" a script, its entire contents are executed.
 
