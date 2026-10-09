@@ -15,6 +15,26 @@ ___
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
+Install [RStudio](https://github.com/tamucc-comp-bio/how_to/blob/main/install_rstudio.md) if you have not yet
+
+Clone the [Lecture-Assignment 5 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-5/accept) to your computer and name it `lecture-assignment-6`
+
+
+```bash
+# For windows only, change the pwd to your Windows Downloads dir
+cd /mnt/Users/TypeYourWinUserNameHere/Downloads
+
+# for mac/linux put it in your home dir, as we have been doing
+cd ~
+
+# then clone
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-assignment-6
+
+# confirm it worked:
+ls lecture-assignment-6/CSB
+```
+
+
 ---
 
 ## I. Review Material Covered for Homework
@@ -301,6 +321,23 @@ Note that there can be several tabs in the panels, allowing you to toggle betwee
 </p>
 </details>
 
+
+<details><summary>R Studio in Windows:  Setting Terminal to Ubuntu</summary>
+<p>
+
+You can set the terminal in Windows RStudio to use your WSL Ubuntu.
+
+Select the termial tab in the lower left corner and open the terminal settings.
+
+Adjust them to look like those here:
+
+![](Week06_files/rstudio_terminal-settings_ubuntu-on-win.png)
+
+---
+
+</p>
+</details>
+
 <details><summary>Acclimating to the `R Studio` IDE</summary>
 <p>
 
@@ -360,7 +397,7 @@ Global Environment (upper right)
 
 From here forward, I request that you please work in R Studio, unless otherwise specified, to reduce minor issues that might crop up between platforms. However, it is important to realize that everything we are learning will also work in the R terminal from the linux/unix command line and with minor exceptions, _almost_ nothing we cover will be only usable in R Studio.
 
-You should type commands into the R Studio `text editor` (upper left panel) and then execute them from there using your mouse or arrow keys and `ctrl` + `enter`.  You can save your work as you would in other GUI apps.
+
 ---
 
 <details><summary><strong>Dude, where's my Ubuntu home dir? (Windows Only)</strong></summary>
@@ -369,7 +406,7 @@ You should type commands into the R Studio `text editor` (upper left panel) and 
 You can access your Ubunutu directory system by typing the following command into a windows explorer search bar or RSTudio/File Open window:
 
 ```
-\\wsl$
+\\wsl$\Ubuntu
 ```
 
 You should see something like this if you did it correctly:
@@ -392,23 +429,28 @@ Then click through to your `/home/YourUserName/CSB` dir
 </p>
 </details>
 
-<details><summary>Optional Housekeeping for Windows Only, Clone CSB Dir Into Your Windows Directory System</summary>
+<details><summary>Optional Housekeeping for Windows Only, Clone [Lecture-Assignment-6 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-5/accept) Into Your Windows Downloads Dir</summary>
+<p>
 
 _If you already did this when following the instructions to prep your computer at the top of this doc, then you do not have to do this again._
 
-For now, we should all be in the `sandbox` for the `r` chapter in `CSB`. 
+For now, we should all be in the `sandbox` for the `r` chapter in `CSB`.
 
-Just to make things a little more tricky, if you have windows, it is not easy to access the `CSB` repo that you cloned to your home directory in Ubuntu from RStudio. So, we have to clone the repo again, but this time to the `Downloads` dir inside your windows home dir.
+Just to make things a little more tricky, if you have windows, it is not easy to access the `CSB` repo that you cloned to your home directory in Ubuntu from RStudio. So, we can clone the repo to a more convenient location, the `Downloads` dir inside your windows home dir.  This is a good location because if you're following best practices, then your repo is always backed up on github and the Downloads dir is a location for files that you can likely delete.
 
 Open your ubuntu terminal and navigate to your windows `Downloads` directory, then clone the CSB repo to there.
 
 ```bash
 # make sure you are in ubuntu
-cd /mnt/c/Users/YourWinUserName/Downloads
-git@github.com:tamucc-comp-bio/CSB.git
+cd /mnt/c/Users/TypeYourWinUserNameHere/Downloads
+
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-assignment-6
+
+# confirm it worked:
+ls lecture-assignment-6/CSB
 ```
 
-You can now close the ubuntu terminal.
+Windows RStudio users can now close the ubuntu terminal.
 
 ---
 
