@@ -145,7 +145,7 @@ This is the end of the hidden section
 
 * [10/09  Week06 Base R Bootcamp II](lectures/lecture06new.md)
 
-  * [Assignment 06 Q1, Due 10/16/2026](https://classroom.github.com/a/pq4mmgoC)
+  * [Assignment 06 Q1, Due 10/16/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-6/accept)
 
   * Install tidyverse in RStudio
 
