@@ -22,7 +22,7 @@ Clone the [Lecture-Assignment 5 Repo](https://classroom50.org/tamucc-comp-bio-as
 
 ```bash
 # For windows only, change the pwd to your Windows Documents dir
-cd /mnt/Users/TypeYourWinUserNameHere/Documents
+cd /mnt/c/Users/TypeYourWinUserNameHere/Documents
 
 # for mac/linux put it in your home dir, as we have been doing
 cd ~
