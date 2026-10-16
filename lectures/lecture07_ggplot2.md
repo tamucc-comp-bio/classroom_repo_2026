@@ -29,29 +29,29 @@ Texas A&M University – Corpus Christi
 </details>
 
 <details><summary>Slide 03 — Philosophy of ggplot2</summary>
-<p>
 
-* The grammar of graphics (Wilkinson 2006)
-  * Describe a graph using text
-* Data – data frame to plot
-* Aesthetic Mapping (aes)
-  * which parts of data frame are associated with which parts of plot
-    * X-axis, Y-axis, colors of points, etc
-* Geometry (geom_)
-  * Lines, points, etc
+### The Grammar of Graphics — Wilkinson (2006)
 
-* Coordinates
-  * cartesian, polar
-* Faceting
-  * Panels
-* Statistics
-  * Fit line, smoothing, etc
-* Theme
-  * Adjust look and feel of the graphics
+**The idea:** Describe a graph using text by specifying its components.
 
+#### 1. The three basic components of a plot
+
+| Component | What it describes | Examples |
+|---|---|---|
+| **Data** | The data frame to plot | |
+| **Aesthetic mapping (`aes`)** | Which parts of the data frame are associated with which parts of the plot | X-axis, Y-axis, colors of points |
+| **Geometry (`geom_`)** | How the data are drawn | Lines, points |
+
+#### 2. Other components of the grammar
+
+| Component | What it describes |
+|---|---|
+| **Coordinates** | Cartesian or polar |
+| **Faceting** | Panels |
+| **Statistics** | Fit lines, smoothing |
+| **Theme** | Adjust the look and feel of the graphics |
 
 ---
-</p>
 </details>
 
 <details><summary>Slide 04 — Make Sure You’ve Downloaded The R Script for this Lecture and Saved it Here:</summary>
