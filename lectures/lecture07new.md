@@ -22,7 +22,23 @@ ___
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that Git, R, RStudio, and the `~/CSB` repository work before continuing.
+Clone the [Lecture 7 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-7/accept) to your computer and name it `lecture-7`
+
+
+```bash
+# For windows only, change the pwd to your Windows Documents dir
+cd /mnt/c/Users/TypeYourWinUserNameHere/Documents
+
+# for mac/linux put it in your home dir, as we have been doing
+cd ~
+
+# then clone
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-7
+
+# confirm it worked:
+ls lecture-7/CSB
+```
+
 
 ### *_PLEASE INSTALL TIDYVERSE IN R STUDIO AS SOON AS YOU READ THIS_*
 
@@ -352,10 +368,10 @@ The tidyverse is an opinionated collection of R packages designed for data scien
 Today, I am going to project a ppt slide show.  I would like you to set up R Studio as follows:
 
 > [!IMPORTANT]
-> Clone the [Lecture_07 Repository](https://classroom.github.com/a/Cc0eYUnO) to your computer
+> See the Computer Preparation instructions above to clone the Lecture 7 Repo to your computer
 
 > [!IMPORTANT]
-> Open `repository_lecture-07_YourUserName/CSB/data_wrangling/sandbox/data_visualization_ggplot2.R` 
+> Open `lecture-07/CSB/data_wrangling/sandbox/data_visualization_ggplot2.R` 
 
 > [!IMPORTANT]
 > Open `repository_lecture-07_YourUserName/comp-bio_lecture-07_slides.pptx` in R Studio, and execute the lines as we go in the ppt.
@@ -373,11 +389,4 @@ These are the Mind Expanders referenced in the lecture slides:
    * [CSB Mind Expander 9.6 (Outside TAMUCC)](https://forms.office.com/r/ASyvGqbY0v)
 
 ---
-
-## Homework 
-
-* Complete the Lecture and Mind Expander 9.6
-
-* Complete the [Assignment 7 (Link in Schedule)](../README.md#schedule)
-	* clone this repo to your computer, update the R script, then push the changes to github
 

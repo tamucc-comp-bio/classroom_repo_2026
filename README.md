@@ -157,13 +157,13 @@ This is the end of the hidden section
 * [10/16  Week07 Data Visualization w/ Tidyverse](lectures/lecture07new.md)
 
   * Finish Assignment 6 Q 2-3, Due 10/23/2026
-  * [Assignment 7, Due 10/23/2026](https://classroom.github.com/a/cnB6wvv6)
+  * [Assignment 7, Due 10/23/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-7/accept)
 
-* [10/23  Week08 Data Wrangling w/ Tidyverse](lectures/lecture08new.md)
+* [10/23 Week08 Data Wrangling w/ Tidyverse](lectures/lecture08new.md)
 
   * [Assignment 8, Due 10/30/2026](https://classroom.github.com/a/exyYQOJC)
      
-* [10/30  Week09 R Markdown](lectures/lecture09new.md)
+* [10/30 Week09 R Markdown](lectures/lecture09new.md)
 
   * [Exam 2 Part 1, Due 11/06/2026](https://forms.office.com/r/yEyDY7DRts)
 	* [Exam 2 Part 1 (Outside TAMUCC)](https://forms.office.com/r/TycAwVuDEW)
