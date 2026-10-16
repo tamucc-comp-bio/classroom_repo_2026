@@ -371,10 +371,10 @@ Today, I am going to project a ppt slide show.  I would like you to set up R Stu
 > See the Computer Preparation instructions above to clone the Lecture 7 Repo to your computer
 
 > [!IMPORTANT]
-> Open `lecture-07/CSB/data_wrangling/sandbox/data_visualization_ggplot2.R` 
+> Open `lecture-07/CSB/data_wrangling/sandbox/data_visualization_ggplot2.R` in R Studio, and execute the lines as we go in the ppt.
 
 > [!IMPORTANT]
-> Open `repository_lecture-07_YourUserName/comp-bio_lecture-07_slides.pptx` in R Studio, and execute the lines as we go in the ppt.
+> Open `repository_lecture-07_YourUserName/comp-bio_lecture-07_slides.pptx` 
 
 ---
 
