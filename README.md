@@ -161,7 +161,7 @@ This is the end of the hidden section
 
 * [10/23 Week08 Data Wrangling w/ Tidyverse](lectures/lecture08new.md)
 
-  * [Assignment 8, Due 10/30/2026](https://classroom.github.com/a/exyYQOJC)
+  * [Assignment 8, Due 10/30/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-8/accept)
      
 * [10/30 Week09 R Markdown](lectures/lecture09new.md)
 

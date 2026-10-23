@@ -31,7 +31,21 @@ ___
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that Git, R, RStudio, and the `~/CSB` repository work before continuing.
+Clone the [Lecture_08 Repository](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-8/accept) 
+
+```bash
+# For windows only, change the pwd to your Windows Documents dir
+cd /mnt/c/Users/TypeYourWinUserNameHere/Documents
+
+# for mac/linux put it in your home dir, as we have been doing
+cd ~
+
+# then clone
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-8
+
+# confirm it worked:
+ls lecture-8/CSB
+```
 
 ### *_PLEASE INSTALL `janitor` AND `readxl` IN R STUDIO AS SOON AS YOU READ THIS_*
 
@@ -40,9 +54,6 @@ Confirm that Git, R, RStudio, and the `~/CSB` repository work before continuing.
 install.packages("janitor")
 install.packages("readxl")
 ```
-
-> [!NOTE]
-> Clone the [Lecture_08 Repository](https://classroom.github.com/a/vVfge2mx) to your computer
 
 ---
 
@@ -63,10 +74,10 @@ install.packages("readxl")
 ## III. Getting the RScript & Data for Today 
 
 > [!IMPORTANT]
-> 1. Clone the [Lecture_08 Repository](https://classroom.github.com/a/Hc6Dz4Re) to your computer
+> 1. If you have not done so, clone the [Lecture_08 Repository](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-8/accept) to your computer.  Instructions can be found above under *Computer Preparation*
 
-2. Open  `repository_lecture-08/CSB/data_wrangling/sandbox/zipCovidSummary_lecture.R` in RStudio
-3. Note that the data for today's lecture is in `repository_lecture-08/CSB/data_wrangling/data`
+2. Open  `lecture-08/CSB/data_wrangling/sandbox/zipCovidSummary_lecture.R` in RStudio
+3. Note that the data for today's lecture is in `lecture-08/CSB/data_wrangling/data`
 4. Continue in the next section, here
 
 <!--
