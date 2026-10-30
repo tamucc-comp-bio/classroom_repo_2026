@@ -1,6 +1,6 @@
 # Week09 R Markdown (Lite) 
 
-###  No assignments were due today
+###  Assignment 8 Is Due Today
 
 [Lecture Stream](https://tamucc.zoom.us/rec/share/n-vLAmB1U6V9HPmYyPCAEJen-n60O4tDw5HdyGrQR001p8NCAqXcI78eZjfX4frn.1IcylHCClEx-nSSO)
 
