@@ -168,7 +168,7 @@ This is the end of the hidden section
   * [Exam 2 Part 1, Due 11/06/2026](https://forms.office.com/r/yEyDY7DRts)
 	* [Exam 2 Part 1 (Outside TAMUCC)](https://forms.office.com/r/TycAwVuDEW)
 
-  * [Exam 2 Part 2, Due 11/06/2026](https://classroom.github.com/a/49v1Y0Af)
+  * [Exam 2 Part 2, Due 11/06/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/exam-2/accept)
 
  <!--
  
