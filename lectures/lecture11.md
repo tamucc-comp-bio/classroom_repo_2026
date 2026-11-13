@@ -15,10 +15,7 @@ Clone the [Lecture-Assignment 11 Repo](https://classroom50.org/tamucc-comp-bio-a
 
 
 ```bash
-# For windows only, change the pwd to your Windows Documents dir
-cd /mnt/c/Users/TypeYourWinUserNameHere/Documents
-
-# for mac/linux put it in your home dir, as we have been doing
+# put it in your home dir, as we have been doing
 cd ~
 
 # then clone
