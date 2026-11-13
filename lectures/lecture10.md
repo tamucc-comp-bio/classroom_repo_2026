@@ -16,11 +16,11 @@ Confirm that Git, Conda, Python, and the `~/CSB` repository work before continui
 
 ---
 
-## Install Miniconda
+## Install Conda Forge
 
-Follow the instructions in [how_to/install_conda.md](https://github.com/tamucc-comp-bio/how_to/blob/main/install_conda.md) to install MiniConda
+Follow the instructions in [how_to/install_conda.md](https://github.com/tamucc-comp-bio/how_to/blob/main/install_conda.md) to install Conda Forge
 
-[Miniconda/Anaconda](https://www.anaconda.com/products/individual) is a free distribution of Python and R that includes preinstalled packages.  When you run `conda`, it is almost invisible but you will use its installations of Python and R rather than those that are already on your system.  While this may seem a bit confusing at first, the point of Anaconda is to make using Python easier.  It does this by allow you to maintain several "environments", with each environment being dedicated to a particular task with the dependencies that are unique to that task.  If you only maintain one environment in which you install all packages, they and their dependencies will start to conflict with each other. 
+[Mamba/CondaForge/Miniconda/Anaconda](https://www.anaconda.com/products/individual) is a free distribution of Python and R that includes preinstalled packages.  When you run `conda`, it is almost invisible but you will use its installations of Python and R rather than those that are already on your system.  While this may seem a bit confusing at first, the point of Anaconda is to make using Python easier.  It does this by allow you to maintain several "environments", with each environment being dedicated to a particular task with the dependencies that are unique to that task.  If you only maintain one environment in which you install all packages, they and their dependencies will start to conflict with each other. 
 
 <details><summary>Don't take it from me, hear what ChatGPT has to say</summary>
 <p>

@@ -214,7 +214,7 @@ This is the end of the hidden section
 
 * [11/06  Week10 Basic Python Programming I](lectures/lecture10.md)
 * [11/13  Week11 Basic Python Programming II](lectures/lecture11.md)
-    * [Assignment 11, Due 11/20/2026](https://classroom.github.com/a/4JCYaOLH)
+    * [Assignment 11, Due 11/20/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-11/accept)
 
 * [11/20  Week12 Writing Good Code](lectures/lecture12.md)
     * [Assignment 12, Due 12/2/2026](https://classroom.github.com/a/LJPtScMZ)

@@ -76,8 +76,8 @@ install.packages("readxl")
 > [!IMPORTANT]
 > 1. If you have not done so, clone the [Lecture_08 Repository](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-8/accept) to your computer.  Instructions can be found above under *Computer Preparation*
 
-2. Open  `lecture-08/CSB/data_wrangling/sandbox/zipCovidSummary_lecture.R` in RStudio
-3. Note that the data for today's lecture is in `lecture-08/CSB/data_wrangling/data`
+2. Open  `lecture-8/CSB/data_wrangling/sandbox/zipCovidSummary_lecture.R` in RStudio
+3. Note that the data for today's lecture is in `lecture-8/CSB/data_wrangling/data`
 4. Continue in the next section, here
 
 <!--

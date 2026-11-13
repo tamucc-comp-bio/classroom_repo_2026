@@ -11,7 +11,23 @@
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that Git, Conda, Python, and the `~/CSB` repository work before continuing.
+Clone the [Lecture-Assignment 11 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-11/accept) to your computer and name it `lecture-assignment-11`
+
+
+```bash
+# For windows only, change the pwd to your Windows Documents dir
+cd /mnt/c/Users/TypeYourWinUserNameHere/Documents
+
+# for mac/linux put it in your home dir, as we have been doing
+cd ~
+
+# then clone
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-assignment-11
+
+# confirm it worked:
+ls lecture-assignment-11/CSB
+```
+
 
 ---
 
@@ -528,7 +544,7 @@ ___
 
 ### Tidy Character-Delimited Files (CSV, etc...)
 
-We will goto the `~/CSB/python/sandbox` dir to demonstrate how to interface with tidy data files
+We will goto the `CSB/python/sandbox` dir in today's lecture repo to demonstrate how to interface with tidy data files
 
 ```python
 >>> import os                       # this is like the library() command in R, we are opening the os package for use
@@ -537,7 +553,7 @@ We will goto the `~/CSB/python/sandbox` dir to demonstrate how to interface with
 '/home/cbird/CSB/python/sandbox'
 ```
 
-You can also exit python `ctrl-d`, move to the `~/CSB/python/sandbox` dir in bash, then run python again
+You can also exit python `ctrl-d`, move to the `CSB/python/sandbox` dir in bash, then run python again
 
 To view the first few lines of a file:
 
