@@ -128,13 +128,13 @@ the hidden section ends here
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-<details><summary>SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R</summary>
-<p>
+
 
 This is the end of the hidden section
 -->
 
-
+<details><summary>SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R</summary>
+<p>
 
 	
 ### SECTION 2. DATA WRANGLING AND VISUALIZATION WITH R
@@ -198,19 +198,17 @@ This is the end of the hidden section
   * [Install Anaconda & Jupyter, Due 10/04](http://computingskillsforbiologists.com/setup/basic-programming/), Due 10/04
 -->
 
-
+</p>
+</details>
 
 ---
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
-</p>
-</details>
-
--->
-
 <details><summary>SECTION 3. PROGRAMMING WITH PYTHON</summary>
 <p>
+
+-->
 
 ### SECTION 3. PROGRAMMING WITH PYTHON
 
@@ -222,17 +220,17 @@ This is the end of the hidden section
     * [Assignment 12, Due 12/2/2026](https://classroom.github.com/a/LJPtScMZ)
 
 
-</p>
-</details>
 
-</p>
-</details>
 
 ---
 
 <!-- This is a hidden comment. It will not be visible in the rendered markdown. 
 
+</p>
+</details>
 
+</p>
+</details>
 
 -->
 
