@@ -568,11 +568,11 @@ Syntax: `key:value, key2:value, key3:value ...`
 
 ```python
 # Make an empty dictionary
->>> my_dict = {}
+>>> my_dictionary = {}
 
 # like lists, dictionaries can contain several datatypes, not just 1
->>> my_dict = {"a": "test", "b": 3.14, "c": [1, 2, 3, 4]}
->>> my_dict
+>>> my_dictionary = {"a": "test", "b": 3.14, "c": [1, 2, 3, 4]}
+>>> my_dictionary
 {'a': 'test', 'b': 3.14, 'c': [1, 2, 3, 4]}
 
 # the order of the key:values do not matter in dictionaries
@@ -805,6 +805,3 @@ ___
 
 ---
 
-# Assignment
-
-[Consult the Schedule](../README.md)
