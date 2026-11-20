@@ -213,11 +213,12 @@ This is the end of the hidden section
 ### SECTION 3. PROGRAMMING WITH PYTHON
 
 * [11/06  Week10 Basic Python Programming I](lectures/lecture10.md)
+
 * [11/13  Week11 Basic Python Programming II](lectures/lecture11.md)
     * [Assignment 11, Due 11/20/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-assignment-11/accept)
 
-* [11/20  Week12 Writing Good Code](lectures/lecture12.md)
-    * [Assignment 12, Due 12/2/2026](https://classroom.github.com/a/LJPtScMZ)
+* [11/20  Week12 Scientific Computing](lectures/lecture12.md)
+    * [Assignment 12, Due 12/2/2026](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/assignment-12/accept)
 
 
 
@@ -252,9 +253,9 @@ We have spent the semester learning:
 #### Undergraduates:  
 I will issue a Final Exam in much the same way I have issued assignments, in a MS Form and a Repo. You can use all resources at your disposal to complete the exam and extra credit.
 
-* [Final Exam (Python) Due 12/7/2026 11:59 pm]()  LIVE!
+* [Final Exam (Python) Due 12/7/2026 11:59 pm]()  
 
-* [Final Exam Extra Credit Due 12/7/2026 11:59 pm]()  LIVE!
+* [Final Exam Extra Credit Due 12/7/2026 11:59 pm]()  
 
 
 
