@@ -44,7 +44,7 @@ conda activate comp_bio_lecture_12
 
 ---
 
-## I. Review: Python Problem Solving 101
+## I. Python Problem Solving 101
 
 * Think through problem
 * Break down complex tasks into simple steps
@@ -125,8 +125,14 @@ cd ~
 conda list
 
 # list numpy scipy pandas biopython
-conda list | grep 'numpy\|scipy\|pandas\|biopython'
+conda list | grep 'numpy\|scipy\|pandas\|biopython\|scikit-image\|matplotlib'
 
+```
+
+<details><summary>In previous years, there were various errors installation. If you run into problems, expand for troubleshooting example </summary>
+<p>
+
+```bash
 # I had no packages
 
 # install scipy
@@ -196,6 +202,9 @@ conda install anaconda::pandas
 conda list | grep 'numpy\|scipy\|pandas\|biopython'
 
 ```
+
+</p>
+</details>
 
 </p>
 </details>
