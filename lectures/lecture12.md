@@ -13,7 +13,34 @@
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Conda/miniforge and python are needed for this lecture.
+Clone the [Lecture 12 Repo](https://classroom50.org/tamucc-comp-bio-assignments/comp-bio-skills-2026/assignments/lecture-12/accept) to your computer and name it `lecture-12`
+
+
+```bash
+# put it in your home dir, as we have been doing
+cd ~
+
+# then clone
+git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-12
+
+# confirm it worked:
+ls lecture-assignment-12/CSB
+```
+
+Create a `conda` environment for today's lecture
+
+```bash
+conda create -n comp_bio_lecture_12 -c conda-forge \
+    python=3.11 numpy scipy pandas biopython \
+    scikit-image matplotlib
+```
+
+Then activate the `comp_bio_lecture_12` environment
+
+```
+conda activate comp_bio_lecture_12
+```
+
 
 ---
 
@@ -63,68 +90,26 @@ The diversity of Python libraries often leads to version conflicts or dependency
 
 As an example of how to use environments, we will make and use an environment in `conda` explicitly for today's lecture activities.
 
-You can create a new environment with `conda` in the `bash` terminal
+You can create a new environment with `conda` in the `bash` terminal.  See the Computer Preparation section above.
+
+You can change between environments using `conda activate NameOfEnvironment` and `conda deactivate`
 
 ```bash
-(base) cbird@xps13plus:~$ conda create -n comp_bio_lecture_13
-```
-
-You should see similar output to this:
-
-```bash
-Do you accept the Terms of Service (ToS) for https://repo.anaconda.com/pkgs/main? [(a)ccept/(r)eject/(v)iew]: a
-Do you accept the Terms of Service (ToS) for https://repo.anaconda.com/pkgs/r? [(a)ccept/(r)eject/(v)iew]: a
-2 channel Terms of Service accepted
-Retrieving notices: done
-Channels:
- - defaults
-Platform: linux-64
-Collecting package metadata (repodata.json): done
-Solving environment: done
-
-## Package Plan ##
-
-  environment location: /home/cbird/miniconda3/envs/comp_bio_lecture_13
-
-
-
-Proceed ([y]/n)? y
-```
-
-Say "y" and proceed
-
-```bash
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-#
-# To activate this environment, use
-#
-#     $ conda activate comp_bio_lecture_13
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
-```
-
-You can change between environments using `conda activate` and `conda deactivate`
-
-```bash
-(base) cbird@xps13plus:~$ conda activate comp_bio_lecture_13
-(comp_bio_lecture_13) cbird@xps13plus:~$
+(base) cbird@xps13plus:~$ conda activate comp_bio_lecture_12
+(comp_bio_lecture_12) cbird@xps13plus:~$
 ```
 
 ```bash
-(comp_bio_lecture_13) cbird@xps13plus:~$ conda deactivate
+(comp_bio_lecture_12) cbird@xps13plus:~$ conda deactivate
 (base) cbird@xps13plus:~$
 ```
 
 ```bash
-(base) cbird@xps13plus:~$ conda activate comp_bio_lecture_13
-(comp_bio_lecture_13) cbird@xps13plus:~$
+(base) cbird@xps13plus:~$ conda activate comp_bio_lecture_12
+(comp_bio_lecture_12) cbird@xps13plus:~$
 ```
 > [!NOTE]
-> The present `conda` environment is listed prior to your command prompt `(comp_bio_lecture_13)`
+> The present `conda` environment is listed prior to your command prompt `(comp_bio_lecture_12)`
 
 ---
 
