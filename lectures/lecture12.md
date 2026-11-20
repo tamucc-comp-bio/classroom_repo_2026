@@ -590,7 +590,7 @@ ___
 # read in image, and note that it is an array
 >>> image = io.imread("../data/Kacsoh2013_Drosobrain.png")
 >>> type(image)
-<class 'imageio.core.util.Array'>
+<class 'numpy.ndarray'>
 ```
 
 The image below is the file you just loaded into python.
@@ -603,10 +603,11 @@ ___
 ### Viewing Image from Within Python
 
 ```python
-# load image, ignore the message and push forward
+# load image, ignore the warning message and push forward
 >>> plt.imshow(image)
-qt.qpa.plugin: Could not find the Qt platform plugin "wayland" in ""
-<matplotlib.image.AxesImage object at 0x7fa7728e67b0>
+Failed to create wl_display (No such file or directory)
+qt.qpa.plugin: Could not load the Qt platform plugin "wayland" in "" even though it was found.
+<matplotlib.image.AxesImage object at 0x7f33a00dc650>
 
 >>> plt.show()
 ```
@@ -620,7 +621,7 @@ ___
 ```python
 #note the dimensions of the image, the first two numbers represent the height and width, in pixels, respectively
 >>> image.shape
-(1024, 1024, 4)
+(1024, 1024, 3)
 
 # view characteristics of Red color channel
 >>> image[:,:,0]
