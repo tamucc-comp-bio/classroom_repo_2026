@@ -1,8 +1,8 @@
-# Lecture 12 Python Boot Camp III: Writing Good Code
+# Lecture 12: Scientific Computing, Ch 6
 
 > [!NOTE]
-> [Lecture Stream](https://tamucc.zoom.us/rec/share/XU_Zb00JD1LAIOsXqg6jVv-goQ9a21q_w9jgs1npiwi3Bzk1GF8KHzZqQqh66S2x.N5sKXhzsbZ-WQRo8)
-> Passcode: y9e6EN%=
+> [Lecture Stream]()
+> Passcode: TBA
 
 > [!IMPORTANT]
 > Assignment 12 is due the last day of classes
@@ -13,11 +13,11 @@
 
 Before class, complete the [Computer Setup Checklist](../resources/computer_setup_checklist.md).
 
-Confirm that Git, Conda, Python, and the `~/CSB` repository work before continuing.
+Conda/miniforge and python are needed for this lecture.
 
 ---
 
-## I. Python Problem Solving 101
+## I. Review: Python Problem Solving 101
 
 * Think through problem
 * Break down complex tasks into simple steps
@@ -28,623 +28,1136 @@ Confirm that Git, Conda, Python, and the `~/CSB` repository work before continui
 
 ___
 
+## II. Lecture Activities
 
-## II. Lecture Activities 
+While we will not completely cover this whole chapter, you may want to review all of it if you are using python in your research.  It reviews `numpy`, `scipy`, `pandas`, and `biopython`.  
 
-### 4.1 Basic Coding Principles for Science
+These are packages that extend the functionality of `python`, making it easier to perform common data manipulation, visualization, and analysis tasks.
 
-* *Minimize errors by minimizing optimization*
-	* working code is better than fastest code
-	
-* *Make code readable by applying consistent formatting*
-	* python forces you to do this
-	
-* *Complex tasks should be broken down into simple tasks or building blocks, i.e. functions*
-	* this concept applies to all challenges you will face, not just coding
+* *NumPy*: adds vector and matrix data structures
+* *SciPy*: adds algebra, integration, differential equations, stats, and simulations
+* *Pandas*: manipulation, analysis, and visualization of data sets
+* *Biopython*: bioinformatics, connection to biological databases
 
-* *Use premade packages that do what you want to accomplish*
-	* do not reinvent wheel
+---
 
-* *Use debugger and employ _unit testing_*
-	* we will learn about this
+### Importance of using `conda` Environments
 
-* *Use a profiler to identify code that needs optimizing*
-	* identify code that is too slow and needs to be sped up
+I have stressed the importance of using `conda` in conjunction with `python`.  
 
-___
+The diversity of Python libraries often leads to version conflicts or dependency issues when working on multiple projects. This is where environments, such as those provided by `conda`, become essential. Using environments when working with Python is not just a best practice; it’s a necessity for efficient, reproducible, and conflict-free project management. They empower you to focus on your code and analyses instead of troubleshooting software compatibility issues.
 
+* **Dependency Management:** Each project may require different versions of Python or specific libraries. For example, one project might rely on Biopython 1.8, while another needs the latest version of Pandas. Using environments, you can ensure each project has access to only the tools and dependencies it requires, avoiding conflicts.
 
-### 4.2.1 Writing Functions
+* **Isolation:** Environments isolate the libraries of one project from another. This means you can work on different projects with completely different requirements on the same system without interference.
 
-As with most other coding languages, `python` allows you to create [functions](https://en.wikipedia.org/wiki/Subroutine). 
+* **Reproducibility:** By creating and exporting an environment file, you can share the exact setup with collaborators. This ensures that they can replicate your work seamlessly, which is a cornerstone of good scientific practice.
 
-When dividing the complex task of making a program into steps, it is important to avoid both over and underdividing.
-* Too many user-defined functions are hard to track
-* Too few user-defined functions makes bloated code (too many lines)
+* **Stability for Long-Term Projects:** Over time, library updates may introduce changes or deprecate functions you rely on. An environment locks in the versions of your libraries, allowing you to revisit old projects without compatibility issues.
 
-My rule of thumb is to create functions for repetative tasks.  If you find yourself copying and pasting blocks of code multiple times within a script, you should make a function out of it.
+* **Ease of Use:** Tools like Miniconda make creating and managing environments simple. You can quickly set up a fresh environment tailored to your needs and even clone or modify existing ones with minimal effort.
 
-We have been using built in `python` functions, but we can also make our own. Remember, you need to define your custom function before you can use it.
+---
 
-___
+### Create an Environment for Today's Lecture
 
+As an example of how to use environments, we will make and use an environment in `conda` explicitly for today's lecture activities.
 
-#### Example Function - Calculate GC Content of DNA
-
-Let us write a function that that calculates the GC content of a DNA sequence.  I want you to type the function into `notepad++` or `bbedit` then test it by copying and pasting it into a `python` terminal
+You can create a new environment with `conda` in the `bash` terminal
 
 ```bash
-# move to the sandbox for this chapter, and start python
-cd ~/CSB/good_code/sandbox
-python3
+(base) cbird@xps13plus:~$ conda create -n comp_bio_lecture_13
 ```
 
-```python
-# this is the function to calc GC content of a DNA sequence, 
-# copy and paste this into your text editor
-def GCcontent(dna):
-	dna = dna.upper()
-	numG = dna.count("G")
-	numC = dna.count("C")
-	numA = dna.count("A")
-	numT = dna.count("T")
-	return (numG + numC) / (numG + numC + numT + numA)
+You should see similar output to this:
+
+```bash
+Do you accept the Terms of Service (ToS) for https://repo.anaconda.com/pkgs/main? [(a)ccept/(r)eject/(v)iew]: a
+Do you accept the Terms of Service (ToS) for https://repo.anaconda.com/pkgs/r? [(a)ccept/(r)eject/(v)iew]: a
+2 channel Terms of Service accepted
+Retrieving notices: done
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/cbird/miniconda3/envs/comp_bio_lecture_13
+
+
+
+Proceed ([y]/n)? y
 ```
 
+Say "y" and proceed
+
+```bash
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate comp_bio_lecture_13
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+```
+
+You can change between environments using `conda activate` and `conda deactivate`
+
+```bash
+(base) cbird@xps13plus:~$ conda activate comp_bio_lecture_13
+(comp_bio_lecture_13) cbird@xps13plus:~$
+```
+
+```bash
+(comp_bio_lecture_13) cbird@xps13plus:~$ conda deactivate
+(base) cbird@xps13plus:~$
+```
+
+```bash
+(base) cbird@xps13plus:~$ conda activate comp_bio_lecture_13
+(comp_bio_lecture_13) cbird@xps13plus:~$
+```
+> [!NOTE]
+> The present `conda` environment is listed prior to your command prompt `(comp_bio_lecture_13)`
+
+---
+
+### Installation of Packages
+
+The are installation details in `~/CSB/scientific/installation`.  You can also consult the official [python package installation tutorial](https://packaging.python.org/tutorials/installing-packages/)
+
+I did the following in the bash shell to install biopython, given that we should all have miniconda/anaconda:
+
+```bash
+cd ~
+# list installed packages
+conda list
+
+# list numpy scipy pandas biopython
+conda list | grep 'numpy\|scipy\|pandas\|biopython'
+
+# I had no packages
+
+# install scipy
+conda install scipy
+
+# check packages
+conda list | grep 'numpy\|scipy\|pandas\|biopython'
+
+# install pandas, I got an error when I didn't include -c conda-forge
+conda install pandas -c conda-forge
+
+# check packages
+conda list | grep 'numpy\|scipy\|pandas\|biopython'
+
+# install biopython
+conda install biopython
+
+```
+
+---
+
+<details><summary>Last year the previous command did not work.  Expand for troubleshooting example </summary>
+<p>
+
+```bash
+# I got hung up here, so tried the following:
+
+conda clean --all
+
+conda update --all
+
+conda install -c conda-forge biopython
+
+# that didn't work so I went to: https://anaconda.org/conda-forge/biopython
+
+conda install conda-forge::biopython
+
+```
+	
+We can't install `biopython` because it doesn't work with the newest version of Python
+Delete the environment and start Over
+
+```bash
+conda deactivate
+
+conda remove -n comp_bio_lecture_13 --all
+
+```
+
+Create the environment with an older version of Python, v 3.10
+
+```bash
+conda create -n comp_bio_lecture_13 python=3.10
+```
+
+Activate the new environment and install scipy, pandas, and Biopython
+
+```bash
+conda activate comp_bio_lecture_13
+
+conda install conda-forge::biopython
+
+conda install conda-forge::scipy
+
+conda install anaconda::pandas 
+
+conda list | grep 'numpy\|scipy\|pandas\|biopython'
+
+```
+
+</p>
+</details>
+
+---
+
+Now let's install some other packages for this lecture
+
+```bash
+conda install -c conda-forge scikit-image
+
+conda install -c conda-forge matplotlib
+```
+
+Confirm installation of biopython in python3 terminal
+
 ```python
-# It should look like this if it works:
->>> def GCcontent(dna):
-...     dna = dna.upper()
-...     numG = dna.count("G")
-...     numC = dna.count("C")
-...     numA = dna.count("A")
-...     numT = dna.count("T")
-...     return (numG + numC) / (numG + numC + numT + numA)
-...
+>>> from Bio import Entrez
 >>>
 ```
 
-After loading the function, you can now see it in your lists of variables
-
-```python
-# show variables and functions in enviroment
->>> globals()
-{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'GCcontent': <function GCcontent at 0x7fc203307bf8>}
-
->>> locals()
-{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'GCcontent': <function GCcontent at 0x7fc203307bf8>}
-```
-
-___
-
-
-#### Anatomy of the `GCcontent()` Function:
-
-* Line 1: define the function with `def GCcontent(dna):`
-	* `def` means define.  this has to be used
-	* `GCcontent()` is the name of the function you are creating
-	* `dna` is a variable that contains the dna sequence passed into the function for processing
-	
-* Lines 2-6: code to calculate GC content
-	* make all bases uppercase in sequence `dna = dna.upper()`
-	* Count the number of G `numG = dna.count("G")`
-	* Count C, A, and T also
-	
-* Line 7: define the output of the function `return (numG + numC) / (numG + numC + numT + numA)`
-	* `return` tells the function to output, or return, the result of the following code
-	* `(numG + numC) / (numG + numC + numT + numA)` calculates the proportion of bases that are either G or C
-
-___
-
-
-#### Using the `GCcontent()` Function:
-
-Use the `GCcontent()` function in your terminal.  Note that the DNA sequence you specify is loaded into the `dna` variable
-
-```python
->>> GCcontent("AATTTCCCGGGAAA")
-0.42857142857142855
->>> GCcontent("ATGCATGCATGC")
-0.5
-```
-
-___
-
-
-#### Concept Reinforcement - Make Two More Functions
-
-Let us define more functions in your text editor, then copy and paste these new functions into your python3 terminal.  Fix any errors that occur in your text editor and try again.
-
-```python
-#print a dictionary
-def print_dictionary(mydictionary):
-	for k, v in mydictionary.items():
-		print("key: ", k, " value: ", str(v))
-
-#return a list with results
-def squared(start = 1, end = 10):
-	results = []
-	for i in range(start, end):
-		r = i ** 2
-		results.append(r)
-	return results
-
-```
-
-Now we can test the functions.  Note that `squared()` has default values which are overruled by user-defined values.
-
-```python
->>> print_dictionary({"a": 3.4, "b": [1, 2, 3, 4], "c": "astring"})
-key:  a  value:  3.4
-key:  b  value:  [1, 2, 3, 4]
-key:  c  value:  astring
-
->>> squared()
-[1, 4, 9, 16, 25, 36, 49, 64, 81]
-
->>> squared(start = 3, end = 10)
-[9, 16, 25, 36, 49, 64, 81]
-
->>> squared(5)
-[25, 36, 49, 64, 81]
-
->>> squared(end = 3)
-[1, 4]
-
-```
-
-___
-
-
-#### [Mind Expander 4.1](https://forms.office.com/Pages/ResponsePage.aspx?id=8frLNKZngUepylFOslULZlFZdbyVx8RLiPt1GobhHnlUMExGOVA0TUROVklLUlhKSUtaN0ZKS1UzNS4u)
-
-* [Mind Expander 4.1(Outside TAMUCC)](https://forms.office.com/r/2FTh5pV1Ra)
-
-Answer the questions in the above link while referring to the following code blocks (you are expected to run them in `python`):
-
-```python
-def foo1(x = 7):
-	return x ** 0.5
-```
-
-```python
-def foo2(x = 3, y = 5):
-	if x > y:
-		return x
-	return y
-```
-
-```python
-def foo3(x = 2, y = 0, z = 9):
-	if x > y:
-		tmp = y
-		y = x
-		x = tmp
-	if y > z:
-		tmp = z
-		z = y
-		y = tmp
-	if x > y:
-		tmp = y
-		y = x
-		x = tmp
-	return [x, y, z]
-```
-
-```python
-def foo4(x = 6):
-	result = 1
-	for i in range(1, x + 1):
-		result = result * i
-	return result
-```
-
-```python
-def foo5(x = 1729):
-	d = 2
-	myfactors = []
-	while x > 1:
-		if x % d == 0:
-			myfactors.append(d)
-			x = x / d
-		else:
-			d = d + 1
-	return myfactors
-```
-
-```python
-def foo6(x = 25):
-	if x == 1:
-		return 1
-	return x * foo6(x - 1)
-```
-
-```python
-def foo7(x = 100):
-	myp = [2]
-	for i in range(3, x + 1):
-		success = False
-		for j in myp:
-			if i % j == 0:
-				success = True
-				break
-		if success == False:
-			myp.append(i)
-	return myp
-```
-
-___
-
-
-### 4.2.2 Importing Packages and Modules
-
-*Modules* are single files that contain multiple functions.
-
-*Packages* are collections of modules and can be imported into python to save time. Last week we used the `csv` and `os` packages.
-
-There are 4 different ways to to load a module. Below we will use generic terms *theModule* and *theFunction* which should be replaced with real module and function names, respectively.
-* `import theModule`
-* `from theModule import theFunction`
-* `import theModule as mm`
-	* gives the module the name mm
-* `from theModule import *`
-
-You should definitely create your own modules to save time. They would contain fuctions that you use frequently.
-
-> [!IMPORTANT]
-> Exit python with `ctrl-d`
+You can also update packages that are already installed.  (bash terminal)
 
 ```bash
-# you can install python packages from the bash terminal using pip
+# if you want to update a package
+conda update pandas
 
-pip install scipy
 ```
 
-> [!IMPORTANT]
-> Enter python 
+___
+
+### Numpy Arrays (Ch 6.2)
+
+NumPy and SciPy are typically used in concert and imported together.  Here we will start by importing `NumPy` and name it `np`
+
+```python
+>>> import numpy as np
+```
+
+`NumPy` provides an `array` data structure.  An array can be one or more dimensions
+
+* 1d: vector
+* 2d: matrix
+* 3d or more: tensor
+
+`np.arrange()` can be used to create a 1d array that is similar to a list
+
+```python
+>>> a = np.arange(9)
+>>> a
+array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+```
+
+___
+
+### Arrays are Different Than Lists
+
+While arrays look superficially similar to lists, they behave very differently when used in arithmetic expressions:
+
+```python
+# list
+>>> al = list(range(9))
+>>> al
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+>>> al * 2
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+#array
+>>> a * 2
+array([ 0,  2,  4,  6,  8, 10, 12, 14, 16])
+
+>>> 2 + a
+array([ 2,  3,  4,  5,  6,  7,  8,  9, 10])
+
+# you cannot add 2 to a list
+>>> 2 + al
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'list'
+```
+
+___
+
+
+### Array Methods
+
+Arrays have many attributes and methods.  Here are some:
+
+```python
+# length along each dimension
+>>> a.shape
+(9,)
+
+# number of dimensions
+>>> a.ndim
+1
+
+# data type of content
+>>> a.dtype.name
+'int64'
+
+# number of elements
+>>> a.size
+9
+>>>
+```
+
+Here are some examples of arithmetic and statistical methods associated with arrays
+
+```python
+>>> a.sum()
+36
+```
+
+You may need to wrap the array method in a print() function to get numeric output.
+
+```python
+>>> print(a.sum())
+36
+>>> a.mean()
+4.0
+>>> a.std()
+2.581988897471611
+>>> a.min()
+0
+>>> a.max()
+8
+>>>
+```
+
+Here are some examples of arithmetic and statistical NumPy methods that can be applied to arrays
+
+```python
+# sqrt each number in array
+>>> np.sqrt(a)
+array([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,
+       2.23606798, 2.44948974, 2.64575131, 2.82842712])
+
+# e^ each number in an array, where e is the constant 2.718...
+>>> np.exp(a)
+array([1.00000000e+00, 2.71828183e+00, 7.38905610e+00, 2.00855369e+01,
+       5.45981500e+01, 1.48413159e+02, 4.03428793e+02, 1.09663316e+03,
+       2.98095799e+03])
+>>>
+```
+
+___
+
+
+### Convert Other Data Structures To Arrays with NumPy
+
+```python
+# convert list to one-dimensional array (aka a vector)
+>>> a1 = np.array([1, 2, 3, 4])
+>>> print(a1)
+[1 2 3 4]
+>>> a1.dtype.name
+'int64'
+
+>>> a1 = np.array([1.0, 2.0, 3.0, 4.0])
+>>> print(a1)
+[1. 2. 3. 4.]
+>>> a1.dtype.name
+'float64'
+
+# convert a list of lists into a 2d array (aka a matrix)
+>>> m = np.array([[1, 2], [3, 4]])
+>>> m
+array([[1, 2],
+       [3, 4]])
+
+# specify the data type in the 2d array
+>>> m = np.array([[1, 2], [3, 4]], dtype = float)
+>>> print(m)
+[[1. 2.]
+ [3. 4.]]
+>>>
+```
+
+___
+
+
+### Arrays can be created, or initialized with set properties
+
+```python
+# create 3x2 array filled with 0.0 (floating-point)
+>>> m.dtype.name
+'float64'
+>>> m = np.zeros((3, 2), dtype = float)
+>>> m
+array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])
+>>>
+
+# create 2x3 array filled with 1+0i (complex numbers)
+>>> m = np.ones((2, 3), dtype = complex)
+>>> m
+array([[1.+0.j, 1.+0.j, 1.+0.j],
+       [1.+0.j, 1.+0.j, 1.+0.j]])
+>>>
+
+# create an array containing the integers from 0 to 8 and arrange it in a 3x3 array
+>>> a = np.arange(9)
+>>> a.reshape((3,3))
+array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+>>>
+
+# create an array with random values drawn from uniform distribution U[0,1]
+>>> np.random.random((2, 3))
+array([[0.75076835, 0.91614084, 0.81553323],
+       [0.34772304, 0.8271986 , 0.46484672]])
+>>>
+```
+
+___
+
+
+### Array Elements & Indexing
+
+The elements of arrays are indexed, just like lists, allowing you to interact with specific values in the array
+
+```python
+>>> a
+array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+>>> a[1]
+1
+>>> a[:4]
+array([0, 1, 2, 3])
+>>> a[-3:]
+array([6, 7, 8])
+>>>
+```
+
+___
+
+
+### Working With 2D Arrays (a.k.a. Matrices)
+
+Here is an example with a 2d array
+
+```python
+#create 2d array
+>>> m = np.arange(16).reshape((4, 4))
+>>> m
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+
+# extract submatrix
+>>> m[0:3, 1:4]
+array([[ 1,  2,  3],
+       [ 5,  6,  7],
+       [ 9, 10, 11]])
+
+# this is the second row
+>>> m[1]
+array([4, 5, 6, 7])
+
+# this is the second column, you need the colon (:) which represents all rows
+>>> m[:, 1]
+array([ 1,  5,  9, 13])
+>>>
+```
+
+___
+
+### Matrix Math
+
+With 2d arrays arithmetic functions can be applied by row or column
+
+```python
+# sum whole matrix
+>>> m.sum()
+120
+
+# sum by column
+>>> m.sum(axis = 0)
+array([24, 28, 32, 36])
+
+# sum by row
+>>> m.sum(axis = 1)
+array([ 6, 22, 38, 54])
+>>>
+```
+
+___
+
+
+### Read In Data From File With NumPy
+
+The `NumPy` function `loadtxt` can be used to read in data from a file, such as a csv
+
+```python
+# this is pseudocode, do not type it in
+m = np.loadtxt("my_matrix_file.csv", delimiter = ",")
+```
+
+As always, you can use the help function to learn more about other functions, such as `loadtxt`
+```python
+>>> help(np.loadtxt)
+Help on function loadtxt in module numpy:
+
+loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0, encoding='bytes', max_rows=None)
+    Load data from a text file.
+
+    Each row in the text file must have the same number of values.
+
+    Parameters
+    ----------
+    fname : file, str, or pathlib.Path
+        File, filename, or generator to read.  If the filename extension is
+        ``.gz`` or ``.bz2``, the file is first decompressed. Note that
+        generators should return byte strings for Python 3k.
+    dtype : data-type, optional
+        Data-type of the resulting array; default: float.  If this is a
+        structured data-type, the resulting array will be 1-dimensional, and
+        each row will be interpreted as an element of the array.  In this
+        case, the number of columns used must match the number of fields in
+        the data-type.
+    comments : str or sequence of str, optional
+        The characters or list of characters used to indicate the start of a
+        comment. None implies no comments. For backwards compatibility, byte
+        strings will be decoded as 'latin1'. The default is '#'.
+```
+
+`q` to exit the help
+
+___
+
+
+### Example: Image processing with NumPy
+
+[Kacsoh et al. (2013)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3760715/) investigated a behavioral immune response
+in Drosophila melanogaster. Female flies lay their eggs in alcohol-laden food when confronted with parasitic wasps so that their offspring are protected from infection by the wasps. This change in oviposition behavior is mediated by neuropeptide F (NPF) and its receptor (NPFRl) in fly brains. Coupled to a reporter gene, NPF and NPFRl can be visualized by confocal microscopy.
+
+![](Week13_files/fruitflies.jpg)
+
+_Fig 1. D. melanogaster medicates offspring with alcohol after exposure to wasps. (A) Standard oviposition preference setup. (B) Proportion eggs laid on 6% ethanol dishes for three wasp treatments, at two time points. ***P < 0.001. (C) Proportion eggs laid on dishes with increasing ethanol (EtOH) concentrations, depending on wasp presence. P < 0.001 for distribution comparisons at both time points. (D) Proportion wasp-exposed fly offspring that eclose when laid in cages with different combinations of oviposition dishes. (E) Proportion unexposed offspring that eclose. For (D to E), letters indicate significance groups at P < 0.01. For (B to E), error bars represent 95% confidence intervals (n = 4)._
+
+![](Week13_files/Kacsoh2013_fig2.jpg)
+
+_Fig 2. Sight and NPF signaling control fly ability to sense and respond to wasps. Proportion eggs laid on ethanol dishes by (A) smell and sight mutants, (B) NPF and NPFR1 over-expression mutants, and (C) NPF and NPFR1 knockdown mutants in the presence and absence of wasps. For (A to C), y-axis is the same; error bars represent 95% confidence intervals (*P < 0.05, ***P < 0.001, n = 4). (D) NPF immunostain of an unexposed fly brain. * = NPF-expressing neurons, FSB = fan-shaped body, Lat = lateral regions, SEG = subesophageal ganglion, OL = optic lobes. (E to H) NPF immunostained fan-shaped bodies from control and sight mutant flies unexposed or exposed to wasps._
+
+___
+
+
+### Getting Working Dir and Packages Set Up
+
+Here we use `NumPy` for image processing.  An image is typically stored as a 3d numerical array:  
+
+* height (y)
+* width (x)
+* color (z)
+
+The color dimension can be composed of Red, Green, and Blue (RGB) with each channel containing an integer between 0 and 255, where 0 is the absence of color and 255 is the fully saturated color.
+
+We will use functions from `NumPy`, 2 image analysis functions from the `scikit-image` library, aka `skimage`
+* `io.imread` - reads an image into an array
+* `io.imshow` - visualize an image
+, and the matplotlib to visualize the images.  
+
+Before we start, you should navigate to the sandbox for this chapter. Exit python with `ctrl-d`
 
 ```bash
-python3
+$ cd ~/CSB/scientific/sandbox
+$ python3
 ```
 
-```python
-import scipy
-```
+Windows-unbuntu folks should turn on the windows app, `Xming` for the next lines of code to work.  Recall that we installed this in lecture 0
 
-
----
-
-### 4.2.3 Program Structure: Making a Program
-
-When writing more complex programs, *it is imperative to break them down into managable pieces* that can be easily debugged, tested, and maintained.
-
-We are going to simulate changes in a population of *N* monoecious, diploid organisms through time.  We will focus on a gene with two alleles, `A` and `a`. 
-* To initialize the population, each individual will be assigned an `A` with probability *p* and `a` with probability of `1-p`. 
-* At the end of each generation, individuals will randomly mate and die after reproducing.  
-* The population size will remain stable and there will be no mutations.
-
-Once it is made, we can use the simulation to investigate [genetic drift](https://en.wikipedia.org/wiki/Genetic_drift). This is essentially a forward time [Wright-Fisher simulation](https://en.wikipedia.org/wiki/Genetic_drift#Wright.E2.80.93Fisher_model)
-
-![](https://www.lds.org/bc/content/ldsorg/topics/book-of-mormon-dna/drift[1].png)
-
-To make the simulation, we will create *functions*, then use a "master" program to call the *functions* and orchestrate the simulation.
-
-___
-
-
-#### Step 1: Plan of Attack
-
-The first step is not coding, it is strategizing and developing a plan of attack in plain English
-
-* Need a function to build the population
-	* inputs: the population size (`N`), probabilty of *A* (`p`)
-	* returns: `population` of diploid indiviudals, e.g `AA,AA,Aa,aa`
-	
-* Need a function to compute [genotypic](https://en.wikipedia.org/wiki/Genotype) frequencies 
-	* Inputs: the `population`
-	* Outputs: the count for each [genotype](https://en.wikipedia.org/wiki/Genotype)
-	
-* Need a reproduction function that 
-	* Inputs: current generation 
-	* Outputs: the next generation
-
-___
-
-
-#### Step 2: Choose Data Structures
-
-* `population`: *list* of *tuples* `[("A", "a"), ("A", "A")]`
-
-___
-
-
-#### Step 3: Find Modules
-
-The third step is identifying modules that can be useful
-
-* `SciPy` and `NumPy`
-
-___
-
-
-#### Step 4: Build 1st Function
-
-We begin by building the population creation function (in our text editor), then test it in the python3 terminal
+Now let us start working in python:
 
 ```python
-# import scipy & numpy
-import scipy
 import numpy as np
-
-# make function to build population
-def build_population(N, p):
-    """The population consists of N individuals.
-        Each individual has two chromosomes, containing
-        allele "A" or "a", with probability p or 1-p,
-        respectively.
-        The population stored as a list of tuples, 
-        where each tuple contains a genotype, 
-        e.g. a pop of two indiviudals, one hetero and 
-        one homozygote is represented as follows [("A", "a"), ("A", "A")].
-    """
-    population = []
-    for i in range(N):
-        # Determine allele 1
-        if np.random.rand() > p:
-            allele1 = "a"
-        else:
-            allele1 = "A"
-        
-        # Determine allele 2
-        if np.random.rand() > p:
-            allele2 = "a"
-        else:
-            allele2 = "A"
-        
-        population.append((allele1, allele2))
-    
-    return population
-
-```
-
-Test the function by copying it from text editor and pasting it into python3 terminal then running the following code
-
-```python
->>> build_population(N = 10, p = 0.7)
-[('A', 'A'), ('A', 'A'), ('a', 'A'), ('A', 'A'), ('A', 'a'), ('a', 'a'), ('a', 'a'), ('A', 'a'), ('A', 'a'), ('A', 'a')]
+import skimage.io as io
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 ```
 
 ___
 
-#### Step 5: Build 2nd Function
-
-Next we build the function that computes genotype frequencies.  AA, Aa, aA, and aa are the possible genotypes. Aa and aA differ according to which allele was maternally vs. paternally inherited. The frequencies are the counts of each genotype.
+### Read in Image From Kascoh 2013
 
 ```python
-def compute_frequencies(population):
-	""" Count the genotypes.
-		Returns a dictionary of genotypic frequencies.
-	"""
-	AA = population.count(("A", "A"))
-	Aa = population.count(("A", "a"))
-	aA = population.count(("a", "A"))
-	aa = population.count(("a", "a"))
-	return({"AA": AA,
-		"aa": aa,
-		"Aa": Aa,
-		"aA": aA})
+# read in image, and note that it is an array
+>>> image = io.imread("../data/Kacsoh2013_Drosobrain.png")
+>>> type(image)
+<class 'imageio.core.util.Array'>
+```
+
+The image below is the file you just loaded into python.
+
+![](Week13_files/Kacsoh2013_Drosobrain.png)
+
+___
+
+
+### Viewing Image from Within Python
+
+```python
+# load image, ignore the message and push forward
+>>> plt.imshow(image)
+qt.qpa.plugin: Could not find the Qt platform plugin "wayland" in ""
+<matplotlib.image.AxesImage object at 0x7fa7728e67b0>
+
+>>> plt.show()
+```
+
+![](Week13_files/Capture.PNG "image 1")
+
+___
+
+### Image Properties
+
+```python
+#note the dimensions of the image, the first two numbers represent the height and width, in pixels, respectively
+>>> image.shape
+(1024, 1024, 4)
+
+# view characteristics of Red color channel
+>>> image[:,:,0]
+Array([[ 9,  4,  6, ..., 24,  9,  4],
+       [21, 10, 10, ..., 16, 20,  6],
+       [ 7, 13, 13, ...,  8,  5, 26],
+       ...,
+       [ 5,  7,  6, ..., 12,  4, 14],
+       [ 3, 24,  4, ...,  5, 10,  3],
+       [ 9,  8,  8, ..., 11,  9,  6]], dtype=uint8)
+>>> red = image[:,:,0]
+>>> red.mean()
+23.1810245513916
+>>> red.std()
+30.44674082199301
+>>> red.min()
+0
+>>> red.max()
+255
+>>>
+
+# green color channel
+>>> green = image[:,:,1]
+>>> green.mean()
+0.0
 
 ```
 
-Test the genotype function
+The images only contain red coloration because of the filters on the confocal microscope.
+
+___
+
+### Counting Red Pixels
+
+We can count the number of red pixels, ie those exhibiting NPF and NPFR1 expression. While there are sophisticated methods to determine the background of an image, here we take the simplest approach and choose an arbitrary threshold of 100 (i.e., intensities below 100 are considered noise, all pixels with a value above this threshold are considered "red" or "expressed"). We can visually inspect how this threshold compares to the rest of the image by setting a part of our picture to 100:
 
 ```python
->>> my_pop = build_population(6, 0.5)
->>> my_pop
-[('a', 'A'), ('A', 'A'), ('a', 'A'), ('a', 'a'), ('A', 'A'), ('A', 'a')]
+# create a copy of the image
+>>> img_copy = image.copy()
+# use Python slicing to change color values of part of the red channel in the image
+>>> img_copy[:, 480:500, 0] = 100
+>>> plt.imshow(img_copy)
+<matplotlib.image.AxesImage object at 0x7f103b7a6d30>
+>>> plt.show()
+```
 
->>> compute_frequencies(my_pop)
-{'AA': 2, 'aa': 1, 'Aa': 1, 'aA': 2}
+![alt text](Week13_files/Capture2.PNG "image 2")
 
->>> compute_frequencies(build_population(100, 0.8))
-{'AA': 61, 'aa': 6, 'Aa': 12, 'aA': 21}
+We now create a new array where we select only pixels that exceed the threshold, and then count their number:
+
+```python
+>>> threshold = 100
+>>> mask = red > threshold
+>>> mask.sum()
+37037
+>>> plt.imshow(mask, cmap="gray", vmin=0, vmax=1)
+<matplotlib.image.AxesImage object at 0x7f103b7c31d0>
+>>> plt.show()
+```
+
+There are 37,037 pixels above the threshold and that the expression of NPF and NPFR1 is spatially localized
+
+![alt text](Week13_files/Capture3.PNG "image 3")
+
+Using the mask (i.e., setting every pixel to either 0 or 1), we lost the information on the intensity of individual pixels (i.e., strength of expression signal). However, we can show the pixels above the threshold along with their intensity by calling
+
+```python
+>>> mask2 = red * (red > threshold)
+>>> mask2.sum()
+4855070
+>>> plt.imshow(mask2, cmap="gray")
+<matplotlib.image.AxesImage object at 0x7f103b7a6630>
+>>> plt.show()
+```
+
+![alt text](Week13_files/Capture4.PNG "image 4")
+
+We have developed a quantitative measure of NPF/NPFR1 expression from confocal images and this can now be easily automated and applied to many images.  This could be used to compare expression in different treatments.
+
+___
+
+
+## 6.3 Working with `pandas`
+
+`pandas` is the Python Data Analysis Library, introducing a data structure similar to the data frame in R. `pandas` provides two main data structures: 
+* _Series_, meant to store a one-dimensional array, and 
+* _DataFrame_, which contains data organized in rows and columns, as in a spreadsheet. 
+The data stored in a Series are all of the same type; in a Data Frame, each column can be of a different type. `pandas` provides useful functions to manipulate data sets, calculate statistics, and plot results.
+
+___
+
+### Read in CSV as Data Frame with Pandas
+
+For our testing, we are going to import a . csv file containing a "plumage score" for male and female birds of several species. The method and the data are from Dale et al. (2015). Using pandas, we are going to import the file (start Jupyter from your `~CSB/scientific/sandbox` directory):
+
+```python
+>>> import pandas
+>>> import numpy as np
+>>> data = pandas.read_csv("../data/Dale2015_data.csv")
+```
+
+This function creates a DataFrame object, made of rows and columns.
+You can specify the delimiter ( e.g., sep = ";" for semicolon), change the text encoding (e.g., encoding = "latin1"), etc. The function `pandas.read_excel` allows you to import Excel files directly into Python. 
+
+___
+
+### Attributes and Methods of Data Frame
+
+Use the attribute shape to determine the numbers of rows and columns of the Data Frame:
+
+```python
+>>> data.shape
+(5831, 5)
+```
+
+To see the first few rows in your data set, use the method head. Equivalently, tail returns the last few lines. To access the names of the columns, type:
+
+```python
+>>> data.columns
+Index(['Scientific_name', 'English_name', 'TipLabel', 'Female_plumage_score',
+       'Male_plumage_score'],
+      dtype='object')
+>>>
+```
+
+which returns an Index object with the column labels. 
+
+___
+
+### Add Column To Data Frame
+
+You can combine columns to create new columns:
+
+```python
+>>> data["Sum_scores"] = data["Female_plumage_score"] + data["Male_plumage_score"]
+>>> data.head()
+            Scientific_name              English_name  ... Male_plumage_score  Sum_scores
+0    Abroscopus albogularis      Rufous-faced Warbler  ...          51.944444   97.777778
+1    Abroscopus schisticeps       Black-faced Warbler  ...          47.777778   96.666667
+2  Abroscopus superciliaris    Yellow-bellied Warbler  ...          43.611111   86.805556
+3  Acanthagenys rufogularis  Spiny-cheeked Honeyeater  ...          39.166667   78.472222
+4       Acanthidops bairdii          Peg-billed Finch  ...          54.166667   94.722222
+
+[5 rows x 6 columns]
+>>>
+```
+
+You can also create a new column with a single operation:
+
+```python
+# add a column with a constant
+>>> data["Study"] = 1
+>>> data.head()
+            Scientific_name              English_name  ... Sum_scores  Study
+0    Abroscopus albogularis      Rufous-faced Warbler  ...  97.777778      1
+1    Abroscopus schisticeps       Black-faced Warbler  ...  96.666667      1
+2  Abroscopus superciliaris    Yellow-bellied Warbler  ...  86.805556      1
+3  Acanthagenys rufogularis  Spiny-cheeked Honeyeater  ...  78.472222      1
+4       Acanthidops bairdii          Peg-billed Finch  ...  94.722222      1
+
+[5 rows x 7 columns]
+
+# use NumPy function to add a column of random numbers
+# shape[0] provides the number of rows
+>>> data["Rnd"] = np.random.random(data.shape[0])
+>>> data.head()
+            Scientific_name              English_name  ... Study       Rnd
+0    Abroscopus albogularis      Rufous-faced Warbler  ...     1  0.277765
+1    Abroscopus schisticeps       Black-faced Warbler  ...     1  0.178028
+2  Abroscopus superciliaris    Yellow-bellied Warbler  ...     1  0.558369
+3  Acanthagenys rufogularis  Spiny-cheeked Honeyeater  ...     1  0.871557
+4       Acanthidops bairdii          Peg-billed Finch  ...     1  0.326340
+
+[5 rows x 8 columns]
 ```
 
 ___
 
 
-#### Step 6: Build 3rd Function
+### Removing Columns from Data Frame
 
-This function accepts the current population of reproductive adults and outputs the next generation with the same size as the previous generation. 
-
-Assumptions:
-
-* Adults produce an infinite pool of gametes
-* Random mating
-
-We draw alleles from the infinite pool of gametes at random to create the next generation of diploids.
+To remove columns from the data, use `del` or `drop`:
 
 ```python
-def reproduce_population(population):
-	""" Create new generation through reproduction
-		For each of N new offspring,
-		- choose the parents at random;
-		- the offspring receives a chromosome from
-		each of the parents.
-	"""
-	new_generation = []
-	N = len(population)
-	for i in range(N):
-		dad = np.random.randint(N)
-		mom = np.random.randint(N)
-		chr_mom = np.random.randint(2)
-		offspring = (population[mom][chr_mom], population [dad][1 - chr_mom])
-		new_generation.append(offspring)
-	return(new_generation)
-	
-```
+# remove a single column
+>>> del(data["Sum_scores"])
+>>> data.head()
 
-And test it
-
-```python
->>> reproduce_population(my_pop)
-[('A', 'A'), ('a', 'A'), ('A', 'A'), ('A', 'a'), ('A', 'A'), ('A', 'A')]
-```
-
-*Phew!!!  (out of breath)  *
-
-___
-
-
-#### Step 7: Save Functions in a Module & Import
-
-Save your module (a file with the 3 functions we just made) into a file called `drift.py`. There is also a copy of this file in `~/CSB/good_code/solutions`.  
-
-Exit `python` (`ctrl-d`) and copy `drift.py` to your sandbox.
-
-```bash
-cd ~/CSB/good_code/sandbox
-cp ../solutions/drift.py .
-```
-
-> [!IMPORTANT]
-> There are two errors in the `drift.py` script.  Be sure to fix it with `sed`
-
-```bash
-# add import numpy as np after import scipy
-sed -i '/import scipy/a import numpy as np' drift.py
-
-# replace scipy.random with np.random
-sed -i 's/scipy\.random/np\.random/g' drift.py
-python3
-```
-
-Import the module and test that it was imported successfully
-
-
-```python
->>> import drift
->>> help(drift)
-# type q to exit help
+# remove multiple columns
+>>> data.drop(["Rnd", "Study"], axis = 1, inplace = True)
+>>> data.head()
 ```
 
 ___
 
+### Selecting Data In Data Frame
 
-#### Step 8: Build 4th Function that Controls the First 3 Functions
-
-We will simulate a population from generation to generation until an allele is fixed (p = 0 or 1; all A or all a alleles)
-
-*Be careful, if you make the population too large, fixation may not be reached, and the program will keep running like an infinite loop.*
+A method with option `axis = 1` will act along columns, while `axis = 0` acts along rows. The argument `inplace = True` means that the columns are removed directly and irrevocably from the data.
+There are several ways of accessing data in a Data Frame: by column label, row index number, or specific x,y locations:
 
 ```python
-import drift
-def simulate_drift(N, p):
-	my_pop = drift.build_population(N, p)
-	fixation = False
-	num_generations = 0
-	while fixation == False:
-		genotype_counts = drift.compute_frequencies (my_pop)
-		if genotype_counts["AA"] == N or genotype_counts["aa"] == N:
-			print("An allele reached fixation at generation",
-			num_generations)
-			print("The genotype counts are")
-			print(genotype_counts)
-			fixation == True
-			break
-		my_pop = drift.reproduce_population(my_pop)
-		num_generations = num_generations + 1
+# select data by column label
+# select first three rows of output
+# remember: noninclusive, 0-based indexing;
+# row "3" is not included!
+>>> data["Scientific_name"][:3]
+0      Abroscopus albogularis
+1      Abroscopus schisticeps
+2    Abroscopus superciliaris
+Name: Scientific_name, dtype: object
 
+# column names can be specified using a dot
+>>> data.Scientific_name[:3]
+0      Abroscopus albogularis
+1      Abroscopus schisticeps
+2    Abroscopus superciliaris
+Name: Scientific_name, dtype: object
 ```
 
-test it
+The DataFrame methods loc and iloc select specific rows and columns without chaining multiple selections ( e.g., data[ column] [row] as seen above). While loc uses row and column labels for selection, iloc expects integers that correspond to the positions of rows and columns:
 
 ```python
->>> simulate_drift(100, 0.5)
-An allele reached fixation at generation 713
-The genotype counts are
-{'AA': 0, 'aa': 100, 'Aa': 0, 'aA': 0}
+# select rows by index label
+# the row named "3" is included!
+# select columns by their label
+# (multiple labels within list)
+>>> data.loc[:3, ["Scientific_name", "English_name"]]
+            Scientific_name              English_name
+0    Abroscopus albogularis      Rufous-faced Warbler
+1    Abroscopus schisticeps       Black-faced Warbler
+2  Abroscopus superciliaris    Yellow-bellied Warbler
+3  Acanthagenys rufogularis  Spiny-cheeked Honeyeater
 
->>> simulate_drift(100, 0.9)
-An allele reached fixation at generation 45
-The genotype counts are
-{'AA': 100, 'aa': 0, 'Aa': 0, 'aA': 0}
+
+# select rows with Scientific_name Zosterops mouroniensis
+>>> data.loc[data.Scientific_name == "Zosterops mouroniensis"]
+             Scientific_name  ... Male_plumage_score
+5801  Zosterops mouroniensis  ...               47.5
+
+[1 rows x 5 columns]
+
+
+# select subset by x,y position (zero-based!)
+# select third row, second column
+>>> data.iloc[2, 1]
+'Yellow-bellied Warbler'
+```
+
+We can even select rows based on only part of the cell content:
+
+```python
+# select the column Scientific_name of all rows that
+# contain "Bowerbird" in column English_name;
+# show first three rows of output
+>>> data[data.English_name.str.contains("Bowerbird")]["Scientific_name"][:3]
+188      Amblyornis flavifrons
+189        Amblyornis inornata
+190    Amblyornis macgregoriae
+Name: Scientific_name, dtype: object
 ```
 
 ___
 
 
-#### Step 9. Save 4th Function to Module 
+### Filtering Data Frame with Pandas
 
-Let us make our pop sim program executable. First save it to a file called simulate_drift.py in your sandbox.
-
-```bash
-nano simulate_drift.py
-```
-
-Next modify it as follows
+Having shown how to select particular columns, we show how to filter rows based on their content:
 
 ```python
-#!/usr/bin/env python
-
-import sys
-import drift
-
-def simulate_drift(N, p):
-        my_pop = drift.build_population(N, p)
-        fixation = False
-        num_generations = 0
-        while fixation == False:
-                genotype_counts = drift.compute_frequencies (my_pop)
-                if genotype_counts["AA"] == N or genotype_counts["aa"] == N:
-                        print("An allele reached fixation at generation",
-                        num_generations)
-                        print("The genotype counts are")
-                        print(genotype_counts)
-                        fixation == True
-                        break
-                my_pop = drift.reproduce_population(my_pop)
-                num_generations = num_generations + 1
-
-# this allows arguments to be passed in from the command line
-if __name__ == "__main__":
-        N = int(sys.argv[1])
-        p = float(sys.argv[2])
-        simulate_drift(N, p)
+# select rows with Male_plumage_score larger than 65
+>>> high_male_score = data[data["Male_plumage_score"] > 65]
 ```
 
-*Note that the shebang! must have the correct path to `python3` in your `anaconda3` dir, or else the script will not work.  Also note that if you point your shebang at `/usr/bin/python3` or `/usr/local/bin/python3`, these are different installations of `python` and probably will not have the `scipy` package.  You would have to separately install `scipy`, and this is why we are using anaconda.*
-
-Make simulate_drift.py executable
-
-```bash
-chmod 700 simulate_drift.py
-```
-
-and then test it
+You can also concatenate multiple conditions with Boolean operators; for example, we extract highly sexually dimorphic species by finding those in which males have a high plumage score, and females have a low score:
 
 ```python
-./simulate_drift.py 1000 0.1
+>>> highly_dimorphic = data[(data.Male_plumage_score > 70) & (data.Female_plumage_score < 40)]
 ```
 
-*Note again that we all have multiple `python` installations on our computer.  If you have the shebang! right, even if you turn off anaconda `conda deactivate`, this will still use the anaconda python installation.
+___
+
+### Selecting Data to Analyze: View vs Copy of Data
+
+One important feature of pandas is that many commands return a view, as opposed to a copy of the data. A simple example:
+
+```python
+>>> high_male_score["Qualitative_score"] = "High"
+__main__:1: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+```
+
+pandas raises a warning because high_male_score is not a new Data Frame, independent of data; rather, it is a view of a "slice" of the original data. While the behavior of this command is what you would expect (the column Qualitative_score is added to high_male_score, but not to data), this is not the correct way to proceed. When you want to take a subset of the data, and separate it from the original data, you need to copy it:
+
+```python
+>>> high_male_score = data[data["Male_plumage_score"] > 65].copy()
+>>> high_male_score["Qualitative_score"] = "High"
+```
+
+The reason behind this behavior is that pandas can be used to analyze large data sets. In most cases, you want to take a subset to perform some operations that do not alter the data.  In which case, copying the data by default would be costly in terms of memory. Unsurprisingly, the idea of views is taken from databases (covered in chapter 10), where it arises for the exact same reason.
+
+Once you have selected your data, it is easy to calculate summary
+statistics:
+
+```python
+>>> data.Male_plumage_score.mean()
+51.00918939004283
+>>> data.Male_plumage_score.median()
+49.72222222
+>>> data.Male_plumage_score.std()
+8.200662934673714
+```
 
 ___
 
 
-### 4.3 Writing Style
+### Visualizing Data with Pandas
 
-Code is read more than it is written, and you should be thinking about the reader when writing your code (as well as your assignments for your courses and theses, and publications)
+A useful feature is that you can produce nice plots for exploratory analysis. If you have not done it already, load the Matplotlib library and type
 
-Python has two documents that describe in excruciating detail how you should style your code in two Python Enhancement Proposals:
+```python
+>>> import matplotlib as mpl
+>>> data.Male_plumage_score.hist()
+<matplotlib.axes._subplots.AxesSubplot object at 0x7f9a3f2ecbe0>
+>>> mpl.pyplot.show()
+```
 
-* [Style Guide for Python Code](https://peps.python.org/pep-0008/)
-* [Docstring Conventions](https://peps.python.org/pep-0257/)
+Hopefully, you see this:
+
+![alt text](Week13_files/Capture5.PNG "image 5")
+
+Similarly, to produce a scatter plot, use
+
+```python
+>>> data.plot.scatter(x = "Male_plumage_score", y = "Female_plumage_score")
+<matplotlib.axes._subplots.AxesSubplot object at 0x7f9a3f3a6588>
+>>> mpl.pyplot.show()
+```
+
+![alt text](Week13_files/Capture6.PNG "image 6")
+
+To draw a box plot displaying the distributions of plumage scores for males and females, type
+
+```python
+>>> data[["Male_plumage_score", "Female_plumage_score"]].plot.box()
+<matplotlib.axes._subplots.AxesSubplot object at 0x7f9a3c20b358>
+>>> mpl.pyplot.show()
+```
+
+![alt text](Week13_files/Capture7.PNG "image 7")
+
+This introduction presents only a few functions of the quite comprehensive pandas library. If you want to perform exploratory analysis of large data sets in Python, we recommend that you master this package. Section 6. 7 provides pointers to resources to further your understanding. Many of the ideas behind the pandas package are taken from R, which we will explore in chapters 8 and 9.
+
+___
 
 
-If you refer to ch 4.3 in CSB, here is where I disagree:
+### 6.4 Biopython
 
-* You should use tabs for indenting (I know this is the opposite of the book), but it will reduce variation in size of indents
+The Biopython project provides many standardized bioinformatics tools which, for example, facilitate the analysis and visualization of sequence data, the interface with data repositories, the parsing of popular file formats, and the integration of programs such as BLAST or Primer3.
 
+Biopython is not part of the standard Python library and needs to be installed. You can find instructions in `~/CSB/scientiftc/installation/install.md`. 
+
+___
+
+### 6.4.1 Retrieving DNA Sequences from NCBI
+
+Many of the popular biological databases offer an application programming interface (API) that allows information to be accessed programmatically. Instead of manually accessing the website, entering search terms, and clicking your way to the desired data set, you can write a script that automatically queries the database and retrieves the data. The data are downloaded in a structured format, such as Extensible Markup Language (XML), making it both human readable and machine readable. Using APis automates your work flow, making it easy to scale up your analysis and facilitating the analysis within the Python environment.
+
+The National Center for Biotechnology Information (NCBI) not only offers an extensive API, but also the Entrez Programming Utilities (E-utilities)-a set of server-side programs to search and retrieve information. Biopython offers functions to interact directly with E-utilities. Let us see how it works by retrieving information about the inquisitive shrew mole (_Uropsilus investigator_):
+
+```python
+# import package
+>>> from Bio import Entrez
+
+# provide your e-mail address to let NCBI know who you are
+>>> Entrez.email = "me@bigu.edu"
+>>> handle = Entrez.esearch(db = "nuccore", term = ("Uropsilus investigator[Organism]"))
+```
+
+The function `Entrez.esearch` allows us to search any of the databases hosted by NCBI, returning a handle to the results. A handle is a standardized "wrapper" around text information. Handles are useful for reading information incrementally, which is important for large data files. Handles are often used to pass information to a parser, such as the function `Entrez.read`:
+
+```python
+>>> record = Entrez.read(handle)
+>>> handle.close()
+
+# record is a dictionary, we can look at the keys
+>>> record.keys()
+dict_keys(['Count', 'RetMax', 'RetStart', 'IdList', 'TranslationSet', 'TranslationStack', 'QueryTranslation'])
+
+# your output may look different:
+# dictionaries have no natural order
+```
+
+The `Entrez.read` parser breaks the retrieved XML data down into individual parts, and transforms them into Python objects that can be accessed individually. Let us see how many sequences are available in the nucleotide database for our search term, and access the record IDs:
+
+```python
+>>> record["Count"]
+'126'
+# retrieve list of GenBank identifiers
+>>> id_list = record["IdList"]
+>>> print(id_list)
+['1631860235', '1631860231', '1631860225', '1631860187', '1631860183', '1631860181', '1631860179', '1631860169', '1631859951', '1631859923', '1631859919', '1631859917', '1631859915', '1631859905', '1631859701', '1631859677', '1631859673', '1631859671', '1631859669', '1631859659']
+```
+
+Note that your counts and IDs might differ if more information about the inquisitive shrew mole has been uploaded since we ran our query.
+
+___
+
+### Fetch Sequences and Save to File
+
+Now that we know what is available (using `Entrez.search`) we can fetch our sequence data using `Entrez.efetch`. We retrieve the first 100 sequences in FASTA format and save them to a file:
+
+```python
+# always tell NCBI who you are
+Entrez.email = "me@bigu.edu"
+handle = Entrez.efetch(db = "nuccore",
+    rettype = "fasta",
+    retmode = "text",
+    id = id_list[:100])
+
+#setup a handle to an output file
+out_handle = open("Uropsilus_seq.fasta", "w")
+
+# write obtained sequence data to file
+for line in handle:
+    out_handle.write(line)
+
+
+88
+71
+71
+...
+71
+2
+1
+
+out_handle.close()
+handle.close()
+```
+
+___
+
+
+### 6.4.2 Input and Output of Sequence Data Using SeqIO
+
+Next, we use the module Seq IO to manipulate our sequences and obtain more information about our U. investigator results:
+
+```python
+>>> from Bio import SeqIO
+>>> handle = open("Uropsilus_seq.fasta", "r")
+>>> for record in SeqIO.parse(handle, "fasta"):
+...     print(record.description)
+...     print(len(record))
+...
+
+MH210524.1 Uropsilus investigator voucher KIZ:2012121035 titin (TTN) gene, partial cds
+940
+MH210522.1 Uropsilus investigator voucher KIZ:GLGS2416 titin (TTN) gene, partial cds
+940
+MH210519.1 Uropsilus investigator voucher KIZ:GLGS1945 titin (TTN) gene, partial cds
+940
+MH210500.1 Uropsilus investigator voucher KIZ:201211262 titin (TTN) gene, partial cds
+940
+MH210498.1 Uropsilus investigator voucher KIZ:201211169 titin (TTN) gene, partial cds
+940
+MH210497.1 Uropsilus investigator voucher KIZ:201211160 titin (TTN) gene, partial cds
+940
+MH210496.1 Uropsilus investigator voucher KIZ:201211149 titin (TTN) gene, partial cds
+940
+MH210491.1 Uropsilus investigator voucher KIZ:201211136 titin (TTN) gene, partial cds
+940
+MH210382.1 Uropsilus investigator voucher KIZ:2012121035 recombination activating protein 2 (RAG2) gene, partial cds
+701
+MH210368.1 Uropsilus investigator voucher KIZ:201211262 recombination activating protein 2 (RAG2) gene, partial cds
+701
+MH210366.1 Uropsilus investigator voucher KIZ:201211169 recombination activating protein 2 (RAG2) gene, partial cds
+701
+MH210365.1 Uropsilus investigator voucher KIZ:201211160 recombination activating protein 2 (RAG2) gene, partial cds
+701
+MH210364.1 Uropsilus investigator voucher KIZ:201211149 recombination activating protein 2 (RAG2) gene, partial cds
+701
+MH210359.1 Uropsilus investigator voucher KIZ:201211136 recombination activating protein 2 (RAG2) gene, partial cds
+701
+MH210257.1 Uropsilus investigator voucher KIZ:2012121035 recombination activating protein 1 (RAG1) gene, partial cds
+1010
+MH210245.1 Uropsilus investigator voucher KIZ:201211262 recombination activating protein 1 (RAG1) gene, partial cds
+1010
+MH210243.1 Uropsilus investigator voucher KIZ:201211169 recombination activating protein 1 (RAG1) gene, partial cds
+700
+
+
+
+
+>>> handle.close()
+```
+
+<!-- This is a hidden comment. It will not be visible in the rendered markdown. 
+
+SeqIO.parse returns a SeqRecord Python object that comes with several methods. Type record. and hit the Tab key in your Jupyter notebook to obtain a list of methods. Let us select only the records of the RAG1 gene and shorten our sequences before writing to a new file:
+
+
+```python
+import re
+output_handle = open("Uropsilus_BMI1.fasta", "w")
+for record in SeqIO.parse("Uropsilus_seq.fasta", "fasta"):
+	if re.search("BMI1", record.description):
+		print(record.id)
+		short_seq = record[:100]
+		SeqIO.write(short_seq, output_handle, "fasta")
+output_handle.close()
+
+```
 
 ---
+
+### 6.4.3 Blast
+
+```
+from Bio.Blast import NCBIWWW
+handle = open("Uropsilus_BMI1.fasta", "r")
+records = list(SeqIO.parse(handle, "fasta"))
+print(records[3].id, " ", records[3].seq)
+```
+-->
+
+
