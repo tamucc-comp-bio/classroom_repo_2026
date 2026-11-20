@@ -24,7 +24,7 @@ cd ~
 git clone PASTE_YOUR_REPO'S_SSH_LINK_HERE lecture-12
 
 # confirm it worked:
-ls lecture-assignment-12/CSB
+ls lecture-12/CSB
 ```
 
 Create a `conda` environment for today's lecture
@@ -115,9 +115,9 @@ You can change between environments using `conda activate NameOfEnvironment` and
 
 ### Installation of Packages
 
-The are installation details in `~/CSB/scientific/installation`.  You can also consult the official [python package installation tutorial](https://packaging.python.org/tutorials/installing-packages/)
+When we created the environment, we also installed the required software.  The are installation details in `~/lecture-12/CSB/scientific/installation`.  You can also consult the official [python package installation tutorial](https://packaging.python.org/tutorials/installing-packages/)
 
-I did the following in the bash shell to install biopython, given that we should all have miniconda/anaconda:
+Check for the installation of the required programs for today's lecture in the bash shell.  Be sure the environment for today's lecture is activated.
 
 ```bash
 cd ~
@@ -129,7 +129,7 @@ conda list | grep 'numpy\|scipy\|pandas\|biopython\|scikit-image\|matplotlib'
 
 ```
 
-<details><summary>In previous years, there were various errors installation. If you run into problems, expand for troubleshooting example </summary>
+<details><summary>In previous years, there were various installation errors. If you run into problems, expand for troubleshooting example </summary>
 <p>
 
 ```bash
@@ -211,13 +211,6 @@ conda list | grep 'numpy\|scipy\|pandas\|biopython'
 
 ---
 
-Now let's install some other packages for this lecture
-
-```bash
-conda install -c conda-forge scikit-image
-
-conda install -c conda-forge matplotlib
-```
 
 Confirm installation of biopython in python3 terminal
 
@@ -232,6 +225,7 @@ You can also update packages that are already installed.  (bash terminal)
 # if you want to update a package
 conda update pandas
 
+# select "No", we will stick with python 25.11.1 and the installed version of padas.
 ```
 
 ___
@@ -250,7 +244,7 @@ NumPy and SciPy are typically used in concert and imported together.  Here we wi
 * 2d: matrix
 * 3d or more: tensor
 
-`np.arrange()` can be used to create a 1d array that is similar to a list
+`np.arange()` can be used to create a 1d array that is similar to a list
 
 ```python
 >>> a = np.arange(9)
@@ -573,7 +567,7 @@ We will use functions from `NumPy`, 2 image analysis functions from the `scikit-
 Before we start, you should navigate to the sandbox for this chapter. Exit python with `ctrl-d`
 
 ```bash
-$ cd ~/CSB/scientific/sandbox
+$ cd ~/lecture-12/CSB/scientific/sandbox
 $ python3
 ```
 
@@ -720,7 +714,7 @@ ___
 
 ### Read in CSV as Data Frame with Pandas
 
-For our testing, we are going to import a . csv file containing a "plumage score" for male and female birds of several species. The method and the data are from Dale et al. (2015). Using pandas, we are going to import the file (start Jupyter from your `~CSB/scientific/sandbox` directory):
+For our testing, we are going to import a . csv file containing a "plumage score" for male and female birds of several species. The method and the data are from Dale et al. (2015). Using pandas, we are going to import the file (start Jupyter from your `~/lecture-12/CSB/scientific/sandbox` directory):
 
 ```python
 >>> import pandas
@@ -989,7 +983,7 @@ ___
 
 The Biopython project provides many standardized bioinformatics tools which, for example, facilitate the analysis and visualization of sequence data, the interface with data repositories, the parsing of popular file formats, and the integration of programs such as BLAST or Primer3.
 
-Biopython is not part of the standard Python library and needs to be installed. You can find instructions in `~/CSB/scientiftc/installation/install.md`. 
+Biopython is not part of the standard Python library and needs to be installed. You can find instructions in `~/lecture-12/CSB/scientiftc/installation/install.md`. 
 
 ___
 
